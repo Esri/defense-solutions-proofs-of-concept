@@ -1,3 +1,19 @@
+///////////////////////////////////////////////////////////////////////////
+// Copyright (c) 2017 Esri All Rights Reserved.
+//
+// Licensed under the Apache License Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+///////////////////////////////////////////////////////////////////////////
+
 define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/_TemplatedMixin", "dijit/_WidgetsInTemplateMixin", "dojo/on", "dojo/aspect", "dojo/_base/declare", "dojo/_base/lang", "dojo/json", "dojo/_base/Deferred", "dojo/_base/array", "dojo/number", "dijit/registry", "dijit/Dialog", "dijit/Toolbar", "dijit/ToolbarSeparator", "dijit/layout/ContentPane", "dijit/form/Button", "dijit/form/ToggleButton", "dijit/form/CheckBox", "put-selector/put", "dojo/dom-geometry", "dojo/dom-style", "dojo/dom-class", "dojo/query", "dojo/_base/Color", "dojo/colors", "dojo/fx/easing", "dojox/charting/Chart", "dojox/charting/axis2d/Default", "dojox/charting/plot2d/Grid", "dojox/charting/plot2d/Areas", "dojox/charting/plot2d/Columns", "dojox/charting/plot2d/Lines","dojox/charting/plot2d/MarkersOnly", "dojox/charting/action2d/MouseIndicator", "dojox/charting/action2d/TouchIndicator", "dojox/charting/themes/ThreeD", "esri/config", "esri/sniff", "esri/request", "esri/dijit/Measurement", "esri/tasks/Geoprocessor", "esri/geometry/Point", "esri/geometry/Polyline", "esri/symbols/SimpleLineSymbol", "esri/symbols/SimpleMarkerSymbol", "esri/graphic", "esri/tasks/FeatureSet", "esri/tasks/LinearUnit", "esri/geometry/geodesicUtils", "esri/geometry/webMercatorUtils", "esri/Color", "esri/units", "dojo/i18n!esri/nls/jsapi", "dojo/i18n!./nls/strings", "dojo/text!./Widget.html", "xstyle/css!./css/style.css"], function (Evented, _WidgetBase, _OnDijitClickMixin, _TemplatedMixin, _WidgetsInTemplateMixin, on, aspect, declare, lang, JSON, Deferred, array, number, registry, Dialog, Toolbar, ToolbarSeparator, ContentPane, Button, ToggleButton, CheckBox, put, domGeometry, domStyle, domClass, query, Color, colors, easing, Chart, Default, Grid, Areas, Columns, Lines, MarkersOnly, MouseIndicator, TouchIndicator, ThreeD, esriConfig, esriSniff, esriRequest, Measurement, Geoprocessor, Point, Polyline, SimpleLineSymbol, SimpleMarkerSymbol, Graphic, FeatureSet, LinearUnit, geodesicUtils, webMercatorUtils, esriColor, Units, esriStrings, i18NStrings, dijitTemplate) {
 
     /**
