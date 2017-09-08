@@ -2,6 +2,8 @@
 
 A repository to showcase demonstrations, prototypes and proofs of concept from the Defense Solutions Team.
 
+__IMPORTANT NOTE__: The samples provided in this repository are not officially released Esri solutions and have not gone through the standard software development lifecycle and/or testing used in officially released Esri solutions. They may not be fully tested or documented, and are not supported by Esri Technical Support or the Defense Solutions Team.  
+
 ![Screenshot][ss]
 
 ## Sections
@@ -44,6 +46,8 @@ A repository to showcase demonstrations, prototypes and proofs of concept from t
 
 ## Resources
 
+* [ArcGIS for Defense Solutions Website](http://solutions.arcgis.com/defense)
+* [ArcGIS for Defense Downloads](http://appsforms.esri.com/products/download/#ArcGIS_for_Defense)
 * Learn more about Esri's Solutions [Focused Maps and Apps for Your Organization](http://solutions.arcgis.com/).
 * [Web AppBuilder API](https://developers.arcgis.com/web-appbuilder/api-reference/css-framework.htm)
 * [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
