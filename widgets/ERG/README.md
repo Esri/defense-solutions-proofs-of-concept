@@ -1,12 +1,10 @@
-# defense-solutions-proofs-of-concept
+# emergency-response-guide-webappbuilder-widget
 
-A repository to showcase demonstrations, prototypes and proofs of concept from the Defense Solutions Team.
+The Emergency Response Guide (ERG) widget allows users to determine potential hazards based on the type of chemical spill and user-selected location on the map.
 
-## IMPORTANT NOTE
+The ERG widget references the [ERG Guidebook 2016](https://www.phmsa.dot.gov/hazmat/outreach-training/erg). Note: Table 3 of the 2016 Guidebook is not implemented in the current version of the widget.
 
-The samples provided in this repository are not officially released Esri solutions and have not gone through the standard software development lifecycle and/or testing used in officially released Esri solutions. They may not be fully tested or documented, and are not supported by Esri Technical Support or the Defense Solutions Team.  
-
-![Screenshot][ss]
+![Image of ERG Widget][ss]
 
 ## Sections
 
@@ -21,25 +19,23 @@ The samples provided in this repository are not officially released Esri solutio
 
 ## Features
 
-* Web Appbuilder (WAB) for ArcGIS Widgets to address specialized workflows
-    * See the individual widget READMEs for more information
-    * Current widgets included and last/latest version tested with:
-
-| Widget Name | Last WAB<br>Version Tested With | 
-|---------------------------------|:-------------------------------:|
-| [Bomb Threat Tool](./widgets/BombThreat/README.md) | 2.3 |
-| [Critical Infrastructure <br>and Key Resources](./widgets/CI_KR_Chart/README.md) | 1.2 | 
-| [Elevation Profile Widget](./widgets/ElevationProfileTable/README.md) | 1.2 | 
-| [ERG](./widgets/ERG/README.md) | 2.3 |
-| [Filter Editor](./widgets/FilterEditor/README.md) | 2.0 | 
-| [Image Discovery](./widgets/ImageDiscovery/README.md) | 2.0 | 
+* Select chemical type
+* Select spill size
+* Select wind direction and speed
+* Select time of day the spill occurred
+* Ability to allow user select a location on the map
+* Displays affected location, demography and facilities
 
 ## Requirements
 
-* Web Appbuilder for ArcGIS
+* Web Appbuilder for ArcGIS Version 2.2+
     * See [ArcGIS Web Appbuilder for ArcGIS](http://developers.arcgis.com/web-appbuilder/)
 
 ## Instructions
+
+* Update/Publish the Geoprocessing and Map services
+    * The widget relies on Geoprocessing and Map services. The SD files for those services can be found in the EmergencyOperations.zip file in the [services folder](./ERG/services). 
+    * The zip file contains ERG.sd which is the Geoprocessing service along with the EmergencyOperation.sd which is the accompanying map service. Please update the ERG [config.json](./ERG/config.json) file once these SD files are published in ArcGIS Server.
 
 * Deploying Widgets
     * To deploy a widget, copy the folder of the desired deployment widget to the stemapp/widgets directory. This is located in %webappbuilder_install%/client directory.
@@ -48,8 +44,6 @@ The samples provided in this repository are not officially released Esri solutio
 
 ## Resources
 
-* [ArcGIS for Defense Solutions Website](http://solutions.arcgis.com/defense)
-* [ArcGIS for Defense Downloads](http://appsforms.esri.com/products/download/#ArcGIS_for_Defense)
 * Learn more about Esri's Solutions [Focused Maps and Apps for Your Organization](http://solutions.arcgis.com/).
 * [Web AppBuilder API](https://developers.arcgis.com/web-appbuilder/api-reference/css-framework.htm)
 * [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
@@ -61,7 +55,7 @@ The samples provided in this repository are not officially released Esri solutio
 
 ## Issues
 
-* Find a bug or want to request a new feature?  Please let us know by submitting an issue. Please see the [Important Note above](#important-note) concerning the level of support.
+* Find a bug or want to request a new feature?  Please let us know by submitting an issue.
 
 ## New to Github
 
@@ -69,11 +63,11 @@ The samples provided in this repository are not officially released Esri solutio
 
 ## Contributing
 
-Please see our [guidelines for contributing](./CONTRIBUTING.md).
+Please see our [guidelines for contributing](../../CONTRIBUTING.md).
 
 ## Licensing
 
-Copyright 2017 Esri
+Copyright 2016-2017 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -88,6 +82,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 A copy of the license is available in the repository's
-[license.txt](LICENSE.txt) file.
+[license.txt](license.txt) file.
 
-[ss]: widgets/ERG/images/screenshot.jpg
+[ss]: images/screenshot.jpg
