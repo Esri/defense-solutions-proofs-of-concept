@@ -2,7 +2,9 @@
 
 A repository to showcase demonstrations, prototypes and proofs of concept from the Defense Solutions Team.
 
-__IMPORTANT NOTE__: The samples provided in this repository are not officially released Esri solutions and have not gone through the standard software development lifecycle and/or testing used in officially released Esri solutions. They may not be fully tested or documented, and are not supported by Esri Technical Support or the Defense Solutions Team.  
+## IMPORTANT NOTE
+
+The samples provided in this repository are not officially released Esri solutions and have not gone through the standard software development lifecycle and/or testing used in officially released Esri solutions. They may not be fully tested or documented, and are not supported by Esri Technical Support or the Defense Solutions Team.  
 
 ![Screenshot][ss]
 
@@ -21,7 +23,7 @@ __IMPORTANT NOTE__: The samples provided in this repository are not officially r
 
 * Web Appbuilder (WAB) for ArcGIS Widgets to address specialized workflows
     * See the individual widget READMEs for more information
-    * Current widget included:
+    * Current widgets included and last/latest version tested with:
 
 | Widget Name | Last WAB<br>Version Tested With | 
 |---------------------------------|:-------------------------------:|
@@ -59,7 +61,7 @@ __IMPORTANT NOTE__: The samples provided in this repository are not officially r
 
 ## Issues
 
-* Find a bug or want to request a new feature?  Please let us know by submitting an issue.
+* Find a bug or want to request a new feature?  Please let us know by submitting an issue. Please see the [Important Note above](#important-note) concerning the level of support.
 
 ## New to Github
 
