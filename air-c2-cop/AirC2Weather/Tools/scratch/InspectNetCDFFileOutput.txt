@@ -1,0 +1,119 @@
+*** Variables ***
+
+Variable: time
+	Variable type: Date 
+	Dimensions: time
+	units = hours since 1800-1-1 00:00:0.0
+	long_name = Time
+	axis = T
+	standard_name = time
+	coordinate_defines = start
+	delta_t = 0000-00-01 00:00:00
+	actual_range = 1569072.0
+
+Variable: x
+	Variable type: Single 
+	Dimensions: x
+	long_name = eastward distance from southwest corner of domain in projection coordinates
+	units = m
+	standard_name = projection_x_coordinate
+
+Variable: y
+	Variable type: Single 
+	Dimensions: y
+	long_name = northward distance from southwest corner of domain in projection coordinates
+	units = m
+	standard_name = projection_y_coordinate
+
+Variable: time_bnds
+	Variable type: Double 
+	Dimensions: time nbnds
+	long_name = Time Boundaries
+
+Variable: acpcp
+	Variable type: Single 
+	Dimensions: time y x
+	units = kg/m^2
+	long_name = Daily accumulated convective precipitation at Surface
+	unpacked_valid_range = 0.0
+	precision = 2
+	actual_range = 0.0
+	missing_value = 32766
+	add_offset = 327.660003662
+	scale_factor = 0.00999999977648
+	valid_range = -32766
+	_FillValue = -32767
+	GRIB_name = ACPCP
+	GRIB_id = 63
+	var_desc = convective precipitation accumulation
+	standard_name = convective_precipitation_amount
+	level_desc = Surface
+	dataset = NARR Daily Values
+	statistic = Daily Accumulation
+	parent_stat = Individual Obs
+	grid_mapping = Lambert_Conformal
+	coordinates = lat lon
+	cell_methods = time: accumulation (for each 3-hourly interval) accumulation (of 8 3-hourly accumulations)
+
+Variable: Lambert_Conformal
+	Variable type: Integer 
+	Dimensions:
+	grid_mapping_name = lambert_conformal_conic
+	standard_parallel = 50.0
+	longitude_of_central_meridian = -107.0
+	latitude_of_projection_origin = 50.0
+	false_easting = 5632642.22547
+	false_northing = 4612545.65137
+
+Variable: lat
+	Variable type: Single 
+	Dimensions: y x
+	long_name = latitude coordinate
+	units = degrees_north
+	axis = Y
+	coordinate_defines = point
+	standard_name = latitude
+
+Variable: lon
+	Variable type: Single 
+	Dimensions: y x
+	units = degrees_east
+	long_name = longitude coordinate
+	axis = X
+	coordinate_defines = point
+	standard_name = longitude
+
+
+*** Global Attributes ***
+
+standardpar1 = 50.0
+
+standardpar2 = 50.000001
+
+centerlon = -107.0
+
+centerlat = 50.0
+
+latcorners = 1.00000095367
+
+loncorners = -145.5
+
+stream = s1
+
+title = Daily NARR
+
+Conventions = CF-1.0
+
+history = created 2006/07 by data management at NOAA/ESRL/PSD
+Created 11/12/2014 15:37 by ArcGIS OPeNDAP to NetCDF tool using the following OPeNDAP URL: http://www.esrl.noaa.gov/psd/thredds/dodsC/Datasets/NARR/Dailies/monolevel/acpcp.1979.nc
+
+institution = National Centers for Environmental Prediction
+
+platform = Model
+
+references = http://wwwt.emc.ncep.noaa.gov/mmb/rreanl/index.html
+http://www.esrl.noaa.gov/psd/data/gridded/data.narr.html
+
+DODS_EXTRA.Unlimited_Dimension = time
+
+Source_Software = Esri ArcGIS
