@@ -1,0 +1,37 @@
+[loggers]
+keys=root,customGPToolsLog
+
+[handlers]
+keys=nullHandler, fileHandler, consoleHandler
+
+[formatters]
+keys=myFormatter
+
+[logger_root]
+level=NOTSET
+handlers=nullHandler
+ 
+[logger_deskGIS]
+level=DEBUG
+handlers=fileHandler
+qualname=utils.common
+
+[handler_nullHandler]
+class=NullHandler
+level=NOTSET
+args=()
+
+[handler_fileHandler]
+class=FileHandler
+formatter=myFormatter
+args=("c:\\temp\\customGPToolsLog.txt",)
+
+[handler_consoleHandler]
+class=StreamHandler
+level=DEBUG
+formatter=myFormatter
+args=(sys.stdout,)
+
+[formatter_myFormatter]
+format=%(asctime)s - %(name)s - %(levelname)s - %(message)s
+datefmt=

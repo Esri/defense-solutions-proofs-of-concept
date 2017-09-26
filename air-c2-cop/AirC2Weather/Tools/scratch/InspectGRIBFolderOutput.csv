@@ -1,0 +1,39 @@
+MsgNum, Byte, GRIB-Version, elem, level, reference(UTC), valid(UTC), Proj(hr)
+1.0, 0, 2, VIS="Visibility [m]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+2.0, 54334, 2, PRES="Pressure [Pa]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+3.0, 369425, 2, HGT="Geopotential height [gpm]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+4.0, 521915, 2, WEASD="Water equivalent of accumulated snow depth [kg/(m^2)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+5.0, 537191, 2, APCP="Total precipitation [kg/(m^2)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+6.0, 537405, 2, ACPCP="Convective precipitation [kg/(m^2)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+7.0, 537619, 2, WEASD="Water equivalent of accumulated snow depth [kg/(m^2)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+8.0, 537833, 2, CSNOW="Categorical Snow [0=no; 1=yes]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+9.0, 538023, 2, CICEP="Categorical Ice Pellets [0=no; 1=yes]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+10.0, 538213, 2, CFRZR="Categorical Freezing Rain [0=no; 1=yes]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+11.0, 538403, 2, CRAIN="Categorical Rain [0=no; 1=yes]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+12.0, 538593, 2, CAPE="Convective available potential energy [J/kg]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+13.0, 587456, 2, CIN="Convective inhibition [J/kg]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+14.0, 640991, 2, LAND="Land cover (1=land; 2=sea) [Proportion]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+15.0, 648979, 2, TMP="Temperature [K]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+16.0, 798681, 2, CNWAT="Plant Canopy Surface Water [kg/(m^2)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+17.0, 798871, 2, NCPCP="Large scale precipitation [kg/(m^2)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+18.0, 799085, 2, SNOM="Snow melt [kg/(m^2)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+19.0, 801251, 2, SHTFL="Sensible heat net flux [W/(m^2)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+20.0, 801441, 2, LHTFL="Latent heat net flux [W/(m^2)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+21.0, 1108409, 2, DSWRF="Downward Short-Wave Rad. Flux [W/(m^2)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+22.0, 1118206, 2, DLWRF="Downward Long-Wave Rad. Flux [W/(m^2)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+23.0, 1118396, 2, USWRF="Upward Short-Wave Rad. Flux [W/(m^2)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+24.0, 1125240, 2, ULWRF="Upward Long-Wave Rad. Flux [W/(m^2)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+25.0, 1377020, 2, ALBDO="Albedo [%]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+26.0, 1484587, 2, WTMP="Water temperature [K]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+27.0, 1634289, 2, ICEC="Ice cover [Proportion]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+28.0, 1650467, 2, CPOFP="Probability of Frozen Precipitation [%]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+29.0, 1669134, 2, PRATE="Precipitation rate [kg/(m^2 s)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+30.0, 1669324, 2, SNOD="Snow depth [m]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+31.0, 1789784, 2, NLAT="Latitude (-90 to 90) [deg]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+32.0, 1839047, 2, ELON="East Longitude (0 to 360) [deg]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+33.0, 1858197, 2, LAND="Land cover (1=land; 2=sea) [Proportion]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+34.0, 1866185, 2, CNWAT="Plant Canopy Surface Water [kg/(m^2)]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+35.0, 1866375, 2, ALBDO="Albedo [%]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+36.0, 1974820, 2, ICEC="Ice cover [Proportion]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+37.0, 1990998, 2, SNOWC="Snow Cover [%]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00
+38.0, 2022955, 2, HPBL="Planetary Boundary Layer Height [m]", 0-SFC, 11/13/2014 09:00, 11/13/2014 09:00, 0.00

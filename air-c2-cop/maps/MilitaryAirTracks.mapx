@@ -1,0 +1,2032 @@
+{
+  "type" : "CIMMapDocument",
+  "version" : "1.2.0",
+  "build" : 5023,
+  "mapDefinition" : {
+    "type" : "CIMMap",
+    "name" : "Military Air Tracks",
+    "uRI" : "CIMPATH=military_overlay_db/map2.xml",
+    "sourceModifiedTime" : {
+      "type" : "TimeInstant",
+      "start" : 978307200000
+    },
+    "metadataURI" : "CIMPATH=Metadata/b7375001f109b7b8a28cff2fe1a29533.xml",
+    "illumination" : {
+      "type" : "CIMIlluminationProperties",
+      "ambientLight" : 75,
+      "sunPositionX" : -0.61237243569579003,
+      "sunPositionY" : 0.61237243569579003,
+      "sunPositionZ" : 0.5,
+      "illuminationSource" : "AbsoluteSunPosition",
+      "sunAzimuth" : 315,
+      "sunAltitude" : 30
+    },
+    "layers" : [
+      "CIMPATH=military_overlay_db/air_equipment__platform__and_missile.xml",
+      "CIMPATH=c70d4ff1b50842de95d9cbe54292fb0d.xml"
+    ],
+    "defaultViewingMode" : "Map",
+    "mapType" : "Map",
+    "defaultExtent" : {
+      "xmin" : -13545151.773730414,
+      "ymin" : 4147431.9195469879,
+      "xmax" : -12369305.273027906,
+      "ymax" : 5025369.2352013215,
+      "spatialReference" : {
+        "wkid" : 102100,
+        "latestWkid" : 3857
+      }
+    },
+    "generalPlacementProperties" : {
+      "type" : "CIMMaplexGeneralPlacementProperties",
+      "invertedLabelTolerance" : 2,
+      "unplacedLabelColor" : {
+        "type" : "CIMRGBColor",
+        "values" : [
+          255,
+          0,
+          0,
+          100
+        ]
+      },
+      "keyNumberGroups" : [
+        {
+          "type" : "CIMMaplexKeyNumberGroup",
+          "delimiterCharacter" : ".",
+          "horizontalAlignment" : "Left",
+          "maximumNumberOfLines" : 20,
+          "minimumNumberOfLines" : 2,
+          "name" : "Default",
+          "numberResetType" : "None"
+        }
+      ],
+      "placementQuality" : "High"
+    },
+    "snappingProperties" : {
+      "type" : "CIMSnappingProperties",
+      "xYTolerance" : 10,
+      "xYToleranceUnit" : "SnapXYToleranceUnitPixel",
+      "snapToSketchEnabled" : true,
+      "snapRequestType" : "SnapRequestType_GeometricAndVisualSnapping"
+    },
+    "spatialReference" : {
+      "wkid" : 102100,
+      "latestWkid" : 3857
+    },
+    "timeDisplay" : {
+      "type" : "CIMMapTimeDisplay",
+      "defaultTimeIntervalUnits" : "esriTimeUnitsUnknown",
+      "timeValue" : {
+        "type" : "TimeExtent",
+        "start" : null,
+        "end" : null,
+        "empty" : false
+      },
+      "timeRelation" : "esriTimeRelationOverlaps"
+    }
+  },
+  "layerDefinitions" : [
+    {
+      "type" : "CIMFeatureLayer",
+      "name" : "AirTracks",
+      "uRI" : "CIMPATH=military_overlay_db/air_equipment__platform__and_missile.xml",
+      "sourceModifiedTime" : {
+        "type" : "TimeInstant",
+        "start" : 978336000000
+      },
+      "metadataURI" : "CIMPATH=Metadata/1146e3defd630cd7095780326191e32e.xml",
+      "description" : "Air Equipment, Platform, and Missile",
+      "layerElevation" : {
+        "type" : "CIMLayerElevationSurface"
+      },
+      "expanded" : true,
+      "layer3DProperties" : {
+        "type" : "CIM3DLayerProperties",
+        "castShadows" : true,
+        "isLayerLit" : true,
+        "layerFaceCulling" : "None",
+        "maxDistance" : 2000000,
+        "minDistance" : -1,
+        "preloadTextureCutoffHigh" : 0,
+        "preloadTextureCutoffLow" : 0.25,
+        "textureCutoffHigh" : 0.25,
+        "textureCutoffLow" : 1,
+        "useCompressedTextures" : true,
+        "verticalExaggeration" : 1,
+        "verticalUnit" : {
+          "uwkid" : 9001
+        },
+        "lighting" : "OneSideDataNormal"
+      },
+      "layerType" : "Operational",
+      "showLegends" : true,
+      "visibility" : true,
+      "displayCacheType" : "Permanent",
+      "maxDisplayCacheAge" : 5,
+      "showPopups" : true,
+      "serviceLayerID" : -1,
+      "featureElevationExpression" : "Z",
+      "featureTable" : {
+        "type" : "CIMFeatureTable",
+        "displayField" : "identity",
+        "editable" : true,
+        "fieldDescriptions" : [
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "objectid",
+            "fieldName" : "objectid",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "readOnly" : true,
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Standard Identity",
+            "fieldName" : "identity",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Context",
+            "fieldName" : "context",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Symbol Set",
+            "fieldName" : "symbolset",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Air Entity",
+            "fieldName" : "symbolentity",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Modifier 1",
+            "fieldName" : "modifier1",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Modifier 2",
+            "fieldName" : "modifier2",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "HQ, Task Force, Feint/Dummy",
+            "fieldName" : "indicator",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Operational Condition",
+            "fieldName" : "operationalcondition",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Unique Designation",
+            "fieldName" : "uniquedesignation",
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Additional Information",
+            "fieldName" : "additionalinformation",
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Staff Comments",
+            "fieldName" : "staffcomment",
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Credibility",
+            "fieldName" : "credibility",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Reliability",
+            "fieldName" : "reliability",
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "IFF/SIF/AIS",
+            "fieldName" : "idmode",
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Type of Equipment",
+            "fieldName" : "type",
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Direction",
+            "fieldName" : "direction",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Speed",
+            "fieldName" : "speed",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Speed Unit",
+            "fieldName" : "speedunit",
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "X Location",
+            "fieldName" : "x",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 6
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Y Location",
+            "fieldName" : "y",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 6
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Altitude/Depth",
+            "fieldName" : "z",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 6
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Symbol Size",
+            "fieldName" : "size",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Symbol Rotation",
+            "fieldName" : "rotation",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Country Code",
+            "fieldName" : "countrycode",
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Date Time Valid",
+            "fieldName" : "datetimevalid",
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Date Time Expired",
+            "fieldName" : "datetimeexpired",
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Created By",
+            "fieldName" : "createdby",
+            "readOnly" : true,
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Created Time",
+            "fieldName" : "createdtime",
+            "readOnly" : true,
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Edited By",
+            "fieldName" : "editedby",
+            "readOnly" : true,
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Edited Time",
+            "fieldName" : "editedtime",
+            "readOnly" : true,
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Civilian",
+            "fieldName" : "civilian",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 0,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Symbol ID (2525D)",
+            "fieldName" : "symbolid_2525d",
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Symbol ID (2525C)",
+            "fieldName" : "symbolid_2525c",
+            "visible" : true
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "shape",
+            "fieldName" : "shape",
+            "visible" : true
+          }
+        ],
+        "dataConnection" : {
+          "type" : "CIMStandardDataConnection",
+          "workspaceConnectionString" : "ENCRYPTED_PASSWORD=00022e68696a32372f4f314d716145486a616e79556165544d41617a48493239624f494636597a57556866735162303d2a00;SERVER=airc2;INSTANCE=sde:postgresql:airc2;DBCLIENT=postgresql;DB_CONNECTION_PROPERTIES=airc2;DATABASE=currentoperations;USER=sde;VERSION=sde.DEFAULT;AUTHENTICATION_MODE=DBMS",
+          "workspaceFactory" : "SDE",
+          "dataset" : "currentoperations.sde.AirC2_MilitaryAirTracks",
+          "datasetType" : "esriDTFeatureClass"
+        },
+        "studyAreaSpatialRel" : "esriSpatialRelUndefined",
+        "searchOrder" : "esriSearchOrderSpatial"
+      },
+      "featureTemplates" : [
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Unspecified Air",
+          "name" : "Unspecified Air",
+          "tags" : "Air; Equipment; Point; Unspecified",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "symbolset",
+              1,
+              "context",
+              0,
+              "identity",
+              1,
+              "symbolentity",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing",
+          "name" : "Military : Fixed-Wing",
+          "tags" : "Air; Fixed-Wing; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "symbolset",
+              1,
+              "context",
+              0,
+              "identity",
+              1,
+              "entity",
+              110100,
+              "symbolentity",
+              110100
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military : Fixed-Wing : Attack/Strike",
+          "name" : "Military : Fixed-Wing : Attack/Strike",
+          "tags" : "Air; Attack/Strike; Fixed-Wing; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "symbolset",
+              1,
+              "context",
+              0,
+              "identity",
+              1,
+              "entity",
+              110102,
+              "symbolentity",
+              110102
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military : Fixed-Wing : Bomber",
+          "name" : "Military : Fixed-Wing : Bomber",
+          "tags" : "Air; Bomber; Equipment; Fixed-Wing; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "symbolset",
+              1,
+              "context",
+              0,
+              "identity",
+              1,
+              "entity",
+              110103,
+              "symbolentity",
+              110103
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military : Fixed-Wing : Cargo",
+          "name" : "Military : Fixed-Wing : Cargo",
+          "tags" : "Air; Cargo; Fixed-Wing; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "symbolset",
+              1,
+              "context",
+              0,
+              "identity",
+              1,
+              "entity",
+              110107,
+              "symbolentity",
+              110107
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Fighter",
+          "name" : "Military : Fixed-Wing : Fighter",
+          "tags" : "Air; Fighter; Fixed-Wing; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "symbolset",
+              1,
+              "context",
+              0,
+              "identity",
+              1,
+              "entity",
+              110104,
+              "symbolentity",
+              110104
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Tanker",
+          "name" : "Military : Fixed-Wing : Tanker",
+          "tags" : "Air; Equipmen; Equipment; Fixed-Wing; Military; Point; Tanker",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "symbolset",
+              1,
+              "context",
+              0,
+              "identity",
+              1,
+              "entity",
+              110109,
+              "symbolentity",
+              110109
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Reconnaissance",
+          "name" : "Military : Fixed-Wing : Reconnaissance",
+          "tags" : "Air; Fixed-Wing; Military; Point; Reconnaissance",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "symbolset",
+              1,
+              "context",
+              0,
+              "identity",
+              1,
+              "entity",
+              110111,
+              "symbolentity",
+              110111
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Manual Track",
+          "name" : "Manual Track",
+          "tags" : "Air; Manual Track; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "symbolset",
+              1,
+              "context",
+              0,
+              "identity",
+              1,
+              "entity",
+              140000,
+              "symbolentity",
+              140000
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Civilian : Fixed-Wing",
+          "name" : "Civilian : Fixed-Wing",
+          "tags" : "Air; Civilian; Fixed-Wing; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "symbolset",
+              1,
+              "context",
+              0,
+              "identity",
+              1,
+              "entity",
+              120100,
+              "symbolentity",
+              120100
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Civilian : Rotary-Wing",
+          "name" : "Civilian : Rotary-Wing",
+          "tags" : "Air; Civilian; Fixed-Wing; Helicopter; Point; Rotary-Wing",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "symbolset",
+              1,
+              "context",
+              0,
+              "identity",
+              1,
+              "entity",
+              120200,
+              "symbolentity",
+              120200
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Civilian : Unmanned Aircraft (UA)/Unmanned Aerial Vehicle (UAV)/Unmanned Aircraft System (UAS)/Remote Piloted Vehicle",
+          "name" : "Civilian : Unmanned Aircraft (UA- UAV- UAS- RPV)",
+          "tags" : "Air; Civilian; Point; RPV; UAS; UAV; Unmanned Aerial Vehicle; Unmanned Aircraft",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "symbolset",
+              1,
+              "context",
+              0,
+              "identity",
+              1,
+              "entity",
+              120300,
+              "symbolentity",
+              120300
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Civilian (Air)",
+          "name" : "Civilian",
+          "tags" : "Air; Civilian; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "symbolset",
+              1,
+              "symbolentity",
+              120000,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Civilian (Air): Airship",
+          "name" : "Civilian : Airship",
+          "tags" : "Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "symbolset",
+              1,
+              "symbolentity",
+              120500,
+              "civilian",
+              0,
+              "identity",
+              1,
+              "context",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "name" : "Civilian : Lighter Than Air",
+          "tags" : "Air; Equipment; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              120400,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "name" : "Civilian : Tethered Lighter Than Air",
+          "tags" : "Air; Equipment; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              120600,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Airship",
+          "name" : "Military : Airship",
+          "tags" : "Air; Airship; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110600,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "name" : "Military : Fixed-Wing : Airborne Early Warning (AEW)",
+          "tags" : "Air; Airborne Early Warning; Equipment; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110116,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "name" : "Military : Fixed-Wing : Antisubmarine Warfare",
+          "tags" : "Air; Antisubmarine Warfare; Equipment; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110118,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "name" : "Military : Fixed-Wing : Antisurface Warfare",
+          "tags" : "Air; Antisurface Warfare; Equipment; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110117,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Combat Search and Rescue (CSAR)",
+          "name" : "Military : Fixed-Wing : Combat Search and Rescue (CSAR)",
+          "tags" : "Air; Combat Search and Rescue; Equipment; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110120,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Communications",
+          "name" : "Military : Fixed-Wing : Communications",
+          "tags" : "Air; Communications; Equipment; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110119,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Electronic Attack (EA)",
+          "name" : "Military : Fixed-Wing : Electronic Attack (EA)",
+          "tags" : "Air; Electronic Attack; Equipment; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110133,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Electronic Combat(EC)/Jammer",
+          "name" : "Military : Fixed-Wing : Electronic Combat(EC)/Jammer",
+          "tags" : "Air; Equipment; Jammer; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110108,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Electronic Support (ES)",
+          "name" : "Military : Fixed-Wing : Electronic Support (ES)",
+          "tags" : "Air; Electronic Support; Equipment; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110121,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Escort",
+          "name" : "Military : Fixed-Wing : Escort",
+          "tags" : "Air; Equipment; Escort; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110132,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Fighter/Bomber",
+          "name" : "Military : Fixed-Wing : Fighter/Bomber",
+          "tags" : "Air; Equipment; Fighter/Bomber; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110105,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Government",
+          "name" : "Military : Fixed-Wing : Government",
+          "tags" : "Air; Equipment; Government; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110122,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Medical Evacuation (MEDEVAC)",
+          "name" : "Military : Fixed-Wing : Medical Evacuation (MEDEVAC)",
+          "tags" : "Air; Equipment; Medical; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110101,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) ",
+          "name" : "Military",
+          "tags" : "Air; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110000,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Passenger",
+          "name" : "Military : Fixed-Wing : Passenger",
+          "tags" : "Air; Equipment; Military; Passenger; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110131,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Patrol",
+          "name" : "Military : Fixed-Wing : Patrol",
+          "tags" : "Air; Equipment; Military; Patrol; Point; tAir",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110110,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Personnel Recovery",
+          "name" : "Military : Fixed-Wing : Personnel Recovery",
+          "tags" : "Air; Equipment; Military; Personnel Recovery; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110124,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Photographic Reconnaissance",
+          "name" : "Military : Fixed-Wing : Photographic Reconnaissance",
+          "tags" : "Air; Equipment; Militar; Military; Photographic Reconnaissance; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110128,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Search and Rescue",
+          "name" : "Military : Fixed-Wing : Search and Rescue",
+          "tags" : "Air; Equipment; Military; Point; Search and Rescue",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110125,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Special Operations Forces",
+          "name" : "Military : Fixed-Wing : Special Operations Forces",
+          "tags" : "Air; Equipment; Military; Point; Special Operations Forces",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110126,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Suppression of Enemy Air Defense",
+          "name" : "Military : Fixed-Wing : Suppression of Enemy Air Defense",
+          "tags" : "Air; Equipment; Military; Point; Suppression of Enemy Air Defense",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110130,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Trainer",
+          "name" : "Military : Fixed-Wing : Trainer",
+          "tags" : "Air; Equipment; Military; Point; Tanker; Trainer",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110112,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Ultra Light",
+          "name" : "Military : Fixed-Wing : Ultra Light",
+          "tags" : "Air; Equipment; Military; Point; Ultra Light",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110127,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Utility",
+          "name" : "Military : Fixed-Wing : Utility",
+          "tags" : "A; Air; Equipment; Military; Point; Utility",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110113,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : Very Important Person (VIP)",
+          "name" : "Military : Fixed-Wing : Very Important Person (VIP)",
+          "tags" : "Air; Equipment; Military; Point; VIP",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110129,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed-Wing : VSTOL",
+          "name" : "Military : Fixed-Wing : VSTOL",
+          "tags" : "Air; Equipment; Military; Point; VSTOL",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110114,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Lighter Than Air",
+          "name" : "Military : Lighter Than Air",
+          "tags" : "Air; Equipment; Lighter Than Air; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110500,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Rotary-Wing",
+          "name" : "Military : Rotary-Wing",
+          "tags" : "Air; Equipment; Military; Point; Rotary-Wing",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110200,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Tethered Lighter Than Air",
+          "name" : "Military : Tethered Lighter Than Air",
+          "tags" : "Air; Equipment; Militar; Military; Point; Tethered Lighter Than Air; yair",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110700,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Unmanned Aircraft (Unmanned Aircraft- Unmanned Aerial Vehicle- Unmanned Aerial System- Remote Piloted Vehicle)",
+          "name" : "Military : Unmanned Aircraft (UA- UAV- UAS- RPV)",
+          "tags" : "Air; Equipment; Military; Point; Unmanned Aircraft",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110300,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air)  : Vertical-Takeoff UAV (VT- UAV)",
+          "name" : "Military : Vertical-Takeoff UAV (VT- UAV)",
+          "tags" : "Ai; Air; Equipment; Military; Point; Vertical-Takeoff UAV",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110400,
+              "civilian",
+              0
+            ]
+          }
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Weapon (Air)",
+          "name" : "Weapon",
+          "tags" : "Air; Equipment; Point; Weapon",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              130000,
+              "civilian",
+              0
+            ]
+          },
+          "requiredFields" : [
+            "SYMBOLENTITY"
+          ]
+        },
+        {
+          "type" : "CIMFeatureTemplate",
+          "description" : "Military (Air) : Fixed Wing : Airborne Command Post (ACP)",
+          "name" : "Military : Fixed Wing : Airborne Command Post (ACP)",
+          "tags" : "ACP; Air; Airborne Command Post; Fixed Wing; Military; Point",
+          "toolProgID" : "2a8b3331-5238-4025-972e-452a69535b06",
+          "defaultValues" : {
+            "type" : "PropertySet",
+            "propertySetItems" : [
+              "identity",
+              1,
+              "context",
+              0,
+              "symbolset",
+              1,
+              "symbolentity",
+              110115,
+              "civilian",
+              0
+            ]
+          }
+        }
+      ],
+      "htmlPopupEnabled" : true,
+      "selectable" : true,
+      "labelClasses" : [
+        {
+          "type" : "CIMLabelClass",
+          "expression" : "[identity]",
+          "expressionEngine" : "VBScript",
+          "featuresToLabel" : "AllVisibleFeatures",
+          "maplexLabelPlacementProperties" : {
+            "type" : "CIMMaplexLabelPlacementProperties",
+            "featureType" : "Point",
+            "avoidPolygonHoles" : true,
+            "canOverrunFeature" : true,
+            "canPlaceLabelOutsidePolygon" : true,
+            "canRemoveOverlappingLabel" : true,
+            "canStackLabel" : true,
+            "connectionType" : "Unambiguous",
+            "constrainOffset" : "NoConstraint",
+            "contourAlignmentType" : "Page",
+            "contourLadderType" : "Straight",
+            "contourMaximumAngle" : 90,
+            "enableConnection" : true,
+            "enablePointPlacementPriorities" : true,
+            "featureWeight" : 0,
+            "fontHeightReductionLimit" : 4,
+            "fontHeightReductionStep" : 0.5,
+            "fontWidthReductionLimit" : 90,
+            "fontWidthReductionStep" : 5,
+            "graticuleAlignmentType" : "Straight",
+            "keyNumberGroupName" : "Default",
+            "labelBuffer" : 15,
+            "labelLargestPolygon" : true,
+            "labelPriority" : -1,
+            "labelStackingProperties" : {
+              "type" : "CIMMaplexLabelStackingProperties",
+              "stackAlignment" : "ChooseBest",
+              "maximumNumberOfLines" : 3,
+              "minimumNumberOfCharsPerLine" : 3,
+              "maximumNumberOfCharsPerLine" : 24,
+              "separators" : [
+                {
+                  "type" : "CIMMaplexStackingSeparator",
+                  "separator" : " ",
+                  "splitAfter" : true
+                },
+                {
+                  "type" : "CIMMaplexStackingSeparator",
+                  "separator" : ",",
+                  "visible" : true,
+                  "splitAfter" : true
+                }
+              ]
+            },
+            "lineFeatureType" : "General",
+            "linePlacementMethod" : "OffsetCurvedFromLine",
+            "maximumLabelOverrun" : 36,
+            "maximumLabelOverrunUnit" : "Point",
+            "minimumFeatureSizeUnit" : "Map",
+            "multiPartOption" : "OneLabelPerPart",
+            "offsetAlongLineProperties" : {
+              "type" : "CIMMaplexOffsetAlongLineProperties",
+              "placementMethod" : "BestPositionAlongLine",
+              "labelAnchorPoint" : "CenterOfLabel",
+              "distanceUnit" : "Percentage",
+              "useLineDirection" : true
+            },
+            "pointExternalZonePriorities" : {
+              "type" : "CIMMaplexExternalZonePriorities",
+              "aboveLeft" : 4,
+              "aboveCenter" : 2,
+              "aboveRight" : 1,
+              "centerRight" : 3,
+              "belowRight" : 5,
+              "belowCenter" : 7,
+              "belowLeft" : 8,
+              "centerLeft" : 6
+            },
+            "pointPlacementMethod" : "AroundPoint",
+            "polygonAnchorPointType" : "GeometricCenter",
+            "polygonBoundaryWeight" : 0,
+            "polygonExternalZones" : {
+              "type" : "CIMMaplexExternalZonePriorities",
+              "aboveLeft" : 4,
+              "aboveCenter" : 2,
+              "aboveRight" : 1,
+              "centerRight" : 3,
+              "belowRight" : 5,
+              "belowCenter" : 7,
+              "belowLeft" : 8,
+              "centerLeft" : 6
+            },
+            "polygonFeatureType" : "General",
+            "polygonInternalZones" : {
+              "type" : "CIMMaplexInternalZonePriorities",
+              "center" : 1
+            },
+            "polygonPlacementMethod" : "CurvedInPolygon",
+            "primaryOffset" : 1,
+            "primaryOffsetUnit" : "Point",
+            "removeExtraWhiteSpace" : true,
+            "repetitionIntervalUnit" : "Map",
+            "rotationProperties" : {
+              "type" : "CIMMaplexRotationProperties",
+              "rotationType" : "Arithmetic",
+              "alignmentType" : "Straight"
+            },
+            "secondaryOffset" : 100,
+            "strategyPriorities" : {
+              "type" : "CIMMaplexStrategyPriorities",
+              "stacking" : 1,
+              "overrun" : 2,
+              "fontCompression" : 3,
+              "fontReduction" : 4,
+              "abbreviation" : 5
+            },
+            "thinningDistanceUnit" : "Point",
+            "truncationMarkerCharacter" : ".",
+            "truncationMinimumLength" : 1,
+            "truncationPreferredCharacters" : "aeiou"
+          },
+          "name" : "Class 1",
+          "priority" : -1,
+          "standardLabelPlacementProperties" : {
+            "type" : "CIMStandardLabelPlacementProperties",
+            "featureType" : "Line",
+            "featureWeight" : "Low",
+            "labelWeight" : "High",
+            "numLabelsOption" : "OneLabelPerName",
+            "lineLabelPosition" : {
+              "type" : "CIMStandardLineLabelPosition",
+              "above" : true,
+              "inLine" : true,
+              "parallel" : true
+            },
+            "lineLabelPriorities" : {
+              "type" : "CIMStandardLineLabelPriorities",
+              "aboveStart" : 3,
+              "aboveAlong" : 3,
+              "aboveEnd" : 3,
+              "centerStart" : 3,
+              "centerAlong" : 3,
+              "centerEnd" : 3,
+              "belowStart" : 3,
+              "belowAlong" : 3,
+              "belowEnd" : 3
+            },
+            "pointPlacementMethod" : "AroundPoint",
+            "pointPlacementPriorities" : {
+              "type" : "CIMStandardPointPlacementPriorities",
+              "aboveLeft" : 2,
+              "aboveCenter" : 2,
+              "aboveRight" : 1,
+              "centerLeft" : 3,
+              "centerRight" : 2,
+              "belowLeft" : 3,
+              "belowCenter" : 3,
+              "belowRight" : 2
+            },
+            "rotationType" : "Arithmetic",
+            "polygonPlacementMethod" : "AlwaysHorizontal"
+          },
+          "textSymbol" : {
+            "type" : "CIMSymbolReference",
+            "symbol" : {
+              "type" : "CIMTextSymbol",
+              "blockProgression" : "TTB",
+              "depth3D" : 1,
+              "extrapolateBaselines" : true,
+              "fontEffects" : "Normal",
+              "fontEncoding" : "Unicode",
+              "fontFamilyName" : "Tahoma",
+              "fontStyleName" : "Regular",
+              "fontType" : "Unspecified",
+              "haloSize" : 1,
+              "height" : 10,
+              "hinting" : "Default",
+              "horizontalAlignment" : "Left",
+              "kerning" : true,
+              "letterWidth" : 100,
+              "ligatures" : true,
+              "lineGapType" : "ExtraLeading",
+              "symbol" : {
+                "type" : "CIMPolygonSymbol",
+                "symbolLayers" : [
+                  {
+                    "type" : "CIMSolidFill",
+                    "enable" : true,
+                    "color" : {
+                      "type" : "CIMRGBColor",
+                      "values" : [
+                        0,
+                        0,
+                        0,
+                        100
+                      ]
+                    }
+                  }
+                ]
+              },
+              "textCase" : "Normal",
+              "textDirection" : "LTR",
+              "verticalAlignment" : "Bottom",
+              "verticalGlyphOrientation" : "Right",
+              "wordSpacing" : 100,
+              "billboardMode3D" : "FaceNearPlane"
+            }
+          },
+          "useCodedValue" : false,
+          "visibility" : true,
+          "iD" : -1
+        }
+      ],
+      "renderer" : {
+        "type" : "CIMDictionaryRenderer",
+        "dictionaryName" : "MIL2525D",
+        "fieldMap" : [
+          {
+            "type" : "CIMStringMap",
+            "key" : "identity",
+            "value" : "identity"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "symbolset",
+            "value" : "symbolset"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "symbolentity",
+            "value" : "symbolentity"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "modifier1",
+            "value" : "modifier1"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "modifier2",
+            "value" : "modifier2"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "echelon"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "mobility"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "array"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "context",
+            "value" : "context"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "indicator",
+            "value" : "indicator"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "status"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "operationalcondition",
+            "value" : "operationalcondition"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "specialentitysubtype"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "civilian",
+            "value" : "civilian"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "sidc",
+            "value" : "SymbolID_2525D"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "additionalinformation"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "additionalinformation2"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "combateffectiveness"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "commonidentifier"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "credibility",
+            "value" : "credibility"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "datetimeexpired"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "datetimevalid"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "distance"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "equipmentteardowntime"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "higherformation"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "idmode",
+            "value" : "idmode"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "platformtype"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "quantity"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "reinforced"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "reliability",
+            "value" : "reliability"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "sigintmobility"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "speed"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "staffcomment"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "targetdesignator"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "type"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "uniquedesignation",
+            "value" : "uniquedesignation"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "uniquedesignation2"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "x"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "y"
+          },
+          {
+            "type" : "CIMStringMap",
+            "key" : "z"
+          }
+        ]
+      },
+      "scaleSymbols" : true,
+      "snappable" : true
+    },
+    {
+      "type" : "CIMTiledServiceLayer",
+      "name" : "TopographicMap",
+      "uRI" : "CIMPATH=c70d4ff1b50842de95d9cbe54292fb0d.xml",
+      "sourceModifiedTime" : {
+        "type" : "TimeInstant"
+      },
+      "description" : "Basemaps/TopographicMap",
+      "layer3DProperties" : {
+        "type" : "CIM3DLayerProperties",
+        "castShadows" : true,
+        "isLayerLit" : true,
+        "layerFaceCulling" : "None",
+        "maxDistance" : -1,
+        "minDistance" : -1,
+        "preloadTextureCutoffHigh" : 0,
+        "preloadTextureCutoffLow" : 0.25,
+        "textureCutoffHigh" : 0.25,
+        "textureCutoffLow" : 1,
+        "useCompressedTextures" : true,
+        "verticalExaggeration" : 1,
+        "verticalUnit" : {
+          "uwkid" : 9001
+        },
+        "lighting" : "OneSideDataNormal"
+      },
+      "layerType" : "BasemapBackground",
+      "maxScale" : 4513.9887049999998,
+      "minScale" : 591657527.591555,
+      "showLegends" : true,
+      "visibility" : false,
+      "displayCacheType" : "Permanent",
+      "maxDisplayCacheAge" : 5,
+      "showPopups" : true,
+      "serviceLayerID" : -1,
+      "serviceConnection" : {
+        "type" : "CIMAGSServiceConnection",
+        "objectName" : "Basemaps/TopographicMap",
+        "objectType" : "MapServer",
+        "url" : "https://airc2.esri.com/ags/rest/services/Basemaps/TopographicMap/MapServer",
+        "serverConnection" : {
+          "type" : "CIMInternetServerConnection",
+          "anonymous" : true,
+          "hideUserProperty" : true,
+          "url" : "https://airc2.esri.com/ags/services"
+        }
+      },
+      "transparentColor" : {
+        "type" : "CIMRGBColor",
+        "values" : [
+          254,
+          254,
+          254,
+          100
+        ]
+      },
+      "backgroundColor" : {
+        "type" : "CIMRGBColor",
+        "values" : [
+          254,
+          254,
+          254,
+          100
+        ]
+      }
+    }
+  ],
+  "binaryReferences" : [
+    {
+      "type" : "CIMBinaryReference",
+      "uRI" : "CIMPATH=Metadata/1146e3defd630cd7095780326191e32e.xml",
+      "data" : "<?xml version=\"1.0\"?>\r\n<metadata xml:lang=\"en\"><Esri><CreaDate>20151102</CreaDate><CreaTime>14505100</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce></Esri><dataIdInfo><idCitation><resTitle>Air</resTitle></idCitation><searchKeys><keyword>Military</keyword><keyword>MIL-STD-2525D</keyword><keyword>AirC2</keyword><keyword>Tracks</keyword></searchKeys><idPurp>Air Tracks for use as part of a plan or operation. This feature class is intended to be used with air data (MIL-STD-2525D Symbol Set 01). </idPurp><idAbs>&lt;DIV STYLE=\"text-align:Left;font-size:12pt\"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Military Features that support air units and equipment. &lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs><idCredit></idCredit><resConst><Consts><useLimit>Licensed under the Apache License, Version 2.0.</useLimit></Consts></resConst></dataIdInfo></metadata>\r\n"
+    },
+    {
+      "type" : "CIMBinaryReference",
+      "uRI" : "CIMPATH=Metadata/b7375001f109b7b8a28cff2fe1a29533.xml",
+      "data" : "<?xml version=\"1.0\"?>\r\n<metadata xml:lang=\"en\"><Esri><CreaDate>20160516</CreaDate><CreaTime>16032400</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce></Esri><dataIdInfo><idCitation><resTitle>Map</resTitle></idCitation></dataIdInfo><Binary><Thumbnail><Data EsriPropertyType=\"PictureX\">/9j/4AAQSkZJRgABAQEAAAAAAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a\r\nHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy\r\nMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCACFAMgDAREA\r\nAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA\r\nAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3\r\nODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm\r\np6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA\r\nAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx\r\nBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK\r\nU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3\r\nuLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD2auw8\r\n8KACgAoAcqb0cYyCMVE2jSCZfSZFhTcyj5R39q5rNnW2kSK6MMqwI9qLAnciZQ5Y8bRnHuaQNDsY\r\nGAwzQMMxlMjGKAIJcKQwcZGcdzSsBDcO1tAZGDkE9iKmVkrsVzPbUU25HbptYf41i5t/CTcuR3K+\r\nQrnaGIHLHjnp+NbRvb3il5hsyA0jGRt24Kowuf60/QZPvkxuZlz3qQGkrMJNxbAGMj+VUmAvlBDG\r\nSFDDAI64pgHmBGlCRndjtTAYvDZKYKLkjPc44/SgCr9pijly5YSbcbFUsW7cDHTvnFIVwgEcoAhV\r\nYn7+YgJHrUdQJmZ7baryRsCpOWbBJ9fYU7DBGd5o5kz5Z+UYyeMdaTXYGOuJB5jiUKsCD5nfgE+g\r\n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</Data></Thumbnail></Binary></metadata>\r\n"
+    }
+  ]
+}
