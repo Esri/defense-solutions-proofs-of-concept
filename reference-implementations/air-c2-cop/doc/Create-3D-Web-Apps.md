@@ -39,7 +39,7 @@
           <pre>  basemap: "streets",</pre>
           <pre>  ground: "world-elevation"</pre>
           <pre>});</pre>
-     <li>Under the code to create the map add the ACO scene layer created in the <a href="/defense/help/air-c2-cop/get-started/publish-3d/" target="_blank">Publish 3D Services</a> section:</li>   
+     <li>Under the code to create the map add the ACO scene layer created in the <a href="./Publish-3D-Services.md">Publish 3D Services</a> section:</li>   
           <pre>    var ACOLayer = new SceneLayer({</pre>
           <pre>      url: 'https://airc2.esri.com/ags/rest/services/Hosted/ACO_3D/SceneServer/layers/0',</pre>
           <pre>      opacity: 0.5    </pre>

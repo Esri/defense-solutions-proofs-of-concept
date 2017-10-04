@@ -1,7 +1,7 @@
 <p>In order to be used within 3D web applications a couple of layers must be published that are created using the <a href="https://www.esri.com/library/whitepapers/pdfs/multipatch-geometry-type.pdf" target="_blank">Multipatch Geometry Type</a>.</p>
 <h2>Airspace Control Order</h2>
 <ol class="steps">
-  <li>Ensuring that you have successfully completed Step 7 of the <a href="#" target="_blank">Copy Sample Data to</a> section, your AirC2_ACO_POLYGON feature class should contain a number of features representing the current Airspace Control Means derived from the Airspace Control Order.</li>    
+  <li>Ensuring that you have successfully completed Step 7 of the <a href="./Copy-the-Sample-Data.md" target="_blank">Copy Sample Data to</a> section, your AirC2_ACO_POLYGON feature class should contain a number of features representing the current Airspace Control Means derived from the Airspace Control Order.</li>    
   <li>Open ArcCatalog.</li>
   <li>Open the Airspace Management Tools toolbox in tools folder.</li>
   <li>Double-click the Convert Airspace Control Order to 3D script.</li>
@@ -28,5 +28,3 @@
     <li><b>Tags:</b> AirC2, ACO, Airspace Control Order, Air Plan, Air Operations, Military</li>
   </ul>
 </ol>
-<h2>Target Threat Areas / Range Domes (Optional)</h2>
-<p>Optionally you can create 3D threat areas around each of your target locations, to achieve this use the <a href="/defense/help/range-dome-analysis/" target="_blank">Range Dome Analysis</a> template.</p>

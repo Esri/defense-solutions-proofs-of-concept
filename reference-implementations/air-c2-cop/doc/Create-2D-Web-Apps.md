@@ -31,9 +31,6 @@
 		</table>
 <p>Most of the widgets used above are 'Out of the box' those that are not are linked to below.</p>
 <ul>
-			<li><a href="https://github.com/Esri/military-tools-webappbuilder/tree/dev/Visibility/" class="icon-github" target="_blank"> Intervisibility</a></li>
-			<li><a href="/defense/help/coordinate-conversion/" target="_blank"> Coordinate Conversion</a></li>
-			<li><a href="https://github.com/Esri/solutions-webappbuilder-widgets/tree/master/ElevationProfileTable/" class="icon-github" target="_blank"> Elevation Profile</a>
-			<li><a href="https://github.com/Esri/military-tools-webappbuilder/tree/dev/DistanceAndDirection/" class="icon-github" target="_blank"> Distance Direction</a></li>
-			<li><a href="https://github.com/Esri/solutions-webappbuilder-widgets/tree/master/GridOverlay/" class="icon-github" target="_blank"> Grid Overlay</a></li>
+			<li><a href="https://github.com/Esri/visibility-addin-dotnet/tree/dev/source/widget/Visibility" class="icon-github" target="_blank"> Intervisibility</a></li>
+			<li><a href="https://github.com/Esri/distance-direction-addin-dotnet/tree/dev/source/widget/DistanceAndDirection/" class="icon-github" target="_blank"> Distance Direction</a></li>
 		</ul>

@@ -5,4 +5,4 @@
 <p>Most web apps include tools from other defense solution templates, i.e. Grid Overlay, Visibility, Distance and Direction, Coordinate Conversion, etc.</p>
 <p>Finally, the <b>Operations Officer Daily Brief</b> is a story map that includes all the other web apps and is intended for use when briefing visitors, decision makers, or for shift change.</p>
 <p>While the download provides most of the tools required to publish the requisite web maps, most of the documentation is designed to walk-through the download, setup, and configuration of these web applications and dashboards.</p>
-<p>To get started, click <a href="#">here</a> to learn how to copy the sample data.</p>
+<p>To get started, click <a href="./Copy-the-Sample-Data.md">here</a> to learn how to copy the sample data.</p>

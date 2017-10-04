@@ -10,7 +10,6 @@ Please see one of the sections below for more information.
 
 * [Overview](./Getting-Started---Overview.md)
 * [Explore Solution](./Explore-the-Solution.md)
-* [Install Template](./Install-the-Template.md)
 * [Copy Data](./Copy-the-Sample-Data.md)
 * [Publish 2D](./Publish-2D-Services.md)
 * [Publish 3D](./Publish-3D-Services.md)

@@ -11,7 +11,7 @@
     </ul>
     <li>Click OK to run the tool.</li>
     <li>On script completion check the data sources have been updated to your Enterprise GeoDatabase by performing a right click and selecting <a href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/using-arccatalog/setting-data-sources.htm" target="_blank">Set Data Source(s)</a> on one of the map documents found under the maps folder.</li>
-    <li><a href="#" target="_blank">Process the Airspace Control Order and the Airspace Tasking Order</a> found under files\SampleACOandATO.</li>
+    <li>Process the Airspace Control Order and the Airspace Tasking Order found under files\SampleACOandATO.</li>
     <li>During the update data source process the symbology of one of the layers in the AirC2_ACO_Use.mxd will be dropped, repair this by doing the following:</li>
     <ul>
       <li>Using ArcMap open the AirC2_ACO_Use.mxd.</li>
