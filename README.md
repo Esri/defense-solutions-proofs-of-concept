@@ -21,7 +21,8 @@ The samples provided in this repository are not officially released Esri solutio
 
 ## Features
 
-* Web Appbuilder (WAB) for ArcGIS Widgets to address specialized workflows
+* Web Appbuilder (WAB) for ArcGIS Widgets
+    * Prototypes used to address specialized workflows
     * See the individual widget READMEs for more information
     * Current widgets included and last/latest version tested with:
 
@@ -33,6 +34,9 @@ The samples provided in this repository are not officially released Esri solutio
 | [ERG](./widgets/ERG/README.md) | 2.3 |
 | [Filter Editor](./widgets/FilterEditor/README.md) | 2.0 | 
 | [Image Discovery](./widgets/ImageDiscovery/README.md) | 2.0 | 
+
+* Reference Implementations
+    * [Air Operations Command and Control Common Operating Picture (Air C2 COP)](.reference-implementations/air-c2-cop/README.md)
 
 ## Requirements
 
