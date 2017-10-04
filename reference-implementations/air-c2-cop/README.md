@@ -10,16 +10,9 @@ The Air Operations Command and Control Common Operating Picture is a gallery of 
 
 ## Sections
 
-* [Features](#features)
 * [Requirements](#requirements)
-* [Instructions To Get Started](#instructions-to-get-started)
 * [Resources](#resources)
-* [Issues](#issues)
-* [Contributing](#contributing)
-* [Credits](#credits)
 * [Licensing](#licensing)
-
-## Features
 
 ## Requirements
 
