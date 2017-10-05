@@ -2,7 +2,7 @@
 <ol class="steps">
 			<li>Login to the ArcGIS REST Service URL.</li>
 			<li>Obtain the JSON web token for WebSocket Connection.</li>
-			<li>Use the WSS URL with the Token to create the GeoEvent Extension Input.</li>
+			<li>Use the WSS URL with the Token to create the GeoEvent Server Input.</li>
 <ol>
 				<li>Expand the Advanced tab.</li>
 				<li>JSON Object Name: attributes</li>
