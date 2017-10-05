@@ -130,11 +130,11 @@
 					</tr>
 				</tbody>
 			</table>
-<li>Create a GeoEvent Extension Output. We suggest one of three options:</li>
+<li>Create a GeoEvent Output. We suggest one of three options:</li>
 <ul>
 				<li>Output to a Stream Service.</li>
 				<li>Output to a Feature Service.</li>
 				<li>Output to a Spatiotemporal Big Data Store.</li>
 			</ul>
-<li>Create the GeoEvent Extension. If you want to consume the entire feed without any analysis, connect the input to the output. We will review using GeoEvent filters and processors to analyze this information in the next section.</li>
+<li>Create the GeoEvent Service. If you want to consume the entire feed without any analysis, connect the input to the output. We will review using GeoEvent filters and processors to analyze this information in the next section.</li>
 		</ol>
