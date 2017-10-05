@@ -1,5 +1,5 @@
 <h3>Overview</h3>
-<p>The Air Operations Command and Control Common Operating Picture is a gallery of maps and apps for an Air Operations Officer to maintain a common operating picture for command and control. These include a 3D web application built in Web AppBuilder for situational awareness and analysis, an operations dashboard for real-time awareness and decision making, and story map journals to brief pre- and post-action. These applications all reference a central web map and web scene integrated with other real-time data inputs analyzed using GeoEvent Extension.<p>
+<p>The Air Operations Command and Control Common Operating Picture is a gallery of maps and apps for an Air Operations Officer to maintain a common operating picture for command and control. These include a 3D web application built in Web AppBuilder for situational awareness and analysis, an operations dashboard for real-time awareness and decision making, and story map journals to brief pre- and post-action. These applications all reference a central web map and web scene integrated with other real-time data inputs analyzed using GeoEvent Server.<p>
 <h3 id="requirements">Requirements</h3>
 <p>The Air C2 COP template requires specific technical experience and software.</p>
 <table class="bordered stripe lined-columns lined-rows">
@@ -18,7 +18,7 @@
           <li>Publishing GIS services</li>
           <li>Administering ArcGIS Online groups and organizing content</li>
           <li>Configuring web app templates in Portal for ArcGIS</li>
-          <li>Configuring GeoEvent Extension feeds</li>
+          <li>Configuring GeoEvent Server feeds</li>
           <li>Creating and sharing Operations Dashboard views</li>
         </ul>
       </td>
