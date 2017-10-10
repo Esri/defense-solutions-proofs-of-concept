@@ -1,7 +1,5 @@
 # Extract Point from Line Processor
 
-___This repository is no longer maintained___
-
 Extract Point from Line Processor - The Extract Point from Line Processor generates a point from an incoming event with a geometry type of line. The point may be the origin, destination, or midpoint of the incoming line event.
 
 ![Image of l2p Processor](l2p_390X150.png)
