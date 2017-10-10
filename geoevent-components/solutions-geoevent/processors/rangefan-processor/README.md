@@ -1,7 +1,5 @@
 # Rangefan Calculator
 
-___This repository is no longer maintained___
-
 The Range fan Calculator generates a range fan originating at the input event's point location given a reange, traversal arc angle, and a bearing
 
 ![Image of Rangefan Processor](rangefans_390X150.png)
