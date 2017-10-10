@@ -1,7 +1,5 @@
 # Spatial Query
 
-___This repository is no longer maintained___
-
 The Spatial Query Processor executes a spatial query on a feature service's rest endpoint. The query area is generated from either a buffer centering on the incoming event's geometry or on the event geometry if it has a geometry type of polygon. Each feature returned in the query is converted into a new geoevent with attribute values from the queried feature and the incoming event. 
 
 ![Image of Spatial Query Processor](spatialq_390X150.png)
