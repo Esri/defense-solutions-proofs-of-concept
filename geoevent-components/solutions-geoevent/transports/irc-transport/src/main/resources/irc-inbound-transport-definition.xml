@@ -1,0 +1,14 @@
+<transport name="IrcInboundTransport" label="${com.esri.geoevent.solutions.transport.irc.irc-transport.TRANSPORT_INBOUND_LABEL}" contact="cbailey@esri.com" version="10.5.0" domain="com.esri.geoevent.solutions.transport.irc.inbound" type="inbound">
+	<description>${com.esri.geoevent.solutions.transport.irc.irc-transport.TRANSPORT_INBOUND_DESCRIPTION}</description>
+	<propertyDefinitions>
+		<propertyDefinition propertyName="channelList" label="${com.esri.geoevent.solutions.transport.irc.irc-transport.LBL_CHANNEL_LIST}"
+			description="${com.esri.geoevent.solutions.transport.irc.irc-transport.DESC_CHANNEL_LIST}"
+			propertyType="String" defaultValue="#esriGEP" mandatory="true" readOnly="false" />
+		<propertyDefinition propertyName="nickName" label="${com.esri.geoevent.solutions.transport.irc.irc-transport.LBL_NICKNAME}"
+			description="${com.esri.geoevent.solutions.transport.irc.irc-transport.DESC_NICKNAME}"
+			propertyType="String" defaultValue="EsriGEP" mandatory="true" readOnly="false" />
+		<propertyDefinition propertyName="serverName" label="${com.esri.geoevent.solutions.transport.irc.irc-transport.LBL_IRC_SERVER}"
+			description="${com.esri.geoevent.solutions.transport.irc.irc-transport.DESC_IRC_SERVER}"
+			propertyType="String" defaultValue="irc.freenode.net" mandatory="true" readOnly="false" />		
+	</propertyDefinitions>
+</transport>

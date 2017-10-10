@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" >
+	<reference id="httpClientService" interface="com.esri.ges.core.http.GeoEventHttpClientService" />
+	<bean id="mlobiOutboundTransportServiceBean" class="com.esri.geoevent.solutions.transport.mlobi.MLOBIOutboundTransportService" activation="eager">
+		<property name="bundleContext" ref="blueprintBundleContext"/>
+		<property name="httpClientService" ref="httpClientService" />
+	</bean>
+	<bean id="mlobiInboundTransportServiceBean" class="com.esri.geoevent.solutions.transport.mlobi.MLOBIInboundTransportService" activation="eager">
+		<property name="bundleContext" ref="blueprintBundleContext"/>
+		<property name="httpClientService" ref="httpClientService" />
+	</bean>
+	<service id="mlobiOutboundTransportService" ref="mlobiOutboundTransportServiceBean" interface="com.esri.ges.transport.TransportService"/>
+	<service id="mlobiInboundTransportService" ref="mlobiInboundTransportServiceBean" interface="com.esri.ges.transport.TransportService"/>
+</blueprint>

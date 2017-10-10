@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+  <identifier>PHEB-2-lq09bb</identifier>
+  <sender>http://wcatwc.arh.noaa.gov/</sender>
+  <sent>2011-08-21T03:04:48-00:00</sent>
+  <status>Actual</status>
+  <msgType>Update</msgType>
+  <source>NWS Pacific Tsunami Warning Center Ewa Beach HI</source>
+  <scope>Public</scope>
+  <code>WECA41</code>
+  <references>PHEB,PHEB-1-lq09bb,2011-08-16T05:16:23-00:00</references>
+  <incidents>lq09bb</incidents>
+  <info>
+    <category>Geo</category>
+    <event>Tsunami</event>
+    <responseType>None</responseType>
+    <urgency>Unknown</urgency>
+    <severity>Unknown</severity>
+    <certainty>Unknown</certainty>
+    <eventCode>
+      <valueName>TsunamiSystemCategory</valueName>
+      <value>Cancellation</value>
+    </eventCode>
+    <senderName>NWS Pacific Tsunami Warning Center Ewa Beach HI</senderName>
+    <headline>The Tsunami Watch is Cancelled. This bulletin is issued as advice to government agencies. Onlynational and local government agencies have the authority to makedecisions regarding the official state of alert in their area andany actions to be taken in response.</headline>
+    <description>The Tsunami Watch is Cancelled. This bulletin is issued as advice to government agencies. Onlynational and local government agencies have the authority to makedecisions regarding the official state of alert in their area andany actions to be taken in response. - Event details: Preliminary magnitude 7.3 (Ml) earthquake / Lat: 18.787, Lon: -67.582 at 2011-08-16T05:16:23Z </description>
+    <instruction>Evaluation: Sea level readings do not show any tsunami signals.  If a tsunami was generated, it does not pose a threat to any areas outside the epicentral region. This tsunami watch is cancelled.This will be the final bulletin issued by the Pacific Tsunami Warning Center for this event unless additional information becomes available.</instruction>
+    <web>http://wcatwc.arh.noaa.gov/tsuPortal/events/PHEB/2011/08/16/lq09bb/2/WECA41/WECA41.txt</web>
+    <parameter>
+      <valueName>EventLocationName</valueName>
+      <value>50 miles/80 Km NW of Mayaguez, Puerto Rico</value>
+    </parameter>
+    <parameter>
+      <valueName>EventPreliminaryMagnitude</valueName>
+      <value>7.3</value>
+    </parameter>
+    <parameter>
+      <valueName>EventPreliminaryMagnitudeType</valueName>
+      <value>Ml</value>
+    </parameter>
+    <parameter>
+      <valueName>EventOriginTime</valueName>
+      <value>2011-08-16T05:16:23Z</value>
+    </parameter>
+    <parameter>
+      <valueName>EventDepth</valueName>
+      <value>43 kilometers</value>
+    </parameter>
+    <parameter>
+      <valueName>EventLatLon</valueName>
+      <value>18.787,-67.582 0.000</value>
+    </parameter>
+    <resource>
+      <resourceDesc>Event Data as a JSON document</resourceDesc>
+      <mimeType>application/json</mimeType>
+      <uri>http://wcatwc.arh.noaa.gov/tsuPortal/events/PHEB/2011/08/16/lq09bb/2/WECA41/PHEB.js</uri>
+    </resource>
+    <area>
+      <areaDesc/>
+      <circle>18.787,-67.582 0.0</circle>
+    </area>
+  </info>
+  <info>
+    <category>Geo</category>
+    <event>Tsunami</event>
+    <responseType>None</responseType>
+    <urgency>Unknown</urgency>
+    <severity>Unknown</severity>
+    <certainty>Unknown</certainty>
+    <eventCode>
+      <valueName>TsunamiSystemCategory</valueName>
+      <value>Cancellation</value>
+    </eventCode>
+    <senderName>NWS Pacific Tsunami Warning Center Ewa Beach HI</senderName>
+    <headline>The Tsunami Watch is Cancelled. This bulletin is issued as advice to government agencies. Onlynational and local government agencies have the authority to makedecisions regarding the official state of alert in their area andany actions to be taken in response.</headline>
+    <description>The Tsunami Watch is Cancelled. This bulletin is issued as advice to government agencies. Onlynational and local government agencies have the authority to makedecisions regarding the official state of alert in their area andany actions to be taken in response. - Event details: Preliminary magnitude 7.3 (Ml) earthquake / Lat: 18.787, Lon: -67.582 at 2011-08-16T05:16:23Z </description>
+    <instruction>Evaluation: Sea level readings do not show any tsunami signals.  If a tsunami was generated, it does not pose a threat to any areas outside the epicentral region. This tsunami watch is cancelled.This will be the final bulletin issued by the Pacific Tsunami Warning Center for this event unless additional information becomes available.</instruction>
+    <web>http://wcatwc.arh.noaa.gov/tsuPortal/events/PHEB/2011/08/16/lq09bb/2/WECA41/WECA41.txt</web>
+    <parameter>
+      <valueName>EventLocationName</valueName>
+      <value>50 miles/80 Km NW of Mayaguez, Puerto Rico</value>
+    </parameter>
+    <parameter>
+      <valueName>EventPreliminaryMagnitude</valueName>
+      <value>7.3</value>
+    </parameter>
+    <parameter>
+      <valueName>EventPreliminaryMagnitudeType</valueName>
+      <value>Ml</value>
+    </parameter>
+    <parameter>
+      <valueName>EventOriginTime</valueName>
+      <value>2011-08-16T05:16:23Z</value>
+    </parameter>
+    <parameter>
+      <valueName>EventDepth</valueName>
+      <value>43 kilometers</value>
+    </parameter>
+    <parameter>
+      <valueName>EventLatLon</valueName>
+      <value>18.787,-67.582 0.000</value>
+    </parameter>
+    <resource>
+      <resourceDesc>Event Data as a JSON document</resourceDesc>
+      <mimeType>application/json</mimeType>
+      <uri>http://wcatwc.arh.noaa.gov/tsuPortal/events/PHEB/2011/08/16/lq09bb/2/WECA41/PHEB.js</uri>
+    </resource>
+    <area>
+      <areaDesc/>
+      <circle>18.787,-67.582 0.0</circle>
+    </area>
+  </info>
+</alert>
+

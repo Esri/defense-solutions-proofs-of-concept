@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+  <identifier>GDACS_TC_41058_32</identifier>
+  <sender>info@gdacs.org</sender>
+  <sent>2013-11-11T00:00:00-00:00</sent>
+  <status>Actual</status>
+  <msgType>Alert</msgType>
+  <scope>Public</scope>
+  <incidents>HAIYAN-13</incidents>
+  <info>
+    <category>Met</category>
+    <event>Tropical Cyclone</event>
+    <urgency>Past</urgency>
+    <severity>Extreme</severity>
+    <certainty>Unknown</certainty>
+    <senderName>Global Disaster Alert and Coordination System</senderName>
+    <headline />
+    <description />
+    <web>http://www.gdacs.org/reports.aspx?eventype=TC&amp;eventid=41058</web>
+    <parameter>
+      <valueName>eventid</valueName>
+      <value>41058</value>
+    </parameter>
+    <parameter>
+      <valueName>currentepisodeid</valueName>
+      <value>32</value>
+    </parameter>
+    <parameter>
+      <valueName>glide</valueName>
+      <value />
+    </parameter>
+    <parameter>
+      <valueName>version</valueName>
+      <value>32</value>
+    </parameter>
+    <parameter>
+      <valueName>fromdate</valueName>
+      <value>Sun, 03 Nov 2013 23:00:00 GMT</value>
+    </parameter>
+    <parameter>
+      <valueName>todate</valueName>
+      <value>Sun, 10 Nov 2013 23:00:00 GMT</value>
+    </parameter>
+    <parameter>
+      <valueName>eventtype</valueName>
+      <value>TC</value>
+    </parameter>
+    <parameter>
+      <valueName>alertlevel</valueName>
+      <value>Red</value>
+    </parameter>
+    <parameter>
+      <valueName>alerttype</valueName>
+      <value>automatic</value>
+    </parameter>
+    <parameter>
+      <valueName>link</valueName>
+      <value>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=41058</value>
+    </parameter>
+    <parameter>
+      <valueName>country</valueName>
+      <value>China, Viet Nam, Philippines, Palau</value>
+    </parameter>
+    <parameter>
+      <valueName>eventname</valueName>
+      <value>HAIYAN-13</value>
+    </parameter>
+    <parameter>
+      <valueName>severity</valueName>
+      <value>Tropical Storm (maximum wind speed of 315 km/h)</value>
+    </parameter>
+    <parameter>
+      <valueName>population</valueName>
+      <value>Population affected by Category 1 (120 km/h) wind speeds or higher is 13.7 million</value>
+    </parameter>
+    <parameter>
+      <valueName>vulnerability</valueName>
+      <value>High</value>
+    </parameter>
+    <parameter>
+      <valueName>sourceid</valueName>
+      <value>JRC</value>
+    </parameter>
+    <parameter>
+      <valueName>iso3</valueName>
+      <value>CHN</value>
+    </parameter>
+    <parameter>
+      <valueName>hazardcomponents</valueName>
+      <value>etrap,SS,calcevent=true</value>
+    </parameter>
+    <parameter>
+      <valueName>datemodified</valueName>
+      <value>Mon, 11 Nov 2013 02:33:18 GMT</value>
+    </parameter>
+    <area>
+      <areaDesc>Polygon</areaDesc>
+      <polygon>5.25,150.2 5.2644,150.3463 5.3071,150.487 5.3764,150.6167 5.4697,150.7303 5.5833,150.8236 5.713,150.8929 5.8537,150.9356 6,150.95 6.1463,150.9356 6.287,150.8929 6.4167,150.8236 6.5303,150.7303 6.6236,150.6167 6.6929,150.487 6.7356,150.3463 6.75,150.2 6.9103,148.5362 7.3463,147.6505 7.3984,147.4787 7.416,147.3 7.316,145.9 7.316,144.6954 7.8772,143.4462 8.4858,141.774 9.0168,140.2697 9.1164,139.9414 9.4792,138.3738 9.943,136.6064 10.243,134.8064 10.5705,133.4965 12.2011,129.9289 12.3244,129.5226 12.7244,127.4226 13.1244,125.2226 13.5244,123.0226 13.9244,121.0226 14.5244,118.5226 14.566,118.1 14.5052,116.9457 15.0316,116.3316 15.301,116.0034 15.5011,115.6289 16.2683,114.1215 17.1629,112.5111 17.8053,111.5476 18.9111,110.6629 20.3184,109.6241 21.2091,109.0303 21.8065,108.9155 22.7116,109.0827 23.4961,109.8039 23.6255,109.9101 23.7732,109.989 23.9334,110.0376 24.1,110.054 24.2666,110.0376 24.4268,109.989 24.5745,109.9101 24.7039,109.8039 24.8101,109.6745 24.889,109.5268 24.9376,109.3666 24.954,109.2 24.9376,109.0334 24.5456,107.6522 24.4733,107.414 24.356,107.1944 24.198,107.002 22.9922,106.0078 22.7367,105.7981 22.4452,105.6423 22.1289,105.5464 21.8,105.514 20.5,105.467 20.1424,105.5022 19.7985,105.6065 19.4816,105.7759 18.3779,106.5117 17.0346,107.1522 16.6889,107.3371 15.1889,108.5371 14.8858,108.7858 14.6371,109.0889 13.8371,110.2889 12.8371,112.0889 11.7873,113.4797 10.7684,114.6684 10.499,114.9966 10.2989,115.3711 10.1756,115.7774 10.134,116.2 10.2232,117.8957 9.6756,120.1774 9.2756,122.1774 8.8756,124.3774 8.4756,126.5774 8.1129,128.4817 6.6756,132.0029 6.557,132.3936 6.157,133.9936 5.857,135.7936 5.817,136.2 5.684,138 5.65,139.6 5.6,141.2 5.6339,142.9972 5.5016,144.3213 5.484,144.5 5.484,145.9 5.5766,147.1957 5.3304,147.9812 5.283,148.1375 5.267,148.3 5.25,150.2</polygon>
+    </area>
+  </info>
+</alert>

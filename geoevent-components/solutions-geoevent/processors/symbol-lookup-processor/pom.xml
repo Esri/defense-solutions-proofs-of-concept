@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.esri.geoevent.solutions.processor.symbol-lookup</groupId>
+	<version>10.5.0</version>
+	<packaging>bundle</packaging>
+	<artifactId>symbol-lookup-processor</artifactId>
+	
+	<name>Esri :: AGES :: Solutions :: Processor :: SymbolLookup</name>
+	<url>http://www.esri.com</url>
+	<description>Conversions between Symbol ID Codes (SIDCs) and well known symbol names</description>
+	<properties>
+		<contact.address>geoevent@esri.com</contact.address>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.bundle.plugin.version>2.3.6</maven.bundle.plugin.version>
+		<junit.version>4.8.1</junit.version>
+		<jackson.version>1.9.5</jackson.version>
+	</properties>
+	<repositories>
+		<repository>
+			<id>ages-sdk-repo</id>
+			<name>GeoEvent Processor SDK repository</name>
+			<url>file:///Program Files/ArcGIS/Server/GeoEvent/sdk/repository</url>
+		</repository>
+		<repository>
+			<id>GEP</id>
+			<name>GeoEvent Processor embedded repository</name>
+			<layout>default</layout>
+			<url>file:///Program Files/ArcGIS/Server/GeoEvent/System</url>
+		</repository>
+		<repository>
+        	<id>MAVENBLD</id>
+        	<name>MAVENBLD-releases</name>
+        	<url>http://mavenbld.esri.com/artifactory/ext-release-local</url>
+    	</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>com.esri.geoevent.sdk</groupId>
+			<artifactId>geoevent-sdk</artifactId>
+			<version>10.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.3.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-ContactAddress>geoeventprocessor@esri.com</Bundle-ContactAddress>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<AGES-Domain>com.esri.geoevent.solutions.processor</AGES-Domain>						
+						<Export-Package/>
+						<Private-Package>com.esri.geoevent.solutions.processor.symbollookup</Private-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

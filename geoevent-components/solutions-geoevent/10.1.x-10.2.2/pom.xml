@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.esri.geoevent</groupId>
+  <artifactId>defense</artifactId>
+  <version>10.3.0</version>
+  <packaging>pom</packaging>
+
+  <name>Esri :: AGES :: Solutions</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+	<modules>
+		<module>10.3.0/adapters/CAP-adapter</module>
+		<module>10.3.0/adapters/cot-adapter</module>
+		<module>10.3.0/adapters/esd-adapter</module>
+		<module>10.3.0/adapters/geomessage-adapter</module>
+		<module>10.3.0/processors/addxyz-processor</module>
+		<module>10.3.0/processors/bearing-processor</module>
+		<module>10.3.0/processors/buffer-processor</module>
+		<module>10.3.0/processors/ellipse-processor</module>
+		<module>10.3.0/processors/eventVolumeControl-processor</module>
+		<module>10.3.0/processors/fieldgrouper-processor</module>
+		<module>10.3.0/processors/query-report-processor</module>
+		<module>10.3.0/processors/rangefan-processor</module>
+		<module>10.3.0/processors/symbol-lookup-processor</module>
+		<module>10.3.0/processors/unitConversion-processor</module>
+		<module>10.3.0/processors/visibility-processor</module>
+		<module>10.3.0/transports/irc-transport</module>
+		<module>10.3.0/transports/tcpSquirt-transport</module>
+		<module>processors/updateOnly-processor</module>
+		<module>adapters/regexText-adapter</module>	
+	</modules>
+	<repositories>
+		<repository>
+			<id>GEP</id>
+			<name>GeoEvent Processor embedded repository</name>
+			<layout>default</layout>
+			<url>file:///geoevent-10.3.0.4271/geoevent-10.3.0/sdk/repository</url>
+		</repository>
+	</repositories>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.esri.ges.sdk</groupId>
+				<artifactId>ges-lib</artifactId>
+				<version>10.3.0</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+			<dependency>
+        	<groupId>org.codehaus.jackson</groupId>
+        	<artifactId>jackson-mapper-asl</artifactId>
+        	<version>1.9.5</version>
+        	<scope>provided</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.2</version>
+			<scope>provided</scope>
+		</dependency>
+        <!--  <dependency>
+        	<groupId>com.esri.arcgis.runtime</groupId>
+            <artifactId>runtime</artifactId>
+            <version>10.1.1</version>
+            <scope>provided</scope>
+        </dependency>-->
+    	<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+</project>

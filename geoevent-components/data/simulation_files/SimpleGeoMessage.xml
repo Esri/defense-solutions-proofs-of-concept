@@ -1,0 +1,244 @@
+<geomessages>
+	<geomessage v="1.0">
+		<_type>trackrep</_type>
+		<_action>UPDATE</_action>
+		<_id>{e15f6125-6dbc-4ea8-bd1d-26205957e2de}</_id>
+		<_wkid>4326</_wkid>
+		<sic>SFGPEVAL-------</sic>
+		<_control_points>70.4565000156,34.4345000144</_control_points>
+		<uniquedesignation>3A1-001</uniquedesignation>
+		<quantity>1</quantity>
+		<direction>359</direction>
+		<type>M1126</type>
+		<datetimevalid>2012-07-26 00:00:00</datetimevalid>
+		<speed>100</speed>
+		<owningunit>2/3/A/1</owningunit>
+		<status911>0</status911>
+		<fuel_state>100</fuel_state>
+		<rel_info>0</rel_info>
+	</geomessage>
+	<geomessage v="1.0">
+		<_type>trackrep</_type>
+		<_action>UPDATE</_action>
+		<_id>{8a1387f6-4059-423e-bb21-e3a67caa866b}</_id>
+		<_wkid>4326</_wkid>
+		<sic>SFGPEVAL-------</sic>
+		<_control_points>70.4572000156,34.4275000144</_control_points>
+		<uniquedesignation>3A2-002</uniquedesignation>
+		<quantity>1</quantity>
+		<direction>359</direction>
+		<type>M1126</type>
+		<datetimevalid>2012-07-26 00:00:00</datetimevalid>
+		<speed>100</speed>
+		<owningunit>2/3/A/2</owningunit>
+		<status911>0</status911>
+		<fuel_state>100</fuel_state>
+		<rel_info>0</rel_info>
+	</geomessage>
+	<geomessage v="1.0">
+		<_type>trackrep</_type>
+		<_action>UPDATE</_action>
+		<_id>{eede9286-636b-493c-acef-c88c04422c52}</_id>
+		<_wkid>4326</_wkid>
+		<sic>SFGPEVUX-------</sic>
+		<_control_points>70.5033000156,34.4017000144</_control_points>
+		<uniquedesignation>1B2-002</uniquedesignation>
+		<quantity>1</quantity>
+		<direction>359</direction>
+		<type>HMMWV</type>
+		<datetimevalid>2012-07-26 00:00:00</datetimevalid>
+		<speed>100</speed>
+		<owningunit>2/1/B/2</owningunit>
+		<status911>1</status911>
+		<fuel_state>100</fuel_state>
+		<rel_info>0</rel_info>
+	</geomessage>
+	<geomessage v="1.0">
+		<_type>trackrep</_type>
+		<_action>UPDATE</_action>
+		<_id>{ba38621c-22a8-4d58-9712-667e43e60a73}</_id>
+		<_wkid>4326</_wkid>
+		<sic>SFGPEVAL-------</sic>
+		<_control_points>70.4916000156,34.4087000144</_control_points>
+		<uniquedesignation>3C2-007</uniquedesignation>
+		<quantity>1</quantity>
+		<direction>359</direction>
+		<type>M1126</type>
+		<datetimevalid>2012-07-26 00:00:00</datetimevalid>
+		<speed>100</speed>
+		<owningunit>2/3/C/2</owningunit>
+		<status911>0</status911>
+		<fuel_state>100</fuel_state>
+		<rel_info>0</rel_info>
+	</geomessage>
+	<geomessage v="1.0">
+		<_type>trackrep</_type>
+		<_action>UPDATE</_action>
+		<_id>{e4a94c6f-1b4f-46b4-840d-42df59627345}</_id>
+		<_wkid>4326</_wkid>
+		<sic>SFGPEVAL-------</sic>
+		<_control_points>70.9621000156,34.6932000144</_control_points>
+		<uniquedesignation>2A3-009</uniquedesignation>
+		<quantity>1</quantity>
+		<direction>359</direction>
+		<type>M1126</type>
+		<datetimevalid>2012-07-26 00:00:00</datetimevalid>
+		<speed>100</speed>
+		<owningunit>2/2/A/3</owningunit>
+		<status911>0</status911>
+		<fuel_state>100</fuel_state>
+		<rel_info>0</rel_info>
+	</geomessage>
+	<geomessage v="1.0">
+		<_type>trackrep</_type>
+		<_action>UPDATE</_action>
+		<_id>{b4cc2d7d-bd54-4e03-a94d-6d3315126682}</_id>
+		<_wkid>4326</_wkid>
+		<sic>SFGPEVAL-------</sic>
+		<_control_points>70.3960000156,34.4422000144</_control_points>
+		<uniquedesignation>3B2-005</uniquedesignation>
+		<quantity>1</quantity>
+		<direction>359</direction>
+		<type>M1126</type>
+		<datetimevalid>2012-07-26 00:00:00</datetimevalid>
+		<speed>100</speed>
+		<owningunit>2/3/B/2</owningunit>
+		<status911>0</status911>
+		<fuel_state>100</fuel_state>
+		<rel_info>0</rel_info>
+	</geomessage>
+	<geomessage v="1.0">
+		<_type>trackrep</_type>
+		<_action>UPDATE</_action>
+		<_id>{8f6ab763-4104-44d4-aa84-a9f9f807ab82}</_id>
+		<_wkid>4326</_wkid>
+		<sic>SFGPEVCFM------</sic>
+		<_control_points>70.2855000156,34.4906000144</_control_points>
+		<uniquedesignation>SupplyConvoy1</uniquedesignation>
+		<additionalinformation>Carrying water, food; equipped with gun system</additionalinformation>
+		<iff_sif>1</iff_sif>
+		<direction>359</direction>
+		<type>M1151</type>
+		<datetimevalid>2012-07-26 00:00:00</datetimevalid>
+		<speed>100</speed>
+		<owningunit>2nd Stryker Brigade</owningunit>
+		<staffcomment>Support troops by the dam</staffcomment>
+		<fuel_state>100</fuel_state>
+		<rel_info>0</rel_info>
+	</geomessage>
+	<geomessage v="1.0">
+		<_type>trackrep</_type>
+		<_action>UPDATE</_action>
+		<_id>{5f3f5ac8-f693-4541-bcba-a3353d1ad066}</_id>
+		<_wkid>4326</_wkid>
+		<sic>SFGPEVCFM------</sic>
+		<_control_points>70.2855000156,34.4906000144</_control_points>
+		<uniquedesignation>SupplyConvoy2</uniquedesignation>
+		<additionalinformation>Equipped with automatic weapons platform</additionalinformation>
+		<iff_sif>2</iff_sif>
+		<direction>359</direction>
+		<type>M1151</type>
+		<datetimevalid>2012-07-26 00:00:00</datetimevalid>
+		<speed>100</speed>
+		<owningunit>2nd Stryker Brigade</owningunit>
+		<staffcomment>Main supply along Zangalbaugh Road near Jalalabad</staffcomment>
+		<fuel_state>100</fuel_state>
+		<rel_info>0</rel_info>
+	</geomessage>
+	<geomessage v="1.0">
+		<_type>trackrep</_type>
+		<_action>UPDATE</_action>
+		<_id>{2911c8f4-9825-4536-baf1-311ae8e06aa8}</_id>
+		<_wkid>4326</_wkid>
+		<sic>SFGPEVUX-------</sic>
+		<_control_points>70.8734000156,35.3140000145</_control_points>
+		<uniquedesignation>2C3-003</uniquedesignation>
+		<quantity>1</quantity>
+		<direction>359</direction>
+		<type>HMMWV</type>
+		<datetimevalid>2012-07-26 00:00:00</datetimevalid>
+		<speed>100</speed>
+		<owningunit>2/2/C/3</owningunit>
+		<status911>0</status911>
+		<fuel_state>100</fuel_state>
+		<rel_info>0</rel_info>
+	</geomessage>
+	<geomessage v="1.0">
+		<_type>bedavail</_type>
+		<_action>UPDATE</_action>
+		<_id>{70c3cde4-9bde-43a6-9cce-98d949f029fe}</_id>
+		<_wkid>4326</_wkid>
+		<_control_points>70.4888000156,34.4024000144</_control_points>
+		<datetimesubmitted>2012-07-26 00:00:00</datetimesubmitted>
+		<uniquedesignation>2/6</uniquedesignation>
+		<element>CSH JBAD</element>
+		<total_opl>100</total_opl>
+		<med_opl>10</med_opl>
+		<gen_opl>50</gen_opl>
+		<burn_opl>20</burn_opl>
+		<spinal_opl>10</spinal_opl>
+		<neuro_opl>5</neuro_opl>
+		<thor_opl>5</thor_opl>
+		<avail_total>45</avail_total>
+		<avail_med>3</avail_med>
+		<avail_gen>11</avail_gen>
+		<avail_burn>17</avail_burn>
+		<avail_spinal>8</avail_spinal>
+		<avail_neuro>4</avail_neuro>
+		<suites>3</suites>
+		<backlog>2</backlog>
+		<overflow>16</overflow>
+		<narrative>15 patients due to return to active duty in N24; 5 return to US</narrative>
+		<avail_thor>2</avail_thor>
+	</geomessage>
+	<geomessage v="1.0">
+		<_type>bedavail</_type>
+		<_action>UPDATE</_action>
+		<_id>{6d53a480-ae03-49c5-bb28-63166d26f69b}</_id>
+		<_wkid>4326</_wkid>
+		<_control_points>71.1631000156,34.8804000144</_control_points>
+		<datetimesubmitted>2012-07-26 00:00:00</datetimesubmitted>
+		<uniquedesignation>2/2</uniquedesignation>
+		<element>BAS ASADABAD</element>
+		<total_opl>5</total_opl>
+		<gen_opl>4</gen_opl>
+		<burn_opl>1</burn_opl>
+		<avail_total>3</avail_total>
+		<avail_gen>2</avail_gen>
+		<avail_burn>1</avail_burn>
+		<suites>0</suites>
+	</geomessage>
+	<geomessage v="1.0">
+		<_type>bedavail</_type>
+		<_action>UPDATE</_action>
+		<_id>{3601e009-4b06-4d1b-b058-f4fba802103f}</_id>
+		<_wkid>4326</_wkid>
+		<_control_points>70.3988000156,34.9226000144</_control_points>
+		<datetimesubmitted>2012-07-26 00:00:00</datetimesubmitted>
+		<uniquedesignation>2/1</uniquedesignation>
+		<element>BAS NURESTAN</element>
+		<total_opl>5</total_opl>
+		<gen_opl>4</gen_opl>
+		<burn_opl>1</burn_opl>
+		<avail_total>4</avail_total>
+		<avail_gen>3</avail_gen>
+		<avail_burn>1</avail_burn>
+		<narrative>Require resupply of burn and major trauma kits</narrative>
+	</geomessage>
+	<geomessage v="1.0">
+		<_type>sitrep</_type>
+		<_action>UPDATE</_action>
+		<_id>{5f42e166-e3e3-4c83-a31d-069b535d763c}</_id>
+		<_wkid>4326</_wkid>
+		<_control_points>70.3631000156,35.4820000145</_control_points>
+		<datetimesubmitted>2012-07-26 00:00:00</datetimesubmitted>
+		<uniquedesignation>2/1/B/2</uniquedesignation>
+		<activity>Conducting security patrols</activity>
+		<effective>A</effective>
+		<own_situation>Platoon based at FOB ATITI; 1st Squad manning OPs ALPHA and HOTEL</own_situation>
+		<situation_overview>Generally secure; some signs of insurgent recce to NW</situation_overview>
+		<operations>Ad-hoc patrolling in local area with teams at OPs</operations>
+		<isr>UAV support proving essential in covering gaps in own recce / surveillance coverage</isr>
+		<sustainment>4 DOS food and ammo</sustainment>
+	</geomessage>
+</geomessages>
