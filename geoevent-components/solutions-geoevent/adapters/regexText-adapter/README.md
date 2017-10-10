@@ -1,7 +1,5 @@
 # regexText Adapter
 
-___This repository is no longer maintained___
-
 The regexText Adapter extends the out-of-the-box Text Adapter by enabling it to handle more complex Attribute Separators that can be defined using a (Java) Regular Expression.  It intercepts the input stream, replaces all matches of the Regular Expression with a simple, single-character, attribute separator, then passes the stream to the Text Adapter for processing as normal.
 A good example of where it can be useful is where "any amount of white space" is used as a delimiter, as in this file of latest BUOY observations: http://www.ndbc.noaa.gov/data/latest_obs/latest_obs.txt.
 
