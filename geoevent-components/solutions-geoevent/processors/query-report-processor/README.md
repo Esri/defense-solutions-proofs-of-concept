@@ -1,7 +1,5 @@
 # Query Report Processor
 
-___This repository is no longer maintained___
-
 Query Report Processor - Executes a spatial query on feature services registered in GeoEvent Processor's data store.  The author of the service can then configures a report based on returned features.
 ![Image of qr processor](qr_390X150.png)
 ## Sections
