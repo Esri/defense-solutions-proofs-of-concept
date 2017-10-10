@@ -1,6 +1,25 @@
 # Repo specific ignores
 
 *.sav
+*.lock
+Desktop.ini
+
+## Python
+
+*.py[co]
+
+# Packages
+
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+var
+sdist
+develop-eggs
+.installed.cfg
 
 # Logs
 logs
@@ -23,30 +42,3 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-# Dependency directory
-# Deployed apps should consider commenting this line out:
-# see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
-node_modules
-BatchEditor/setting/css/images/add.png
-BatchEditor/images/down_white.png
-BatchEditor/images/down_black.png
-BatchEditor/.jshintrc
-ImageDiscovery/.idea/.name
-ImageDiscovery/.idea/compiler.xml
-ImageDiscovery/.idea/ImageDiscovery.iml
-ImageDiscovery/.idea/misc.xml
-ImageDiscovery/.idea/modules.xml
-ImageDiscovery/.idea/vcs.xml
-ImageDiscovery/.idea/workspace.xml
-ImageDiscovery/.idea/copyright/profiles_settings.xml
-OverviewMap/
-Scalebar/
-MyLocation/
-Search/
-Legend/
-LayerList/
-Splash/
-HomeButton/
-Coordinate/
-ZoomSlider/
-AttributeTable/
