@@ -1,7 +1,5 @@
 # updateOnly-processor
 
-___This repository is no longer maintained___
-
 The updateOnly processor filters out GeoEvents that do not offer more recent information than that already received.
 To do this, it maintains an in-memory cache of the attribute tagged TRACK_ID mapped against the attribute tagged TIME_START.
 When incoming GeoEvents have a TRACK_ID that is already held in the cache, but do not have a more recent TIME_START, they are filtered out.
