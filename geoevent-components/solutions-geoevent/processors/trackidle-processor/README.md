@@ -1,8 +1,6 @@
 solutions-geoevent-java 
 ====================
 
-___This repository is no longer maintained___
-
 ![Image of geomessage-adapter](ScreenShot.JPG)
 
 The solutions-geoevent-java repository includes custom connectors for use with [ArcGIS GeoEvent Processor for Server](http://www.esri.com/software/arcgis/arcgisserver/extensions/geoevent-extension). 
