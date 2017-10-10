@@ -1,7 +1,5 @@
 # GeoMessage Adapter
 
-___This repository is no longer maintained___
-
 The GeoMessage Adapter provides an example of an adapter that can receive and send XML messages in a simple GeoMessage format.  This GeoMessage format is an XML format for use with [Esri military features](http://resources.arcgis.com/en/help/main/10.2/index.html#//000n0000000p000000)
  and corresponds to the format used by the [ArcGIS Runtime Message Processor](https://developers.arcgis.com/en/java/api-reference/com/esri/core/symbol/advanced/MessageProcessor.html).
 
