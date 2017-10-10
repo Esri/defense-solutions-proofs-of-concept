@@ -1,7 +1,5 @@
 # Event Volume Control Processor
 
-___This repository is no longer maintained___
-
 The Event Volume Control Processor filters events that exceed a given number of events received over a given interval of time. The user defines the number of events and the time interval thresholds.  Any events exceeding the thresholds are dropped. 
 
 ![Image of Event Volume Control Processor](evc_390X150.png)
