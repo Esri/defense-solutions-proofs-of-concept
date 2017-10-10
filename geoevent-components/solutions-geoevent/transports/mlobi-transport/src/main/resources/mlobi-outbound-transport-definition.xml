@@ -1,0 +1,56 @@
+<transport name="MLOBIOutboundTransport"
+	label="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.TRANSPORT_LABEL}"
+	domain="com.esri.geoevent.solutions.transport.mlobi.outbound" type="outbound">
+	<description>${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.TRANSPORT_DESCRIPTION}
+	</description>
+	<propertyDefinitions>
+		<propertyDefinition propertyName="server"
+			label="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.LBL_SERVER}"
+			description="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.DESC_SERVER}"
+			propertyType="String" mandatory="true" readOnly="false" />
+		<propertyDefinition propertyName="username"
+			label="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.LBL_USER}"
+			description="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.DESC_USER}"
+			propertyType="String" mandatory="true" readOnly="false" />
+		<propertyDefinition propertyName="password"
+			label="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.LBL_PW}"
+			description="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.DESC_PW}"
+			propertyType="Password" mandatory="true" readOnly="false">
+		</propertyDefinition>
+		<propertyDefinition propertyName="featureservice"
+			label="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.LBL_SERVICE}"
+			description="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.DESC_SERVICE}"
+			propertyType="String" mandatory="true" readOnly="false">
+		</propertyDefinition>
+		<propertyDefinition propertyName="layerindex"
+			label="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.LBL_INDEX}"
+			description="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.DESC_INDEX}"
+			propertyType="Integer" mandatory="true" readOnly="false">
+		</propertyDefinition>
+		<propertyDefinition propertyName="trackid"
+			label="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.LBL_TRACKID}"
+			description="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.DESC_TRACKID}"
+			propertyType="String" mandatory="true" readOnly="false">
+		</propertyDefinition>
+		<propertyDefinition propertyName="cleanupFeatures"
+			label="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.LBL_CLEANUP_OLD_FEATURES}"
+			description="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.DESC_CLEANUP_OLD_FEATURES}"
+			propertyType="Boolean" defaultValue="false" mandatory="false"
+			readOnly="false" />
+		<propertyDefinition propertyName="featureLifeSpan"
+			label="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.LBL_FEATURE_LIFESPAN}"
+			description="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.DESC_FEATURE_LIFESPAN}"
+			propertyType="Integer" defaultValue="1440" mandatory="false"
+			readOnly="false" dependsOn="cleanupFeatures=true" />
+		<propertyDefinition propertyName="cleanupFrequency"
+			label="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.LBL_CLEANUP_FREQUENCY}"
+			description="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.DESC_CLEANUP_FREQUENCY}"
+			propertyType="Integer" defaultValue="20" mandatory="false" readOnly="false"
+			dependsOn="cleanupFeatures=true" />
+		<propertyDefinition propertyName="cleanupTimeField"
+			label="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.LBL_TIME_FIELD}"
+			description="${com.esri.geoevent.solutions.transport.mlobi.mlobi-transport.DESC_TIME_FIELD}"
+			propertyType="String" defaultValue="" mandatory="false" readOnly="false"
+			dependsOn="cleanupFeatures=true" />
+	</propertyDefinitions>
+</transport>

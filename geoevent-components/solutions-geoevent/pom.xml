@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.esri.geoevent</groupId>
+  <artifactId>defense</artifactId>
+  <version>10.3.0</version>
+  <packaging>pom</packaging>
+
+  <name>Esri :: AGES :: Solutions</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+	<modules>
+		<module>adapters/CAP-adapter</module>
+		<module>adapters/cot-adapter</module>
+		<module>adapters/esd-adapter</module>
+		<module>adapters/geomessage-adapter</module>
+		<module>processors/addxyz-processor</module>
+		<module>processors/bearing-processor</module>
+		<module>processors/buffer-processor</module>
+		<module>processors/ellipse-processor</module>
+		<module>processors/eventVolumeControl-processor</module>
+		<module>processors/eventjoiner-processor</module>
+		<module>processors/query-report-processor</module>
+		<module>processors/rangefan-processor</module>
+		<module>processors/symbol-lookup-processor</module>
+		<module>processors/unitConversion-processor</module>
+		<module>processors/visibility-processor</module>
+		<module>transports/irc-transport</module>
+		<module>transports/tcpSquirt-transport</module>
+		<module>processors/updateOnly-processor</module>
+		<module>adapters/regexText-adapter</module>	
+	</modules>
+	<repositories>
+		<repository>
+			<id>ages-sdk-repo</id>
+			<name>GeoEvent Processor SDK repository</name>
+			<url>file:///Program Files/ArcGIS/Server/GeoEvent/sdk/repository</url>
+		</repository>
+		<repository>
+			<id>GEP</id>
+			<name>GeoEvent Processor embedded repository</name>
+			<layout>default</layout>
+			<url>file:///Program Files/ArcGIS/Server/GeoEvent/System</url>
+		</repository>
+	</repositories>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.esri.ges.sdk</groupId>
+				<artifactId>ges-lib</artifactId>
+				<version>10.3.0</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+			<dependency>
+        	<groupId>org.codehaus.jackson</groupId>
+        	<artifactId>jackson-mapper-asl</artifactId>
+        	<version>1.9.5</version>
+        	<scope>provided</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.2</version>
+			<scope>provided</scope>
+		</dependency>
+        <!--  <dependency>
+        	<groupId>com.esri.arcgis.runtime</groupId>
+            <artifactId>runtime</artifactId>
+            <version>10.1.1</version>
+            <scope>provided</scope>
+        </dependency>-->
+    	<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+</project>

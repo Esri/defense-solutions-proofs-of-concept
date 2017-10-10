@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template productVersion="10.3.1">
+    <geoEventServices>
+        <geoEventService name="METAR" label="METAR" description="metar processing" lineStyle="Diagonal" runningState="ERROR" statusDetails="Processor &quot;Updates Only&quot;: Node &quot;Updates Only&quot;: GeoEventProcessor(uri=com.esri.geoevent.solutions.processor.updateOnly/UpdateOnlyProcessor/10.2.2) is not available.&#xA;Processor &quot;Update Only Processor&quot;: Node &quot;Update Only Processor&quot;: GeoEventProcessor(uri=com.esri.geoevent.solutions.processor.updateOnly/UpdateOnlyProcessor/10.3.0) is not available.">
+            <inputs>
+                <input ref="af36c607-2388-4899-8d7b-1e01e7111f8d" label="metar-regexText-in" left="867" top="210" width="123" height="40"/>
+            </inputs>
+            <outputs>
+                <output ref="2d0923ed-51f3-4531-8330-3d3c8fefcc15" label="metar-fs-out" left="205" top="160" width="82" height="40"/>
+            </outputs>
+            <nodes>
+                <node name="Updates Only" label="Updates Only" left="452" top="154" width="70" height="60">
+                    <processor uri="com.esri.geoevent.solutions.processor.updateOnly/UpdateOnlyProcessor/10.2.2">
+                        <properties/>
+                    </processor>
+                </node>
+                <node name="b0591900-cc77-40f0-8f9b-94483f51de42" label="Update Only Processor" left="605" top="285" width="142" height="40">
+                    <processor uri="com.esri.geoevent.solutions.processor.updateOnly/UpdateOnlyProcessor/10.3.0">
+                        <properties/>
+                    </processor>
+                </node>
+            </nodes>
+            <flow>
+                <from ref="Updates Only" label="Updates Only">
+                    <to ref="2d0923ed-51f3-4531-8330-3d3c8fefcc15" label="metar-fs-out"/>
+                </from>
+                <from ref="b0591900-cc77-40f0-8f9b-94483f51de42" label="Update Only Processor">
+                    <to ref="Updates Only" label="Updates Only"/>
+                </from>
+                <from ref="af36c607-2388-4899-8d7b-1e01e7111f8d" label="metar-regexText-in">
+                    <to ref="b0591900-cc77-40f0-8f9b-94483f51de42" label="Update Only Processor"/>
+                </from>
+            </flow>
+            <geoEventsReceivedRateRange max="0.0" min="0.0"/>
+            <geoEventsSentRateRange max="0.0" min="0.0"/>
+        </geoEventService>
+        <geoEventService name="BUOY" label="BUOY" description="Pulls in BUOY updates (and CMAN)" lineStyle="Diagonal" runningState="ERROR" statusDetails="Processor &quot;Update Only Processor&quot;: Node &quot;Update Only Processor&quot;: GeoEventProcessor(uri=com.esri.geoevent.solutions.processor.updateOnly/UpdateOnlyProcessor/10.3.0) is not available.">
+            <inputs>
+                <input ref="ef1265d9-6440-4cdd-8057-0f12b206e283" label="buoy-regexText-in" left="864" top="82" width="117" height="40"/>
+            </inputs>
+            <outputs>
+                <output ref="5c43a313-3e22-4ed6-88fa-d2c7b0842620" label="buoy-fs-out" left="8" top="68" width="75" height="40"/>
+            </outputs>
+            <nodes>
+                <node name="ceeb3011-6066-40a9-8a85-7826b122e5f2" label="Update Only Processor" left="341" top="194" width="142" height="40">
+                    <processor uri="com.esri.geoevent.solutions.processor.updateOnly/UpdateOnlyProcessor/10.3.0">
+                        <properties/>
+                    </processor>
+                </node>
+                <node name="Field Reducer - Remove Date Part Fields" label="Field Reducer - Remove Date Part Fields" left="558" top="74" width="70" height="72">
+                    <processor uri="com.esri.ges.processor/FieldReducer/10.3.1">
+                        <properties>
+                            <property name="eventDefinitionName" type="String">RemoveDatePartFields_Buoy</property>
+                            <property name="fields" type="String">yr, month, day, hr, mins</property>
+                        </properties>
+                    </processor>
+                </node>
+                <node name="f3aea293-9e64-433e-821f-ca1981fafb25" label="Map Fields" left="174" top="160" width="68" height="40">
+                    <processor uri="com.esri.ges.processor/FieldMapper/10.3.1">
+                        <properties>
+                            <property name="inputGeoEventDefinition" type="GeoEventDefinition">RemoveDatePartFields_Buoy</property>
+                            <property name="outputGeoEventDefinition" type="GeoEventDefinition">BUOY</property>
+                            <property name="inputFields" type="String">StationID,Latitude,Longitude,ObservationDate,WindDirection,WindSpeed,GustSpeed,WaveHeight,DominantWavePeriod,AverageWavePeriod,MeanWaveDirection,Pressure,PressureTendency,AirTemperature,SeaSurfaceTemperature,DewPoint,Visibility,TideDifference,Location,Location</property>
+                            <property name="outputFields" type="String">stationid,latitude,longitude,observationdate,winddirect,windspeed,gustspeed,waveheight,dominantwa,averagewav,meanwavedi,pressure,pressurete,airtempera,seasurface,dewpoint,visibility,tidediffer,location,geometry</property>
+                        </properties>
+                    </processor>
+                </node>
+                <node name="Field Calculator - Concatenate Date" label="Field Calculator - Concatenate Date" left="726" top="201" width="70" height="72">
+                    <processor uri="com.esri.ges.processor/FieldCalculator/10.3.1">
+                        <properties>
+                            <property name="newGeoEventDefinitionName" type="String">ConcatenateDate_Buoy</property>
+                            <property name="expression" type="String">valueOf(yr) + '-' + substring(concat('00', valueOf(month)), length(valueOf(month)), length(valueOf(month)) + 2) + '-' + substring(concat('00', valueOf(day)), length(valueOf(day)), length(valueOf(day)) + 2) + 'T' + substring(concat('00', valueOf(hr)), length(valueOf(hr)), length(valueOf(hr)) + 2) + ':' + substring(concat('00', valueOf(mins)), length(valueOf(mins)), length(valueOf(mins)) + 2) + 'Z'</property>
+                            <property name="newFieldName" type="String">ObservationDate</property>
+                            <property name="newFieldType" type="String">Date</property>
+                            <property name="newFieldTag" type="String">TIME_START</property>
+                            <property name="resultDestination" type="String">New Field</property>
+                            <property name="existingFieldName" type="String">ObservationDate</property>
+                        </properties>
+                    </processor>
+                </node>
+            </nodes>
+            <flow>
+                <from ref="ef1265d9-6440-4cdd-8057-0f12b206e283" label="buoy-regexText-in">
+                    <to ref="Field Calculator - Concatenate Date" label="Field Calculator - Concatenate Date"/>
+                </from>
+                <from ref="ceeb3011-6066-40a9-8a85-7826b122e5f2" label="Update Only Processor">
+                    <to ref="f3aea293-9e64-433e-821f-ca1981fafb25" label="Map Fields"/>
+                </from>
+                <from ref="Field Reducer - Remove Date Part Fields" label="Field Reducer - Remove Date Part Fields">
+                    <to ref="ceeb3011-6066-40a9-8a85-7826b122e5f2" label="Update Only Processor"/>
+                </from>
+                <from ref="f3aea293-9e64-433e-821f-ca1981fafb25" label="Map Fields">
+                    <to ref="5c43a313-3e22-4ed6-88fa-d2c7b0842620" label="buoy-fs-out"/>
+                </from>
+                <from ref="Field Calculator - Concatenate Date" label="Field Calculator - Concatenate Date">
+                    <to ref="Field Reducer - Remove Date Part Fields" label="Field Reducer - Remove Date Part Fields"/>
+                </from>
+            </flow>
+            <geoEventsReceivedRateRange max="0.0" min="0.0"/>
+            <geoEventsSentRateRange max="0.0" min="0.0"/>
+        </geoEventService>
+    </geoEventServices>
+    <inputs>
+        <input clusterCommand="START" connector="esri-in-http-text-regex" connectorLabel="Receive delimited text via HTTP" hostName="GEEServer" label="buoy-regexText-in" name="ef1265d9-6440-4cdd-8057-0f12b206e283" runningState="ERROR" statusDetails="Stopping Stream 'buoy-regexText-in' because the Adapter is not available." supportsAllGeoEventDefinitions="true">
+            <adapter uri="com.esri.geoevent.solutions.adapter/regexText-adapter/10.3.0"/>
+            <geoEventDefinitionHistory/>
+            <geoEventsRateRange max="0.0" min="0.0"/>
+            <supportedGeoEventDefinitions/>
+            <transport uri="com.esri.ges.transport.inbound/HTTP/10.3.1">
+                <properties>
+                    <property name="clientURLProxy" type="String"></property>
+                    <property name="useClientURLProxy" type="Boolean">false</property>
+                    <property name="clientPostBody" type="String"></property>
+                    <property name="acceptableMimeTypesClientMode" type="String"></property>
+                    <property name="mode" type="String">CLIENT</property>
+                    <property name="headers" type="String"></property>
+                    <property name="httpMethod" type="String">GET</property>
+                    <property name="frequency" type="Integer">300</property>
+                    <property name="useLongPolling" type="Boolean">false</property>
+                    <property name="clientPostFrom" type="String">TEXT</property>
+                    <property name="httpTimeoutValue" type="Integer">30</property>
+                    <property name="honorLastModified" type="Boolean">true</property>
+                    <property name="clientURL" type="String">http://www.ndbc.noaa.gov/data/latest_obs/latest_obs.txt</property>
+                    <property name="postContentType" type="String"></property>
+                    <property name="acceptableMimeTypesServerMode" type="String"></property>
+                    <property name="clientParameters" type="String"></property>
+                    <property name="httpAppendToEnd" type="String"></property>
+                    <property name="clientPostParameters" type="String"></property>
+                </properties>
+            </transport>
+        </input>
+        <input clusterCommand="START" connector="esri-in-http-text-regex" connectorLabel="Receive delimited text via HTTP" hostName="GEEServer" label="metar-regexText-in" name="af36c607-2388-4899-8d7b-1e01e7111f8d" runningState="ERROR" statusDetails="Stopping Stream 'metar-regexText-in' because the Adapter is not available." supportsAllGeoEventDefinitions="true">
+            <adapter uri="com.esri.geoevent.solutions.adapter/regexText-adapter/10.3.0"/>
+            <geoEventDefinitionHistory/>
+            <geoEventsRateRange max="0.0" min="0.0"/>
+            <supportedGeoEventDefinitions/>
+            <transport uri="com.esri.ges.transport.inbound/HTTP/10.3.1">
+                <properties>
+                    <property name="clientURLProxy" type="String"></property>
+                    <property name="useClientURLProxy" type="Boolean">false</property>
+                    <property name="clientPostBody" type="String"></property>
+                    <property name="acceptableMimeTypesClientMode" type="String"></property>
+                    <property name="mode" type="String">CLIENT</property>
+                    <property name="headers" type="String"></property>
+                    <property name="httpMethod" type="String">GET</property>
+                    <property name="frequency" type="Integer">300</property>
+                    <property name="useLongPolling" type="Boolean">false</property>
+                    <property name="clientPostFrom" type="String">TEXT</property>
+                    <property name="httpTimeoutValue" type="Integer">30</property>
+                    <property name="honorLastModified" type="Boolean">true</property>
+                    <property name="clientURL" type="String">https://aviationweather.gov/adds/dataserver_current/current/metars.cache.csv</property>
+                    <property name="postContentType" type="String"></property>
+                    <property name="acceptableMimeTypesServerMode" type="String"></property>
+                    <property name="clientParameters" type="String"></property>
+                    <property name="httpAppendToEnd" type="String"></property>
+                    <property name="clientPostParameters" type="String"></property>
+                </properties>
+            </transport>
+        </input>
+    </inputs>
+    <outputs>
+        <output clusterCommand="START" connector="esri-out-json-fs-update" connectorLabel="Update a Feature" label="buoy-fs-out" name="5c43a313-3e22-4ed6-88fa-d2c7b0842620" runningState="ERROR" statusDetails="Could not restart transport because the required layer information is not available ([Localhost Server][/][CurrentWeather][1][FeatureServer])." supportsAllGeoEventDefinitions="true">
+            <adapter uri="com.esri.ges.adapter.outbound/JSON/10.3.1">
+                <properties>
+                    <property name="mimeType" type="String">application/json</property>
+                    <property name="flattenEvents" type="Boolean">true</property>
+                    <property name="keepEventsUnique" type="Boolean">true</property>
+                    <property name="prettyJson" type="Boolean">false</property>
+                    <property name="updateInterval" type="String">1</property>
+                </properties>
+            </adapter>
+            <geoEventDefinitionHistory/>
+            <geoEventsRateRange max="0.0" min="0.0"/>
+            <supportedGeoEventDefinitions/>
+            <transport uri="com.esri.ges.transport.outbound/FeatureService/10.3.1">
+                <properties>
+                    <property name="serviceName" type="ArcGISFeatureService">CurrentWeather</property>
+                    <property name="append" type="Boolean">false</property>
+                    <property name="path" type="ArcGISFolder">/</property>
+                    <property name="trackIDField" type="ArcGISField">stationid</property>
+                    <property name="featureLifeSpan" type="Integer">1440</property>
+                    <property name="cleanupTimeField" type="ArcGISField">observationdate</property>
+                    <property name="layerIndex" type="ArcGISLayer">1</property>
+                    <property name="cleanupFrequency" type="Integer">300</property>
+                    <property name="cleanupFeatures" type="Boolean">true</property>
+                    <property name="maximumTransactionSize" type="Integer">500</property>
+                    <property name="datastore">[ArcGIS Server Name]</property>
+                </properties>
+            </transport>
+        </output>
+        <output clusterCommand="START" connector="esri-out-json-fs-update" connectorLabel="Update a Feature" label="metar-fs-out" name="2d0923ed-51f3-4531-8330-3d3c8fefcc15" runningState="ERROR" statusDetails="Could not restart transport because the required layer information is not available ([Localhost Server][/][CurrentWeather][0][FeatureServer])." supportsAllGeoEventDefinitions="true">
+            <adapter uri="com.esri.ges.adapter.outbound/JSON/10.3.1">
+                <properties>
+                    <property name="mimeType" type="String">application/json</property>
+                    <property name="flattenEvents" type="Boolean">true</property>
+                    <property name="keepEventsUnique" type="Boolean">true</property>
+                    <property name="prettyJson" type="Boolean">false</property>
+                    <property name="updateInterval" type="String">1</property>
+                </properties>
+            </adapter>
+            <geoEventDefinitionHistory/>
+            <geoEventsRateRange max="0.0" min="0.0"/>
+            <supportedGeoEventDefinitions/>
+            <transport uri="com.esri.ges.transport.outbound/FeatureService/10.3.1">
+                <properties>
+                    <property name="serviceName" type="ArcGISFeatureService">CurrentWeather</property>
+                    <property name="append" type="Boolean">false</property>
+                    <property name="path" type="ArcGISFolder">/</property>
+                    <property name="trackIDField" type="ArcGISField">station_id</property>
+                    <property name="featureLifeSpan" type="Integer">1440</property>
+                    <property name="cleanupTimeField" type="ArcGISField">observationdate</property>
+                    <property name="layerIndex" type="ArcGISLayer">0</property>
+                    <property name="cleanupFrequency" type="Integer">20</property>
+                    <property name="cleanupFeatures" type="Boolean">true</property>
+                    <property name="maximumTransactionSize" type="Integer">500</property>
+                    <property name="datastore">[ArcGIS Server Name]</property>
+                </properties>
+            </transport>
+        </output>
+    </outputs>
+    <geoEventDefinitions>
+        <geoEventDefinition guid="23206310-d752-4863-8252-1cf23238ad98" name="AirportTraffic" owner="siteadmin" accessType="editable">
+            <fieldDefinitions>
+                <fieldDefinition name="Location" type="Geometry" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>GEOMETRY</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Altitude" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Field_A" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Runaway" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Type" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="FlightNumber" type="String" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>TRACK_ID</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="SomeTime" type="Date" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>TIME_START</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="SomeDate" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="SomeNum" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Model" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+            </fieldDefinitions>
+        </geoEventDefinition>
+        <geoEventDefinition guid="3197983b-1d2b-4c06-be96-0bf16a98b111" name="BUOY-incoming" owner="arcgis" accessType="editable">
+            <fieldDefinitions>
+                <fieldDefinition name="StationID" type="String" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>TRACK_ID</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Latitude" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Longitude" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="yr" type="Integer" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="month" type="Integer" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="day" type="Integer" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="hr" type="Integer" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="mins" type="Integer" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="WindDirection" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="WindSpeed" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="GustSpeed" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="WaveHeight" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="DominantWavePeriod" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="AverageWavePeriod" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="MeanWaveDirection" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Pressure" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="PressureTendency" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="AirTemperature" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="SeaSurfaceTemperature" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="DewPoint" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Visibility" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="TideDifference" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Location" type="Geometry" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>GEOMETRY</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+            </fieldDefinitions>
+        </geoEventDefinition>
+        <geoEventDefinition guid="701a5365-6589-41c8-b223-49cdd551b16d" name="BUOY" owner="siteadmin" accessType="editable">
+            <fieldDefinitions>
+                <fieldDefinition name="objectid" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="stationid" type="String" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>TRACK_ID</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="latitude" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="longitude" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="observationdate" type="Date" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>TIME_START</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="winddirect" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="windspeed" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="gustspeed" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="waveheight" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="dominantwa" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="averagewav" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="meanwavedi" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="pressure" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="pressurete" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="airtempera" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="seasurface" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="dewpoint" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="visibility" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="tidediffer" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="location" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="geometry" type="Geometry" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>GEOMETRY</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+            </fieldDefinitions>
+        </geoEventDefinition>
+        <geoEventDefinition guid="7bc1c92a-238c-429f-998f-1872e7c404c6" name="ConcatenateDate_Buoy" owner="Field Calculator - Concatenate Date" accessType="editable">
+            <fieldDefinitions>
+                <fieldDefinition name="StationID" type="String" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>TRACK_ID</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Latitude" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Longitude" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="yr" type="Integer" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="month" type="Integer" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="day" type="Integer" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="hr" type="Integer" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="mins" type="Integer" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="WindDirection" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="WindSpeed" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="GustSpeed" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="WaveHeight" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="DominantWavePeriod" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="AverageWavePeriod" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="MeanWaveDirection" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Pressure" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="PressureTendency" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="AirTemperature" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="SeaSurfaceTemperature" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="DewPoint" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Visibility" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="TideDifference" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Location" type="Geometry" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>GEOMETRY</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="ObservationDate" type="Date" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>TIME_START</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+            </fieldDefinitions>
+        </geoEventDefinition>
+        <geoEventDefinition guid="e69c9175-b0ad-44fa-a239-9519d7ffedc0" name="EMEA-Simulation-Data" owner="siteadmin" accessType="editable">
+            <fieldDefinitions>
+                <fieldDefinition name="TimeStamp" type="Date" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>TIME_START</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="CategoryCode" type="Short" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Longitude" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Latitude" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Location" type="Geometry" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>GEOMETRY</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+            </fieldDefinitions>
+        </geoEventDefinition>
+        <geoEventDefinition guid="9b4f0606-4298-4996-a71a-966b37d93a43" name="METAR" owner="arcgis" accessType="editable">
+            <fieldDefinitions>
+                <fieldDefinition name="raw_text" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="station_id" type="String" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>TRACK_ID</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="observation_time" type="Date" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>TIME_START</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="latitude" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="longitude" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="temperature_c" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="dewpoint_c" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="winddirection_degrees" type="Integer" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="windspeed_kts" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="windgustspeed_kts" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="visibility_statute_miles" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="altim_in_hg" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="sea_level_pressure_mb" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="corrected" type="Boolean" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="auto" type="Boolean" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="auto_station" type="Boolean" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="maintenance_indicator_on" type="Boolean" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="no_signal" type="Boolean" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="lighting_sensor_off" type="Boolean" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="freezing_rain_sensor_off" type="Boolean" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="present_weather_sensor_off" type="Boolean" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="wx_string" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="sky_cover_1st_level" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="cloud_base_ft_agl_1st_level" type="Long" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="sky_cover_2nd_level" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="cloud_base_ft_agl_2nd_level" type="Long" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="sky_cover_3rd_level" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="cloud_base_ft_agl_3rd_level" type="Long" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="sky_cover_4th_level" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="cloud_base_ft_agl_4th_level" type="Long" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="flight_category" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="three_hr_pressure_tendency_mb" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="maxT_c" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="minT_c" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="maxT24hr_c" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="minT24hr_c" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="precip_in" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="pcp3hr_in" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="pcp6hr_in" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="pcp24hr_in" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="snow_in" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="vert_vis_ft" type="Long" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="metar_type" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="elevation_m" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="location" type="Geometry" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>GEOMETRY</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+            </fieldDefinitions>
+        </geoEventDefinition>
+        <geoEventDefinition guid="be598cbb-0a3f-4f1f-9d52-6e6c5b4e60ff" name="RemoveDatePartFields_Buoy" owner="Field Reducer - Remove Date Part Fields" accessType="editable">
+            <fieldDefinitions>
+                <fieldDefinition name="StationID" type="String" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>TRACK_ID</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Latitude" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Longitude" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="WindDirection" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="WindSpeed" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="GustSpeed" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="WaveHeight" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="DominantWavePeriod" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="AverageWavePeriod" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="MeanWaveDirection" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Pressure" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="PressureTendency" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="AirTemperature" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="SeaSurfaceTemperature" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="DewPoint" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Visibility" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="TideDifference" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="Location" type="Geometry" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>GEOMETRY</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="ObservationDate" type="Date" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>TIME_START</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+            </fieldDefinitions>
+        </geoEventDefinition>
+        <geoEventDefinition guid="2dc61517-a5b8-43e4-87ee-aa67f6a0a654" name="Sample" owner="sample.processor/SampleAsyncProcessor/10.3.1" accessType="readOnly">
+            <fieldDefinitions>
+                <fieldDefinition name="guid" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="defName" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="trackId" type="String" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>TRACK_ID</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="startTime" type="Date" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>START_TIME</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="geometry" type="Geometry" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>GEOMETRY</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="type" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="ownerId" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="ownerUri" type="String" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+            </fieldDefinitions>
+        </geoEventDefinition>
+        <geoEventDefinition guid="95caa7c4-a3df-4488-b9ea-30dd91573619" name="TrackIdle" owner="com.esri.geoevent.processor/TrackIdleDetector/10.3.0" accessType="editable">
+            <fieldDefinitions>
+                <fieldDefinition name="trackId" type="String" cardinality="One">
+                    <fieldDefinitionTag>
+                        <name>TRACK_ID</name>
+                    </fieldDefinitionTag>
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="idle" type="Boolean" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="idleDuration" type="Double" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="idleStart" type="Date" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+                <fieldDefinition name="geometry" type="Geometry" cardinality="One">
+                    <fieldDefinitions/>
+                </fieldDefinition>
+            </fieldDefinitions>
+        </geoEventDefinition>
+    </geoEventDefinitions>
+    <tags/>
+    <connectors>
+        <connector accessType="editable" label="Receive delimited text via HTTP" name="esri-in-http-text-regex" type="inbound">
+            <adapter uri="com.esri.geoevent.solutions.adapter/regexText-adapter/10.3.0"/>
+            <defaultName>esri-in-http-text-regex</defaultName>
+            <description>Receives delimited text via HTTP. The attributes can be delmited by a complex delimiter that can be identified by a regular expression.</description>
+            <properties>
+                <advanced>
+                    <property default="CLIENT" label="Mode" name="mode" source="transport"/>
+                    <property label="Acceptable MIME Types (Server Mode)" name="acceptableMimeTypesServerMode" source="transport"/>
+                    <property default="false" label="Use URL Proxy" name="useClientURLProxy" source="transport"/>
+                    <property label="URL Proxy" name="clientURLProxy" source="transport"/>
+                    <property label="Parameters" name="clientParameters" source="transport"/>
+                    <property label="Content Body" name="clientPostBody" source="transport"/>
+                    <property default="GET" label="HTTP Method" name="httpMethod" source="transport"/>
+                    <property label="Acceptable MIME Types (Client Mode)" name="acceptableMimeTypesClientMode" source="transport"/>
+                    <property label="Post body MIME Type" name="postContentType" source="transport"/>
+                </advanced>
+                <hidden>
+                    <property default="" label="Header Parameter Name:Value List" name="headers" source="transport"/>
+                    <property default="TEXT" label="Post From" name="clientPostFrom" source="transport"/>
+                    <property default="" label="Post Parameters" name="clientPostParameters" source="transport"/>
+                    <property default="30" label="HTTP Timeout (in seconds)" name="httpTimeoutValue" source="transport"/>
+                    <property default="" label="Append to the End of Payload" name="httpAppendToEnd" source="transport"/>
+                </hidden>
+                <shown>
+                    <property default="\n" label="Message Separator" name="MessageSeparator" source="adapter"/>
+                    <property default="," label="Attribute Separator to be Replaced" name="AttributeSeparatorToBeReplaced" source="adapter"/>
+                    <property default="," label="Attribute Separator" name="AttributeSeparator" source="adapter"/>
+                    <property default="true" label="Create Unrecognized Event Definitions" name="CreateUnrecognizedGeoEventDefinitions" source="adapter"/>
+                    <property default="true" label="Incoming Data Contains GeoEvent Definition" name="IncomingDataContainsGeoEventDefinition" source="adapter"/>
+                    <property default="false" label="Create Fixed GeoEvent Definitions" name="CreateFixedGeoEventDefinitions" source="adapter"/>
+                    <property label="GeoEvent Definition Name (New)" name="NewFixedGeoEventDefinitionName" source="adapter"/>
+                    <property label="GeoEvent Definition Name (Existing)" name="ExistingFixedGeoEventDefinitionName" source="adapter"/>
+                    <property default="false" label="Build Geometry From Fields" name="BuildGeometryFromFields" source="adapter"/>
+                    <property label="X Geometry Field" name="XGeometryField" source="adapter"/>
+                    <property label="Y Geometry Field" name="YGeometryField" source="adapter"/>
+                    <property label="Z Geometry Field" name="ZGeometryField" source="adapter"/>
+                    <property label="wkid Geometry Field" name="WKIDGeometryField" source="adapter"/>
+                    <property label="Well Known Text Geometry Field" name="WKTextGeometryField" source="adapter"/>
+                    <property label="Expected Date Format" name="CustomDateFormat" source="adapter"/>
+                    <property label="URL" name="clientURL" source="transport"/>
+                    <property default="false" label="Use Long Polling" name="useLongPolling" source="transport"/>
+                    <property default="5" label="Frequency (in seconds)" name="frequency" source="transport"/>
+                    <property default="true" label="Receive New Data Only" name="honorLastModified" source="transport"/>
+                </shown>
+            </properties>
+            <transport uri="com.esri.ges.transport.inbound/HTTP/10.3.1"/>
+        </connector>
+    </connectors>
+    <arcgisServerConnections/>
+    <folderDataStores/>
+</template>

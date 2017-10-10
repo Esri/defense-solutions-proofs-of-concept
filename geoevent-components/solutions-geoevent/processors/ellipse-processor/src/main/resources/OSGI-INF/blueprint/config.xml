@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	default-activation="lazy">
+	<reference id="geoDefManagerService"
+		interface="com.esri.ges.manager.geoeventdefinition.GeoEventDefinitionManager" />
+
+	<bean id="ellipseProcessorServiceBean"
+		class="com.esri.geoevent.solutions.processor.ellipse.EllipseProcessorService"
+		init-method="start">
+		<property name="bundleContext" ref="blueprintBundleContext" />
+		<property name="manager" ref="geoDefManagerService" />
+	</bean>
+
+	<service id="ellipseProcessorService" ref="ellipseProcessorServiceBean"
+		interface="com.esri.ges.processor.GeoEventProcessorService" />
+
+</blueprint>

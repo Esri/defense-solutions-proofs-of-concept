@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	default-activation="lazy">
+	
+	<bean id="rangeFanProcessorServiceBean"
+		class="com.esri.geoevent.solutions.processor.rangefan.RangeFanProcessorService">
+		<property name="bundleContext" ref="blueprintBundleContext" />
+	</bean>
+	
+	<service id="rangeFanProcessorService" ref="rangeFanProcessorServiceBean"
+		interface="com.esri.ges.processor.GeoEventProcessorService" />
+
+</blueprint>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<template>
+  <geoEventServices />
+  <inputs />
+  <outputs />
+  <geoEventDefinitions>
+    <geoEventDefinition guid="6b618b47-5720-411d-bfad-e2ec15b2b5f7" name="buffer" owner="arcgis">
+      <fieldDefinitions>
+        <fieldDefinition name="eventid" type="String" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TRACK_ID</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="x" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="y" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="z" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="radius" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="date" type="Date" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TIME_START</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="geodef" type="String" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+      </fieldDefinitions>
+    </geoEventDefinition>
+    <geoEventDefinition guid="f943594d-3344-41f9-9044-edb3b420ff8c" name="ellipses" owner="arcgis">
+      <fieldDefinitions>
+        <fieldDefinition name="eventid" type="String" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TRACK_ID</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="x" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="y" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="z" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="geo" type="Geometry" cardinality="One">
+          <fieldDefinitionTag>
+            <name>GEOMETRY</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="major_axis" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="minor_axis" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="rotation" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="date" type="Date" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TIME_START</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="geodef" type="String" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+      </fieldDefinitions>
+    </geoEventDefinition>
+    <geoEventDefinition guid="487c32a7-5c42-4e67-a685-669ce64d160e" name="rangefans" owner="arcgis">
+      <fieldDefinitions>
+        <fieldDefinition name="event_id" type="String" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TRACK_ID</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="x" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="y" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="z" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="geo" type="Geometry" cardinality="One">
+          <fieldDefinitionTag>
+            <name>GEOMETRY</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="range" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="bearing" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="traversal" type="Double" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="date" type="Date" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TIME_START</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions/>
+        </fieldDefinition>
+        <fieldDefinition name="geodef" type="String" cardinality="One">
+          <fieldDefinitions/>
+        </fieldDefinition>
+      </fieldDefinitions>
+    </geoEventDefinition>
+  </geoEventDefinitions>
+</template>

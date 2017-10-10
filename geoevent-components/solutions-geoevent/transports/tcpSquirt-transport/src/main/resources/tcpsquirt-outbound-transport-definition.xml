@@ -1,0 +1,27 @@
+<transport name="TCPSquirt" label="TCP Squirt Outbound Transport" domain="com.esri.geoevent.solutions.transport.tcpsquirt.outbound" type="outbound">
+	<description>Esri TCP Squirt Transport for outbound streams.</description>
+	<propertyDefinitions>
+		<propertyDefinition propertyName="port" label="${com.esri.geoevent.solutions.transport.tcpsquirt.tcpsquirt-transport.LBL_PORT}"
+			description="${com.esri.geoevent.solutions.transport.tcpsquirt.tcpsquirt-transport.DESC_PORT}"
+			propertyType="Integer" defaultValue="5570" mandatory="true" readOnly="false" />
+		<propertyDefinition propertyName="mode" label="${com.esri.geoevent.solutions.transport.tcpsquirt.tcpsquirt-transport.LBL_MODE}"
+            description="${com.esri.geoevent.solutions.transport.tcpsquirt.tcpsquirt-transport.DESC_MODE}"
+            propertyType="String" defaultValue="SERVER" mandatory="true"
+            readOnly="false">
+            <allowedValues>
+                <value>SERVER</value>
+                <value>CLIENT</value>
+            </allowedValues>
+        </propertyDefinition>
+		<propertyDefinition propertyName="host"
+			label="${com.esri.geoevent.solutions.transport.tcpsquirt.tcpsquirt-transport.LBL_HOST}"
+			description="${com.esri.geoevent.solutions.transport.tcpsquirt.tcpsquirt-transport.DESC_HOST}"
+			propertyType="String" defaultValue="localhost" mandatory="false"
+			readOnly="false" dependsOn="mode=CLIENT" />
+		<propertyDefinition propertyName="clientConnectionTimeout"
+			label="${com.esri.geoevent.solutions.transport.tcpsquirt.tcpsquirt-transport.LBL_TIMEOUT}"
+			description="${com.esri.geoevent.solutions.transport.tcpsquirt.tcpsquirt-transport.DESC_TIMEOUT}"
+			propertyType="Integer" defaultValue="60" mandatory="false"
+			readOnly="false" dependsOn="mode=CLIENT" />		
+	</propertyDefinitions>
+</transport>

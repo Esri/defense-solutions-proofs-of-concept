@@ -1,0 +1,31 @@
+<connectorDefinition label="Receive Cursor on Target Over TCP Socket" name="cot-tcp-in"
+	type="inbound">
+	<description>Receive Cursor on Target messages over a TCP socket that opens and closes before and after the message is received</description>
+	<defaultName>cot-tcp-in</defaultName>
+	<transport uri="com.esri.ges.transport.inbound/TCP/10.2.0" />
+	<adapter
+		uri="com.esri.geoevent.solutions.adapter.cot.inbound/CursorOnTargetIn/10.2.0" />
+	<properties>
+		<shown>
+			<property name="XSD_Path" label="XSD_Path" source="adapter"
+				default="" />
+			<property name="CoT_Types_Path" label="CoT_Types_Path"
+				source="adapter" default="" />
+			<property name="port" label="Server Port"
+				source="transport" default="5570" />
+		</shown>
+		<advanced />
+		<hidden>
+			<property name="Max_Buffer_Size" label="Maximum Buffer Size"
+				source="adapter" default="1048576" />
+			<property name="handshake" label="Handshake Text"
+				source="transport" />
+			<property name="mode" label="Mode"
+				source="transport" default="SERVER" />
+			<property name="clientConnectionTimeout" label="Connection Timeout (Client Mode)"
+				source="transport" default="60" />
+			<property name="host" label="Host (Client Mode)"
+				source="transport" default="localhost"/>
+		</hidden>
+	</properties>
+</connectorDefinition>
