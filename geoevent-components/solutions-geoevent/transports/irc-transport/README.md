@@ -1,7 +1,5 @@
 # IRC Transport
 
-___This repository is no longer maintained___
-
 The IRC Transport demonstrates how to consume IRC messages using  GeoEvent Extension for ArcGIS Server
 
 ![Image of geomessage-adapter](IRC.PNG)
