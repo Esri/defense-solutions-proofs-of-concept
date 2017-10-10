@@ -1,7 +1,5 @@
 # symbol-lookup-processor
 
-___This repository is no longer maintained___
-
 The symbol lookup processor demonstrates how to convert between military symbol names and symbol identification codes.
 
 ![Image of processor](ScreenShot.png)
