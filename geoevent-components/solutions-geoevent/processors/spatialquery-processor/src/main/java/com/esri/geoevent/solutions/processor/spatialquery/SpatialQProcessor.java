@@ -24,10 +24,13 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.message.BasicNameValuePair;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -466,13 +469,17 @@ public class SpatialQProcessor extends GeoEventProcessorBase implements
 		{
 			endpoint=properties.get("endpoint").getValueAsString();
 		}
-		connectionType = conn.getConnectionType();
-		try {
-			token = conn.getDecryptedToken();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(!properties.get("token").getValueAsString().isEmpty())
+		{
+			token=properties.get("token").getValueAsString();
 		}
+		//connectionType = conn.getConnectionType();
+		//try {
+			//token = conn.getDecryptedToken();
+		//} catch (Exception e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+		//}
 		field = properties.get("field").getValueAsString();
 		wc = properties.get("wc").getValueAsString();
 	}
@@ -720,7 +727,23 @@ public class SpatialQProcessor extends GeoEventProcessorBase implements
 			HashMap<String, String> tokenMap = (HashMap<String, String>) query
 					.get("tokenMap");
 			String itemConfig = (String) query.get("itemconfig");
-			String args = "where="
+			
+			String wc2 = (String) query.get("whereclause");
+			
+			ArrayList<NameValuePair> postparameters = new ArrayList<NameValuePair>();
+			postparameters.add(new BasicNameValuePair("where",wc2));
+			postparameters.add(new BasicNameValuePair("geometry", jsonGeometry));
+			postparameters.add(new BasicNameValuePair("geometryType", geoType));
+			postparameters.add(new BasicNameValuePair("outFields", "*"));
+			postparameters.add(new BasicNameValuePair("returnGeometry", "true"));
+			postparameters.add(new BasicNameValuePair("returnDistinctValues", "false"));
+			postparameters.add(new BasicNameValuePair("returnIdsOnly", "false"));
+			postparameters.add(new BasicNameValuePair("returnZ", "false"));
+			postparameters.add(new BasicNameValuePair("returnM", "false"));
+			postparameters.add(new BasicNameValuePair("f", "json"));
+			
+			
+			/*String args = "where="
 					+ wc
 					+ "&objectIds=&time=&geometry="
 					+ geo
@@ -728,14 +751,18 @@ public class SpatialQProcessor extends GeoEventProcessorBase implements
 					+ geoType
 					+ "&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*"
 					// + fields
-					+ "&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&gdbVersion=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&f=json";
+					+ "&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&gdbVersion=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&f=json";*/
 			if(token != null)
 			{
-				args += "&token=" + token;
+				path += "token=" + token;
 			}
-			String uri = path + args;
+			//String uri = path + args;
+			String uri = path;
 			try {
 				HttpPost httppost = new HttpPost(uri);
+				
+				httppost.setEntity(new UrlEncodedFormEntity(postparameters, "UTF-8"));
+				
 				httppost.setHeader("Accept", contentType);
 				CloseableHttpResponse response = http.execute(httppost, GeoEventHttpClient.DEFAULT_TIMEOUT);
 				//HttpResponse response = httpclient.execute(httppost);

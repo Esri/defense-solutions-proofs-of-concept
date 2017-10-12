@@ -141,6 +141,9 @@ try {
 			PropertyDefinition pdRE = new PropertyDefinition("endpoint", PropertyType.String, "", lblEndPoint, descEndPoint, false, false);
 			propertyDefinitions.put(pdRE.getPropertyName(), pdRE);
 			
+			PropertyDefinition pdToken = new PropertyDefinition("token", PropertyType.String, "", "token", "token", false, false);
+			propertyDefinitions.put(pdToken.getPropertyName(), pdToken);
+			
 			PropertyDefinition pdwc = new PropertyDefinition( "wc", PropertyType.String, "", lblWC, descWC, false, false); 
 			propertyDefinitions.put(pdwc.getPropertyName(), pdwc);
 
