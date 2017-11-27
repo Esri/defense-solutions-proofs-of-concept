@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+
+<project name="VehicleCommander" basedir="." default="build">
+  <description>
+    Builds and deploys the VehicleCommander from source files
+    Defines these primary tasks:
+    build - (default) creates jar file
+    deploy - creates a standalone, runnable deployment in the applications folder
+  </description>
+
+  <import file="./versions.xml"/>
+
+  <target name="set_variables" depends="set_version_variables">
+
+    <!-- NOTE: these are set in versions.xml -->
+    <!-- ${dir.agsruntimejavasdk} and ${version.runtime}"  -->
+
+    <property name="dir.arcgis.jars" value="${dir.agsruntimejavasdk}/sdk/jars"/>
+    <property name="dir.src" value="."/>
+    <property name="dir.build" value="bin"/>
+    <property name="dir.dist" value="dist"/>
+    <property name="dir.lib3rdParty" value="lib"/>
+    <property name="dir.deploy" value="../../application/VehicleCommander"/>
+    <property name="jar.name" value="VehicleCommander.jar" />
+
+    <path id="project.classpath">
+      <pathelement location="${dir.dist}/${jar.name}"/>
+      <pathelement location="${dir.lib3rdParty}/beansbinding-1.2.1.jar"/>
+      <pathelement location="${dir.arcgis.jars}/ArcGIS_Runtime_Java.jar"/>
+      <pathelement location="${dir.arcgis.jars}/ArcGIS_Runtime_Java_Toolkit.jar"/>
+      <pathelement location="${dir.arcgis.jars}/apache-mime4j.jar"/>
+      <pathelement location="${dir.arcgis.jars}/commons-codec.jar"/>
+      <pathelement location="${dir.arcgis.jars}/commons-logging.jar"/>
+      <pathelement location="${dir.arcgis.jars}/httpclient.jar"/>
+      <pathelement location="${dir.arcgis.jars}/httpcore.jar"/>
+      <pathelement location="${dir.arcgis.jars}/httpmime.jar"/>
+      <pathelement location="${dir.arcgis.jars}/jackson-core-lgpl.jar"/>
+      <pathelement location="${dir.arcgis.jars}/jackson-mapper-lgpl.jar"/>
+      <pathelement location="${dir.arcgis.jars}/jcifs.jar"/>
+      <pathelement location="${dir.arcgis.jars}/jcommon.jar"/>
+      <pathelement location="${dir.arcgis.jars}/jfreechart.jar"/>
+      <pathelement location="${dir.arcgis.jars}/json.jar"/>
+    </path>
+    <path id="test.classpath">
+      <path refid="project.classpath"/>
+      <pathelement location="${dir.dist}/${jar.name}"/>
+      <pathelement location="${dir.lib3rdParty}/junit-4.10.jar"/>
+    </path>
+    <echo message="Running from: ${dir.src}"/>	
+  </target>
+
+  <target name="check_properties" depends="set_variables">
+    <echo message="Checking for required property settings"/>	
+    <condition property="propsnotfound">
+      <or>
+        <not>
+          <isset property="dir.agsruntimejavasdk"/>
+        </not>
+        <not>
+          <isset property="dir.arcgis.jars"/>
+        </not>       
+        <not>
+          <isset property="dir.src"/>
+        </not>       
+      </or>
+    </condition>
+    <fail message="****** COULD NOT FIND VALID PROPERTIES ******" if="propsnotfound"/>	
+  </target>
+
+  <target name="build" depends="create,compile,jar,dist-files">
+    <echo message="Build successful." />  
+  </target>
+
+  <target name="dist-files" depends="jar">
+    <!-- copy any additional dependent files here -->
+    <copy todir="${dir.dist}/lib">
+      <fileset dir="${dir.lib3rdParty}" />
+      <fileset dir="${dir.arcgis.jars}" />
+    </copy>
+    <copy todir="${dir.dist}">
+      <fileset file="${dir.src}/mapconfig.xml" />
+    </copy>
+  </target>
+  
+  <target name="compile" depends="create">
+  
+    <echo message="*********************************************************************" />
+    <echo message="*** IMPORTANT:                                                    ***" />
+    <echo message="*** Did you remember to pull latest military-apps-library-java?   ***" />
+    <echo message="*** $ git pull https://github.com/Esri/military-apps-library-java ***" />
+    <echo message="*** - or -                                                        ***" />
+    <echo message="*** $ git submodule foreach git pull origin master                ***" />
+    <echo message="*********************************************************************" />  
+
+    <javac classpathref="project.classpath" destdir="${dir.build}" includeantruntime="true" debug="${debug}">
+        <src path="${dir.src}/src" />
+        <src path="${dir.src}/../military-apps-library-java/source/MilitaryAppsLibrary/src" />
+    </javac>
+    <copy todir="${dir.build}">
+      <fileset dir="${dir.src}/src" excludes="**/*.java,**/*.form" />
+      <fileset dir="${dir.src}/../military-apps-library-java/source/MilitaryAppsLibrary/src" excludes="**/*.java" />
+    </copy>
+  </target>
+
+  <target name="jar" depends="compile">
+    <pathconvert pathsep=" " property="project.classpath.string" refid="project.classpath">
+      <chainedmapper>
+        <flattenmapper/>
+        <filtermapper>
+          <replacestring from=" " to="%20"/>
+        </filtermapper>
+        <globmapper from="*" to="lib/*"/>
+      </chainedmapper>
+    </pathconvert>
+    <jar destfile="${dir.dist}/${jar.name}">
+      <fileset dir="${dir.build}" />
+      <manifest>
+        <attribute name="Main-Class" value="com.esri.vehiclecommander.view.VehicleCommanderJFrame" />
+        <attribute name="Class-Path" value="${project.classpath.string}" />
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="run" depends="check_properties,jar" description="Runs the application">
+    <java classname="com.esri.vehiclecommander.view.VehicleCommanderJFrame" fork="true" failonerror="true">
+      <classpath refid="project.classpath"/>
+    </java>
+  </target>
+
+  <target name="deploy" depends="check_properties,dist-files">
+  <!-- copy from dist folder to {github root}/vehicle-commander/application -->
+    <delete dir="${dir.deploy}" >
+        <exclude name="ArcGISRuntime*/**" />
+    </delete>
+    <copy todir="${dir.deploy}">
+      <fileset dir="${dir.dist}"/>
+    </copy>
+    <copy todir="${dir.deploy}/ArcGISRuntime${version.runtime}/resources/symbols/mil2525c/messagetypes">
+      <fileset dir="${dir.src}" includes="afm*.json" />
+    </copy>
+  </target>
+
+  <target name="clean" depends="check_properties">
+    <delete dir="${dir.build}" />
+    <delete dir="${dir.dist}" />
+    <echo message="Deleting path: ${dir.build}" />
+    <echo message="Deleting path: ${dir.dist}" />
+  </target>
+
+  <target name="create" depends="check_properties">
+    <mkdir dir="${dir.build}/classes"/>
+    <mkdir dir="${dir.build}/test/classes"/>
+    <mkdir dir="${dir.dist}"/>
+    <mkdir dir="${dir.deploy}"/>
+    <echo message="Creating: ${dir.build}" />
+    <echo message="Creating: ${dir.dist}" />
+    <echo message="Creating: ${dir.deploy}" />
+  </target>
+  
+  <target name="run-tests" depends="jar" description="Run Ant tests">
+      <property name="debug" value="false" />
+      <javac srcdir="${dir.src}/test" classpathref="test.classpath" destdir="${dir.build}/test/classes" includeantruntime="true" debug="${debug}" />
+      <copy todir="${dir.build}/test/classes">
+          <fileset file="${dir.src}/test/*" />
+      </copy>
+      <junit printsummary="no"  fork="yes" forkmode="once">
+          <classpath>
+              <path refid="test.classpath" />
+              <path location="${dir.build}/test/classes" />
+          </classpath>
+          <formatter type="plain" usefile="false" />
+          <batchtest>
+              <fileset dir="${dir.src}/test" />
+          </batchtest>
+      </junit>
+  </target>
+  
+  <target name="debug-tests" depends="create" description="Run Ant tests in debug mode">
+      <property name="debug" value="true" />
+      <antcall target="clean" />
+      <antcall target="jar" />
+      <javac srcdir="${dir.src}/test" classpathref="test.classpath" destdir="${dir.build}/test/classes" includeantruntime="true" debug="true" />
+      <copy todir="${dir.build}/test/classes">
+          <fileset file="${dir.src}/test/*" />
+      </copy>
+      <nbjpdastart addressproperty="jpda.address" name="VehicleCommander" transport="dt_socket">
+          <classpath>
+              <path refid="test.classpath" />
+              <path location="${dir.build}/test/classes" />
+          </classpath>
+      </nbjpdastart>
+      <junit printsummary="no" fork="yes" forkmode="once">
+          <jvmarg value="-Xdebug"/>
+          <jvmarg value="-Xrunjdwp:transport=dt_socket,address=${jpda.address}"/>
+          <classpath>
+              <path refid="test.classpath" />
+              <path location="${dir.build}/test/classes" />
+          </classpath>
+          <formatter type="plain" usefile="false" />
+          <batchtest>
+              <fileset dir="${dir.src}/test" />
+          </batchtest>
+      </junit>
+  </target>
+
+</project>
