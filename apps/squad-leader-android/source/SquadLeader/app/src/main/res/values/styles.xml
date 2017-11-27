@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SquadLeaderTheme" parent="@style/Theme.AppCompat">
+        <item name="android:actionModeCloseDrawable">@drawable/ic_clear_white_36dp</item>
+        <!-- Uncomment the following line if using AppCompat -->
+        <item name="actionModeCloseDrawable">@drawable/ic_clear_white_36dp</item>
+    </style>
+</resources>

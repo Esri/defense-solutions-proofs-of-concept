@@ -1,0 +1,259 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="displayLocation"
+            type="String" />
+
+        <variable
+            name="displaySpeed"
+            type="String" />
+
+        <variable
+            name="displayTime"
+            type="String" />
+
+        <variable
+            name="displayHeading"
+            type="String" />
+    </data>
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:context=".SquadLeaderActivity">
+
+        <com.esri.android.map.MapView
+            android:id="@+id/map"
+            initExtent="7730000 3970000 8010000 4300000"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></com.esri.android.map.MapView>
+
+        <ImageButton
+            android:id="@+id/imageButton_openBasemapPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/selector_basemap"
+            android:contentDescription="@string/open_basemap_panel"
+            android:onClick="imageButton_openBasemapPanel_clicked" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton_status911"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/selector_status911"
+            android:contentDescription="@string/status_911"
+            android:onClick="toggleButton_status911_clicked"
+            android:textOff=""
+            android:textOn="" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton_spotReport"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageButton_openBasemapPanel"
+            android:layout_toRightOf="@+id/imageButton_openBasemapPanel"
+            android:background="@drawable/selector_spot_report"
+            android:contentDescription="@string/create_spot_report"
+            android:onClick="toggleButton_spotReport_clicked"
+            android:textOff=""
+            android:textOn="" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton_viewshed"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/toggleButton_spotReport"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/toggleButton_spotReport"
+            android:background="@drawable/selector_viewshed"
+            android:contentDescription="@string/calculate_viewshed"
+            android:onClick="toggleButton_viewshed_clicked"
+            android:textOff=""
+            android:textOn="" />
+
+        <ImageButton
+            android:id="@+id/imageButton_clearViewshed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/toggleButton_viewshed"
+            android:layout_below="@+id/toggleButton_viewshed"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/selector_clear_viewshed"
+            android:contentDescription="@string/clear_viewshed"
+            android:onClick="imageButton_clearViewshed_clicked"
+            android:visibility="invisible" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup_chemLightButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignRight="@+id/imageButton_openBasemapPanel"
+            android:layout_below="@+id/imageButton_openBasemapPanel"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical">
+
+            <ToggleButton
+                android:id="@+id/toggleButton_chemLightRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/selector_chemlights_red"
+                android:contentDescription="@string/chemlight_red"
+                android:onClick="toggleButton_chemLightRed_clicked"
+                android:textOff=""
+                android:textOn="" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton_chemLightYellow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/selector_chemlights_yellow"
+                android:contentDescription="@string/chemlight_yellow"
+                android:onClick="toggleButton_chemLightYellow_clicked"
+                android:textOff=""
+                android:textOn="" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton_chemLightGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/selector_chemlights_green"
+                android:contentDescription="@string/chemlight_green"
+                android:onClick="toggleButton_chemLightGreen_clicked"
+                android:textOff=""
+                android:textOn="" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton_chemLightBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_chemlights_blue"
+                android:contentDescription="@string/chemlight_blue"
+                android:onClick="toggleButton_chemLightBlue_clicked"
+                android:textOff=""
+                android:textOn="" />
+        </RadioGroup>
+
+        <ToggleButton
+            android:id="@+id/toggleButton_grid"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/selector_grid"
+            android:contentDescription="@string/toggle_grid"
+            android:onClick="toggleButton_grid_clicked"
+            android:textOff=""
+            android:textOn="" />
+
+        <com.esri.squadleader.view.NorthArrowView
+            android:id="@+id/northArrowView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/imageButton_zoomIn"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/north_arrow_desc"
+            android:onClick="northArrowView_clicked"
+            android:src="@drawable/ic_north_arrow" />
+
+        <ImageButton
+            android:id="@+id/imageButton_zoomIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/imageButton_zoomOut"
+            android:layout_alignRight="@+id/imageButton_zoomOut"
+            android:background="@drawable/selector_zoom_in"
+            android:contentDescription="@string/zoom_in"
+            android:onClick="imageButton_zoomIn_clicked" />
+
+        <ImageButton
+            android:id="@+id/imageButton_zoomOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/selector_zoom_out"
+            android:contentDescription="@string/zoom_out"
+            android:onClick="imageButton_zoomOut_clicked" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton_followMe"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/toggleButton_grid"
+            android:layout_toLeftOf="@+id/imageButton_zoomOut"
+            android:background="@drawable/selector_follow_me"
+            android:contentDescription="@string/follow_me"
+            android:onClick="toggleButton_followMe_clicked"
+            android:textOff=""
+            android:textOn="" />
+
+        <TableLayout
+            android:id="@+id/tableLayout_display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/toggleButton_grid"
+            android:layout_alignBottom="@+id/imageButton_zoomIn"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/imageButton_zoomIn"
+            android:clickable="true"
+            android:background="@drawable/location_display_background">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_weight=".5">
+
+                <TextView
+                    android:id="@+id/textView_displayLocation"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".75"
+                    android:text="@{displayLocation}"
+                    android:textColor="#4D4D4D" />
+
+                <TextView
+                    android:id="@+id/textView_displaySpeed"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight=".25"
+                    android:text="@{displaySpeed}"
+                    android:textColor="#4D4D4D" />
+            </TableRow>
+
+            <TableRow android:layout_weight=".5">
+
+                <TextView
+                    android:id="@+id/textView_displayTime"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".75"
+                    android:text="@{displayTime}"
+                    android:textColor="#4D4D4D" />
+
+                <TextView
+                    android:id="@+id/textView_displayHeading"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight=".25"
+                    android:text="@{displayHeading}"
+                    android:textColor="#4D4D4D" />
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
+</layout>
