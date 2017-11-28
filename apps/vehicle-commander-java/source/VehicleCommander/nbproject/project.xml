@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.ant.freeform</type>
+    <configuration>
+        <general-data xmlns="http://www.netbeans.org/ns/freeform-project/1">
+            <name>VehicleCommander</name>
+        </general-data>
+        <general-data xmlns="http://www.netbeans.org/ns/freeform-project/2">
+            <!-- Do not use Project Properties customizer when editing this file manually. -->
+            <name>VehicleCommander</name>
+            <properties>
+                <property name="project.dir">../..</property>
+            </properties>
+            <folders>
+                <source-folder>
+                    <label>vehicle-commander</label>
+                    <location>${project.dir}</location>
+                </source-folder>
+                <source-folder>
+                    <label>VehicleCommander</label>
+                    <location>.</location>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
+                <source-folder>
+                    <label>source\military-apps-library-java\source\MilitaryAppsLibrary\src</label>
+                    <location>${project.dir}/source/military-apps-library-java/source/MilitaryAppsLibrary/src</location>
+                </source-folder>
+                <source-folder>
+                    <label>source\VehicleCommander\test</label>
+                    <location>${project.dir}/source/VehicleCommander/test</location>
+                </source-folder>
+                <source-folder>
+                    <label>src</label>
+                    <type>java</type>
+                    <location>${project.dir}/source/VehicleCommander/src</location>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
+                <source-folder>
+                    <label>military-apps-library-java</label>
+                    <type>java</type>
+                    <location>${project.dir}/source/military-apps-library-java/source/MilitaryAppsLibrary/src</location>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
+                <source-folder>
+                    <label>test</label>
+                    <type>java</type>
+                    <location>${project.dir}/source/VehicleCommander/test</location>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
+            </folders>
+            <ide-actions>
+                <action name="build">
+                    <target>build</target>
+                </action>
+                <action name="clean">
+                    <target>clean</target>
+                </action>
+                <action name="run">
+                    <target>run</target>
+                </action>
+                <action name="rebuild">
+                    <target>clean</target>
+                    <target>build</target>
+                </action>
+                <action name="debug">
+                    <script>nbproject/ide-targets.xml</script>
+                    <target>debug-nb</target>
+                </action>
+            </ide-actions>
+            <export>
+                <type>jar</type>
+                <location>${project.dir}/source/VehicleCommander/dist/VehicleCommander.jar</location>
+                <build-target>build</build-target>
+            </export>
+            <export>
+                <type>jar</type>
+                <location>${project.dir}/source/VehicleCommander/dist/VehicleCommander.jar</location>
+                <build-target>build</build-target>
+            </export>
+            <view>
+                <items>
+                    <source-folder style="packages">
+                        <label>src</label>
+                        <location>${project.dir}/source/VehicleCommander/src</location>
+                    </source-folder>
+                    <source-folder style="packages">
+                        <label>military-apps-library-java</label>
+                        <location>${project.dir}/source/military-apps-library-java/source/MilitaryAppsLibrary/src</location>
+                    </source-folder>
+                    <source-folder style="packages">
+                        <label>test</label>
+                        <location>${project.dir}/source/VehicleCommander/test</location>
+                    </source-folder>
+                    <source-file>
+                        <location>build.xml</location>
+                    </source-file>
+                </items>
+                <context-menu>
+                    <ide-action name="build"/>
+                    <ide-action name="rebuild"/>
+                    <ide-action name="clean"/>
+                    <ide-action name="run"/>
+                    <ide-action name="debug"/>
+                    <action>
+                        <label>Deploy Project</label>
+                        <target>deploy</target>
+                    </action>
+                </context-menu>
+            </view>
+            <subprojects/>
+        </general-data>
+        <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/3">
+            <compilation-unit>
+                <package-root>${project.dir}/source/VehicleCommander/src</package-root>
+                <classpath mode="compile">C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\apache-mime4j.jar;C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\ArcGIS_Runtime_Java.jar;C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\ArcGIS_Runtime_Java_Toolkit.jar;C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\commons-codec.jar;C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\commons-logging.jar;C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\httpclient.jar;C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\httpcore.jar;C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\httpmime.jar;C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\jackson-core-lgpl.jar;C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\jackson-mapper-lgpl.jar;C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\jcifs.jar;C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\jcommon.jar;C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\json.jar;C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\jfreechart.jar;${project.dir}/source/military-apps-library-java/source/MilitaryAppsLibrary/src;${project.dir}/source/VehicleCommander/lib/beansbinding-1.2.1.jar</classpath>
+                <built-to>${project.dir}/source/VehicleCommander/dist/VehicleCommander.jar</built-to>
+                <source-level>1.7</source-level>
+            </compilation-unit>
+            <compilation-unit>
+                <package-root>${project.dir}/source/military-apps-library-java/source/MilitaryAppsLibrary/src</package-root>
+                <classpath mode="compile">${project.dir}/source/military-apps-library-java/source/MilitaryAppsLibrary/lib/json.jar</classpath>
+                <built-to>${project.dir}/source/VehicleCommander/dist/VehicleCommander.jar</built-to>
+                <source-level>1.7</source-level>
+            </compilation-unit>
+            <compilation-unit>
+                <package-root>${project.dir}/source/VehicleCommander/test</package-root>
+                <unit-tests/>
+                <classpath mode="compile">C:\Program Files (x86)\ArcGIS SDKs\java10.2.4\sdk\jars\ArcGIS_Runtime_Java.jar;${project.dir}/source/VehicleCommander/lib/junit-4.10.jar;${project.dir}/source/VehicleCommander/src</classpath>
+                <source-level>1.7</source-level>
+            </compilation-unit>
+        </java-data>
+    </configuration>
+</project>

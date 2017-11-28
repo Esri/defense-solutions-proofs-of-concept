@@ -1,0 +1,41 @@
+<project name="ArcGIS Versions" default="set_version_variables" basedir=".">
+    <description>
+	Purpose: sets version/sdk location variables: ${version.runtime}, ${dir.agsruntimejavasdk}
+	Also verifies that the folder exists
+	NOTE: If you need to build with another/alternate version, see TODO section below 
+    </description>
+
+<property environment="env"/>
+
+<!--  TODO: You may need to edit these properties to match the desired SDK version  -->
+<!-- IMPORTANT: Set these 2 properties to the current/desired version (ex. 10.X.X): -->
+<property name="dir.agsruntimejavasdk" value="${env.ARCGISRUNTIMESDKJAVA_10_2_4}"/>
+<property name="version.runtime" value="10.2.4"/>
+<!-- ****************************************************************************** -->
+
+<echo message="Using ArcGIS Runtime Java SDK Location = ${dir.agsruntimejavasdk}"/>
+ 
+<!-- Check that expected variables exists -->
+<target name="check_agsruntime_sdk_exists">
+	<echo message="Checking for ArcGIS Runtime SDK at these Locations: ${dir.agsruntimejavasdk}"/>	
+	<condition property="agsnotfound">
+	  <or>
+		<not>
+			<isset property="dir.agsruntimejavasdk"/>
+		</not>
+		<not>
+		  <available file="${dir.agsruntimejavasdk}" type="dir"/>
+		</not>       
+	  </or>
+	</condition>
+	<fail message="**** COULD NOT FIND VALID ArcGIS Runtime SDK INSTALLATION FOLDER ****" if="agsnotfound"/>	
+</target>
+
+<target name="set_version_variables" depends="check_agsruntime_sdk_exists">
+	<echo message="ArcGIS Runtime SDK found at this locations: ${dir.agsruntimejavasdk}" />
+	<echo message="ArcGIS Runtime Version: ${version.runtime}" />
+	<echo message="Java Version: ${java.version}" />
+</target>
+
+</project>
+
