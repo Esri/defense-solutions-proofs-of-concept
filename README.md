@@ -31,7 +31,6 @@ The samples provided in this repository are not officially released Esri solutio
 | [Bomb Threat Tool](./widgets/BombThreat/README.md) | 2.3 |
 | [Critical Infrastructure <br>and Key Resources](./widgets/CI_KR_Chart/README.md) | 1.2 | 
 | [Elevation Profile Widget](./widgets/ElevationProfileTable/README.md) | 1.2 | 
-| [ERG](./widgets/ERG/README.md) | 2.3 |
 | [Filter Editor](./widgets/FilterEditor/README.md) | 2.0 | 
 | [Image Discovery](./widgets/ImageDiscovery/README.md) | 2.0 | 
 
