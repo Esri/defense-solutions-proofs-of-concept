@@ -37,6 +37,8 @@ The samples provided in this repository are not officially released Esri solutio
 
 * Reference Implementations
     * [Air Operations Command and Control Common Operating Picture (Air C2 COP)](./reference-implementations/air-c2-cop/README.md)
+* Apps
+    * [Vehicle Commander](./apps/vehicle-commander-java/README.md)
 
 ## Requirements
 

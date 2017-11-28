@@ -1,0 +1,3 @@
+[submodule "apps/vehicle-commander-java/source/military-apps-library-java"]
+	path = apps/vehicle-commander-java/source/military-apps-library-java
+	url = git@github.com:Esri/military-apps-library-java.git
