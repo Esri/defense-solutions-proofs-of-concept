@@ -43,6 +43,11 @@ import com.esri.ges.core.geoevent.GeoEvent;
 import com.esri.ges.messaging.GeoEventListener;
 import com.esri.ges.messaging.MessagingException;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 
 public class CAPInboundAdapter extends InboundAdapterBase
 {
@@ -176,6 +181,9 @@ public class CAPInboundAdapter extends InboundAdapterBase
 				            		Element area = (Element) areas.item(ar);
 					            	String areaID = infoID + "_" + ar;
 				            		GeoEvent areaMsg = parseInfoArea(area, identifier, infoID, areaID);
+                                                        
+                                                        boolean isPolygon = false;
+                                                        
 				            		if (areaMsg != null){
 				    					geoEventListener.receive( areaMsg );	
 						            	System.out.println("   Area "+ ar + ": ");	
@@ -185,9 +193,14 @@ public class CAPInboundAdapter extends InboundAdapterBase
 						            	for (int pg = 0; pg < polygons.getLength(); pg++) {
 						            		Element polygon = (Element) polygons.item(pg);	
 						            		System.out.println("     Polygon "+ pg + ": ");
+                                                                        
+                                                                        isPolygon = true;
+                                                                        
 						            		GeoEvent areaGeomMsg = parseInfoAreaGeom(polygon, null, null, identifier, infoID, areaID);
+                                                                        
 						            		if (areaGeomMsg != null){
-						    					geoEventListener.receive( areaGeomMsg );								            			
+						    					geoEventListener.receive( areaGeomMsg );
+ 
 								            	System.out.println("      " + areaGeomMsg.toString());
 						            		}
 						            		else
@@ -213,13 +226,25 @@ public class CAPInboundAdapter extends InboundAdapterBase
 				    					
 				    					NodeList geocodes = info.getElementsByTagName("geocode");
 						            	for (int g = 0; g < geocodes.getLength(); g++) {
-						            		Element geocode = (Element) geocodes.item(g);							            	
-						            		GeoEvent areaGeomMsg = parseInfoAreaGeom(null, null, geocode, identifier, infoID, areaID);
-						            		if (areaGeomMsg != null){
-						    					geoEventListener.receive( areaGeomMsg );
-								            	System.out.println("     Geocode "+ g + ": ");		
-								            	System.out.println("      " + areaGeomMsg.toString());
-						            		}
+						            		Element geocode = (Element) geocodes.item(g);	
+                                                                        
+                                                                        if(isPolygon){
+                                                                            GeoEvent areaGeomMsg = parseInfoAreaGeom(null, null, geocode, identifier, infoID, areaID);
+                                                                            if (areaGeomMsg != null){
+                                                                                            geoEventListener.receive( areaGeomMsg );
+                                                                                    System.out.println("     Geocode "+ g + ": ");		
+                                                                                    System.out.println("      " + areaGeomMsg.toString());
+                                                                            }
+                                                                        }else{
+                                                                            //no polygon data, so begin point logic instead
+                                                                            GeoEvent pointGeomMsg = parseInfoPointGeom(geocode, identifier, infoID, areaID);
+                                                                            if (pointGeomMsg != null){
+                                                                                            geoEventListener.receive( pointGeomMsg );
+                                                                                            LOG.debug(pointGeomMsg.getGeometry());
+                                                                                    System.out.println("     Geocode "+ g + ": ");		
+                                                                                    System.out.println("      " + pointGeomMsg.toString());
+                                                                            }
+                                                                        }
 						            	}
 				            		}		            		
 				            	}			    				
@@ -680,12 +705,14 @@ public class CAPInboundAdapter extends InboundAdapterBase
 		}		
 		return msg;
 	}
-	private GeoEvent parseInfoAreaGeom(Element polygon, Element circle, Element geocode, String identifier, String infoID, String areaID)
+        
+        private GeoEvent parseInfoAreaGeom(Element polygon, Element circle, Element geocode, String identifier, String infoID, String areaID)
 	{
 		GeoEvent msg;
 		try
 		{
 			msg = geoEventCreator.create(((AdapterDefinition)definition).getGeoEventDefinition("CAPInfoAreaGeom").getGuid()); 
+                        
 			Integer len = identifier.length();
 			try{msg.setField(0, identifier);}catch(Exception ex){LOG.debug("Failed to set 'identifier': " + identifier);}
             try{msg.setField(1, infoID);}catch(Exception ex){LOG.debug("Failed to set 'infoID': " + infoID);}
@@ -813,7 +840,7 @@ public class CAPInboundAdapter extends InboundAdapterBase
             	}
             	catch(Exception ex)
             	{
-            		LOG.debug("Failed to set 'Geocode Name': " + strValue);
+            		LOG.debug("Area/ Failed to set 'Geocode Name': " + strValue);
             	}
             	
             	tagName = "value";
@@ -826,8 +853,240 @@ public class CAPInboundAdapter extends InboundAdapterBase
             	}
             	catch(Exception ex)
             	{
-            		LOG.debug("Failed to set 'Geocode Value': " + strValue);
+            		LOG.debug("Area/ Failed to set 'Geocode Value': " + strValue);
             	}
+            }
+
+		}
+		catch (MessagingException e)
+		{
+			return null;
+		}		
+		return msg;
+	}
+	
+        
+	private GeoEvent parseInfoPointGeom(Element geocode, String identifier, String infoID, String areaID)
+	{
+		GeoEvent msg;
+		try
+		{
+			msg = geoEventCreator.create(((AdapterDefinition)definition).getGeoEventDefinition("CAPInfoPointGeom").getGuid()); 
+			Integer len = identifier.length();
+			try{msg.setField(0, identifier);}catch(Exception ex){LOG.debug("Failed to set 'identifier': " + identifier);}
+            try{msg.setField(1, infoID);}catch(Exception ex){LOG.debug("Failed to set 'infoID': " + infoID);}
+            try{msg.setField(2, areaID);}catch(Exception ex){LOG.debug("Failed to set 'areaID': " + areaID);}
+            SpatialReference sr = SpatialReference.create(4326);
+            String tagName;
+            NodeList nodeList;
+            Element line;
+            String strValue = "";
+        
+//            if (polygon != null){
+//            	tagName = "polygon";
+//            	
+//            	try{strValue = getCharacterDataFromElement(polygon);
+//            	msg.setField(3, strValue);}catch(Exception ex){
+//            		LOG.debug("Failed to set '" + tagName + "': " + strValue);
+//            		}
+//            	
+//            	String[] coords = strValue.split(" ");
+//            	if (coords.length >= 4 )
+//            	{
+//            		String firstCoordPair = coords[0].trim();
+//            		String lastCoordPair = coords[coords.length - 1].trim();
+//            		boolean firstAndLastCoordsAreEqual = firstCoordPair.equals(lastCoordPair);
+//            		if (!firstAndLastCoordsAreEqual) {
+//            			System.out.println("      Invalid coordinate list.");
+//            			System.out.println("      The first (" + firstCoordPair + ") and last (" + lastCoordPair + ") coordinate pairs are not identical.");
+//            			//return null;
+//            		}
+//            			
+//            		try
+//            		{
+//            			
+//            			com.esri.core.geometry.Polygon capPoly = new com.esri.core.geometry.Polygon();
+//            			Boolean first = true;
+//            			for(String pair: coords)
+//            			{
+//            				String[] xyArr = pair.split(",");
+//            				Double y = Double.parseDouble(xyArr[0].trim());
+//            				Double x = Double.parseDouble(xyArr[1].trim());
+//            				if (Double.isNaN(y) | y == 0)
+//								continue;
+//							if (Double.isNaN(x) | x == 0)
+//								continue;
+//							Point p = new Point(x, y);
+//							
+//            				//com.esri.core.geometry.Point p = GeometryEngine.project(x, y, sr);
+//            				if(first)
+//            				{
+//            					capPoly.startPath(p);
+//            					first=false;
+//            				}
+//            				else
+//            				{
+//            					capPoly.lineTo(p);
+//            				}
+//            			}
+//            			capPoly.closeAllPaths();
+//            			Geometry simple = GeometryEngine.simplify(capPoly, sr);
+//            			MapGeometry mapGeo = new MapGeometry(simple, sr);
+//            			
+//            			msg.setGeometry(mapGeo);
+//            			
+//            		}
+//            		catch(Exception ex)
+//            		{
+//            			LOG.debug("Failed to set polygon");
+//            		}
+//            	}          	
+//            }    
+//            
+//            if (circle != null)
+//            {
+//            	tagName = "circle";
+//            	try
+//            	{
+//            		strValue = getCharacterDataFromElement(circle);
+//                	msg.setField(4, strValue);}
+//            	catch(Exception ex)
+//            	{
+//            		LOG.debug("Failed to set '" + tagName + "': " + strValue);
+//            	}
+//
+//            	String coordPair = "";
+//            	String radString = "";
+//            	try
+//            	{
+//            		String[] coords = strValue.split(" ");
+//            		coordPair = coords[0];
+//            		String[] xAndY = coordPair.split(",");
+//            		Double y = Double.parseDouble(xAndY[0]);
+//            		Double x = Double.parseDouble(xAndY[1]);
+//
+//            		radString= coords[1];
+//            		Double radius = Double.parseDouble(radString);
+//            		if (radius == null | radius <= 0) {
+//            			System.out.println("      Invalid radius. Radius is "+ radius.toString() + ". It must be non-null and > 0. Setting radius at 0.1.");
+//            			//return null;
+//            			radius = 0.1;
+//            		}
+//            		Geometry pointBuffer = buffer(x,y,radius);
+//            		MapGeometry mapGeo = new MapGeometry(pointBuffer, sr);
+//            		msg.setField(7, mapGeo);
+//        			System.out.println("");
+//        			System.out.println("      Set a circle geometry for " + areaID + ".");
+//        			System.out.println("");
+//            	}
+//            	catch(Exception ex)
+//            	{
+//            		LOG.debug("Failed to set circle");
+//            		System.out.println("     Error parsing coordinates ("+ coordPair + ") or radius ("+ radString + ").");
+//            		return null;
+//            	}
+//            }
+                
+            
+            if (geocode != null){
+            	tagName = "valueName";
+            	nodeList = geocode.getElementsByTagName(tagName);
+            	line = (Element) nodeList.item(0);
+                
+                boolean isSAME = false;
+                
+            	try
+            	{
+            		strValue = getCharacterDataFromElement(line);
+            		msg.setField(5, strValue);
+                        
+                        
+                        if(strValue.trim().equals("SAME")){
+                            isSAME = true;
+                        }
+            	}
+            	catch(Exception ex)
+            	{
+            		LOG.debug("Point/ Failed to set 'Geocode Name': " + strValue);
+            	}
+                
+            	tagName = "value";
+            	nodeList = geocode.getElementsByTagName(tagName);
+            	line = (Element) nodeList.item(0);
+                
+                String csvFile = "/2015_Gaz_counties_national.csv";
+                InputStreamReader isr = null;
+                BufferedReader br = null;
+                String fileLine = "";
+                String cvsSplitBy = ",";
+                int SAMEIndex = 1;
+                int latIndex = 4;
+                int longIndex = 5;
+                com.esri.core.geometry.Point capPoint = null;
+                
+            	try
+            	{
+            		strValue = getCharacterDataFromElement(line);
+            		msg.setField(6, strValue);
+                        
+                        
+                        if((isSAME)){  
+                            LOG.debug(strValue);
+                            
+                            isr = new InputStreamReader(getClass().getResourceAsStream(csvFile));
+                            
+                            br = new BufferedReader(isr);
+                            
+                            
+                            while ((fileLine = br.readLine()) != null) {
+
+                                    // use comma as separator
+                                    String[] county = fileLine.split(cvsSplitBy);
+                                    
+                                    if(Integer.parseInt(county[SAMEIndex].trim()) == Integer.parseInt(strValue.trim())){
+                                        //we've reached the correct county line, retrieve the lat and long
+                                        double latitude = Double.parseDouble(county[latIndex].trim());
+                                        double longitude = Double.parseDouble(county[longIndex].trim());
+                                        
+                                        //use it to set point coordinates
+                                        capPoint = new com.esri.core.geometry.Point(longitude,latitude);
+                                        if (capPoint != null){
+                                            
+                                            MapGeometry mapGeo = new MapGeometry(capPoint, sr);
+
+                                            msg.setField(7, mapGeo);
+                                            msg.setGeometry(mapGeo);
+                                            
+                                        }
+                                        
+                                    }
+
+                            } 
+                            
+//                            if (capPoint != null){
+//                                LOG.debug(capPoint.getX());
+//                                LOG.debug(capPoint.getY());
+//            			MapGeometry mapGeo = new MapGeometry(capPoint, sr);
+//            			
+//            			msg.setGeometry(mapGeo);
+//                                msg.setField(7, mapGeo);
+//                            }
+                        }
+            	}
+            	catch(Exception ex)
+            	{
+            		LOG.debug("Point/ Failed to set 'Geocode Value': " + strValue);
+                        LOG.debug(ex);
+            	}
+                finally {
+                        if (br != null) {
+                                try {
+                                        br.close();
+                                } catch (IOException e) {
+                                        e.printStackTrace();
+                                }
+                        }
+                }
             }
 
 		}
