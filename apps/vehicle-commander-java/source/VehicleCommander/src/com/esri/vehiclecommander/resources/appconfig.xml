@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appconfig>
+	<user name="Vehicle Commander" type="HMMWV">
+		<code>SFGPEVATM-EDUSG</code>
+	</user>
+	<messaging>
+		<port>45678</port>
+		<positionmessageinterval>3000</positionmessageinterval>
+		<vehiclestatusmessageinterval>30000</vehiclestatusmessageinterval>
+	</messaging>
+	<!-- gps attributes:
+	       type: "simulated" or "onboard"
+		   gpx: filename of a GPX file
+		   speedMultiplier: multiplier for simulated GPS speed
+		 If you use type="simulated" with no gpx, or if you omit the
+		 type or gpx tag altogether, the application will
+		 use a built-in GPX file over Jalalabad, Afghanistan.
+	-->
+	<!-- gps type="simulated" speedMultiplier="1" /-->
+</appconfig>

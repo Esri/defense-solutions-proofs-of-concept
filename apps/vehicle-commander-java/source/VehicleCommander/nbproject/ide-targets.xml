@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir=".." name="VehicleCommander-IDE">
+    <import file="../build.xml"/>
+    <!-- TODO: edit the following target according to your needs -->
+    <!-- (more info: http://www.netbeans.org/kb/articles/freeform-config.html#debugj2se) -->
+    <target name="debug-nb" depends="set_variables">
+        <property name="debug" value="true" />
+        <antcall target="jar" />
+        <nbjpdastart addressproperty="jpda.address" name="VehicleCommander" transport="dt_socket">
+            <classpath refid="project.classpath"/>
+        </nbjpdastart>
+        <java classname="com.esri.vehiclecommander.view.VehicleCommanderJFrame" failonerror="true" fork="true">
+            <classpath refid="project.classpath"/>
+            <jvmarg value="-Xdebug"/>
+            <jvmarg value="-Xrunjdwp:transport=dt_socket,address=${jpda.address}"/>
+        </java>
+    </target>
+</project>
