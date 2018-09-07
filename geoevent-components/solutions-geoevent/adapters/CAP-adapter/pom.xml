@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.esri.geoevent.solutions.adapter.cap</groupId>
-	<version>10.5.0</version>
+	<version>10.6.0</version>
 	<packaging>bundle</packaging>
 	<artifactId>cap-adapter</artifactId>
 	<name>Esri :: AGES :: Solutions :: Adapter :: CAP Adapter</name>
@@ -29,7 +29,7 @@
 		<dependency>
 			<groupId>com.esri.geoevent.sdk</groupId>
 			<artifactId>geoevent-sdk</artifactId>
-			<version>10.5.0</version>
+			<version>10.6.0</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -40,7 +40,7 @@
 		<dependency>
    			<groupId>com.esri.geometry</groupId>
    			<artifactId>geometry-api</artifactId>
-   			<version>10.5.0</version>
+   			<version>10.6.0</version>
 		</dependency>
 	</dependencies>
 	<build>
