@@ -19,88 +19,106 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.esri.ges.core.component.ComponentException;
 import com.esri.ges.core.geoevent.GeoEvent;
 import com.esri.ges.core.property.Property;
+import com.esri.ges.framework.i18n.BundleLogger;
+import com.esri.ges.framework.i18n.BundleLoggerFactory;
 import com.esri.ges.processor.GeoEventProcessorBase;
 import com.esri.ges.processor.GeoEventProcessorDefinition;
 
 public class UpdateOnlyProcessor extends GeoEventProcessorBase
 {
-	// This class attempts to reduce the volume of output geoevents by filtering out events that have no updates
-	// (i.e. the TIME_START tagged field is no later than last time a TRACK_ID was processed)
-	// Use of this processor requires that incoming geoevent definitions has TRACK_ID and TIME_START tags applied to their fields
-	
-	protected static String CLEAR_CACHE_PROPERTY_NAME = "ClearCache";
-	private static final Log LOG = LogFactory.getLog(UpdateOnlyProcessor.class);
-	private Map<String, Date> trackCache = new HashMap<String, Date>();
+  private static final BundleLogger LOGGER     = BundleLoggerFactory.getLogger(UpdateOnlyProcessor.class);
 
-	protected UpdateOnlyProcessor(GeoEventProcessorDefinition definition) throws ComponentException
-	{
-		super(definition);
-	}
+  // This class attempts to reduce the volume of output geoevents by filtering out events that have no updates
+  // (i.e. the TIME_START tagged field is no later than last time a TRACK_ID was processed)
+  // Use of this processor requires that incoming geoevent definitions has TRACK_ID and TIME_START tags applied to their
+  // fields
 
-	@Override
-	public GeoEvent process(GeoEvent geoEvent) throws Exception
-	{
-		String trackID = geoEvent.getTrackId();
-		Date startTime = geoEvent.getStartTime();
-		if (trackCache.containsKey(trackID))
-		{
-			Date lastTime = trackCache.get(trackID);
-			// Filter out any tracks that haven't been updated since last time
-			if (!startTime.after(lastTime))
-			{
-				LOG.trace("UpdateOnlyProcessor ignoring track as nothing new since last time: " + trackID + " : " + startTime.toString());
-				return null;
-			}
-			LOG.trace("UpdateOnlyProcessor is handling new data for track " + trackID + " : " + startTime.toString() + " is more recent than " + lastTime.toString());
-		}
-		else
-		{
-			LOG.trace("UpdateOnlyProcessor is handling a new track: " + trackID + " : " + startTime.toString());
-		}
-		// If we've reached here, then either there's an update to a track in the cache, or there's a new track, so record it in the cache
-		trackCache.put(trackID,  startTime);
-		//... and allow the geoEvent through
-		return geoEvent;
-	}
-	
-	@Override
-	public void afterPropertiesSet()
-	{
-		// If a user sets the "Clear Cache" property, then clear it, and un-set the property again
-		// Users might want to clear the cache when another element later in the process chain has broken, or the outbound connector failed,
-		// ... as this could mean the cache has a record of updates that never reached their final destination
-		Boolean propValue = (Boolean)getProperty(CLEAR_CACHE_PROPERTY_NAME).getValue();
-		if (propValue)
-		{
-			trackCache.clear();
-			LOG.info("UpdateOnlyProcessor cache was cleared by user setting the Clear Cache property. Resetting to false...");
-			getProperty(CLEAR_CACHE_PROPERTY_NAME).setValue(false);
-		}
-		super.afterPropertiesSet();
-	}
+  private Map<String, Date>         trackCache = new HashMap<String, Date>();
 
-	@Override
-	public String toString()
-	{
-		StringBuffer sb = new StringBuffer();
-		sb.append(definition.getName());
-		sb.append("/");
-		sb.append(definition.getVersion());
-		sb.append("[");
-		for (Property p : getProperties())
-		{
-			sb.append(p.getDefinition().getPropertyName());
-			sb.append(":");
-			sb.append(p.getValue());
-			sb.append(" ");
-		}
-		sb.append("]");
-		return sb.toString();
-	}
+  protected UpdateOnlyProcessor(GeoEventProcessorDefinition definition) throws ComponentException
+  {
+    super(definition);
+    LOGGER.trace("Constructed UpdatesOnly Processor: {0}", this);
+  }
+
+  @Override
+  public GeoEvent process(GeoEvent geoEvent) throws Exception
+  {
+    if (geoEvent != null)
+    {
+      String trackID = geoEvent.getTrackId();
+      Date startTime = geoEvent.getStartTime();
+      if (trackID != null && startTime != null)
+      {
+        if (trackCache.containsKey(trackID))
+        {
+          Date lastTime = trackCache.get(trackID);
+          // Filter out any tracks that haven't been updated since last time
+          if (!startTime.after(lastTime))
+          {
+            LOGGER.trace("UpdateOnlyProcessor ignoring track as nothing new since last time {0}: {1}", trackID, startTime);
+            return null;
+          }
+          LOGGER.trace("UpdateOnlyProcessor is handling new data for track {0}: {1}", trackID, startTime.toString() + " is more recent than " + lastTime);
+        }
+        else
+        {
+          LOGGER.trace("UpdateOnlyProcessor is handling a new track {0}: {1}", trackID, startTime);
+        }
+        // Either there's an update to a track in the cache, or there's a new track, record it in the cache
+        trackCache.put(trackID, startTime);
+        // ... and allow the geoEvent through
+      }
+      else if (LOGGER.isInfoEnabled())
+      {
+        LOGGER.info("Event TRACK_ID={0} and TIME_START={1}. Check that the GeoEvent Defintion {2} has tags for TRACK_ID and TIME_START set: {3}", trackID, startTime, geoEvent.getGeoEventDefinition().getName(), geoEvent);
+      }
+    }
+    else
+    {
+      LOGGER.trace("Event is NULL, nothing to process.");
+    }
+    return geoEvent;
+
+  }
+
+  @Override
+  public void afterPropertiesSet()
+  {
+    // If a user sets the "Clear Cache" property, then clear it, and un-set the property again
+    // Users might want to clear the cache when another element later in the process chain has broken, or the outbound
+    // connector failed,
+    // ... as this could mean the cache has a record of updates that never reached their final destination
+    Boolean propValue = (Boolean) getProperty(UpdateOnlyProcessorDefinition.CLEAR_CACHE_PROPERTY).getValue();
+    if (propValue)
+    {
+      trackCache.clear();
+      LOGGER.info("UpdateOnlyProcessor cache was cleared by user setting the Clear Cache property. Resetting to false: {0}", this);
+      getProperty(UpdateOnlyProcessorDefinition.CLEAR_CACHE_PROPERTY).setValue(false);
+    }
+    super.afterPropertiesSet();
+    LOGGER.debug("UpdateOnlyProcessor after properties set: {0}", this);
+  }
+
+  @Override
+  public String toString()
+  {
+    StringBuffer sb = new StringBuffer();
+    sb.append(definition.getName());
+    sb.append("/");
+    sb.append(definition.getVersion());
+    sb.append("[");
+    for (Property p : getProperties())
+    {
+      sb.append(p.getDefinition().getPropertyName());
+      sb.append(":");
+      sb.append(p.getValue());
+      sb.append(" ");
+    }
+    sb.append("]");
+    return sb.toString();
+  }
 }
