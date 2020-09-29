@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="@string/pref_angularUnits"
+        android:title="@string/pref_angularUnits"
+        android:dialogTitle="@string/pref_angularUnits"
+        android:entries="@array/pref_angularUnits_entries"
+        android:entryValues="@array/pref_angularUnits_values"
+        android:defaultValue="@string/wkid_degrees" />
+    <EditTextPreference
+        android:key="@string/pref_viewshedObserverHeight"
+        android:title="@string/pref_viewshedObserverHeight"
+        android:summary="@string/pref_viewshedObserverHeight_summary"
+        android:inputType="number"
+        android:defaultValue="2" />
+    <EditTextPreference
+        android:key="@string/pref_username"
+        android:title="@string/pref_username"
+        android:defaultValue="Squad Leader" />
+    <EditTextPreference
+        android:key="@string/pref_vehicleType"
+        android:title="@string/pref_vehicleType"
+        android:defaultValue="Dismounted" />
+    <EditTextPreference
+        android:key="@string/pref_uniqueId"
+        android:title="@string/pref_uniqueId" />
+    <EditTextPreference
+        android:key="@string/pref_sic"
+        android:title="@string/pref_sic"
+        android:defaultValue="@string/pref_sicDefault" />
+    <CheckBoxPreference
+        android:key="@string/pref_positionReports"
+        android:title="@string/pref_positionReports"
+        android:summary="@string/pref_positionReports_summary" />
+    <EditTextPreference
+        android:key="@string/pref_positionReportPeriod"
+        android:title="@string/pref_positionReportPeriod"
+        android:inputType="number"
+        android:defaultValue="1000" />
+    <EditTextPreference
+        android:key="@string/pref_messagePort"
+        android:title="@string/pref_messagePort"
+        android:inputType="number"
+        android:defaultValue="45678" />
+    <Preference 
+        android:key="@string/pref_resetApp"
+        android:title="@string/pref_resetApp"
+        android:summary="@string/pref_resetApp_summary" />
+</PreferenceScreen>

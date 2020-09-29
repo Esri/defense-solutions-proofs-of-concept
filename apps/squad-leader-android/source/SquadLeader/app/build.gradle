@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 26
+    buildToolsVersion '25.0.3'
+    compileOptions.encoding = 'ISO-8859-1'
+
+    dataBinding {
+        enabled = true
+    }
+
+    defaultConfig {
+        applicationId "com.esri.squadleader"
+        minSdkVersion 15
+        targetSdkVersion 26
+
+        renderscriptTargetApi 18
+        renderscriptSupportModeEnabled true
+
+        testApplicationId "com.esri.squadleader.test"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+    }
+
+    lintOptions {
+        abortOnError false
+        disable 'MissingTranslation'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'LICENSE.txt'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    dependencies {
+        compile 'com.esri.arcgis.android:arcgis-android:10.2.9'
+        androidTestCompile 'junit:junit-dep:4.10'
+    }
+
+    sourceSets {
+        main.java.srcDirs += '../../military-apps-library-java/source/MilitaryAppsLibrary/src'
+        main.resources.srcDirs += '../../military-apps-library-java/source/MilitaryAppsLibrary/src'
+    }
+}
+
+dependencies {
+    compile project(':aFileChooser')
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="?android:attr/buttonBarStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+    
+    <Button
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:tag="-65536"
+        android:layout_margin="2.5dp"
+        android:background="@drawable/selector_chemlights_red"
+        android:textOn=""
+        android:textOff=""
+        android:contentDescription="@string/chemlight_red"
+        android:onClick="chemLightColorChangeClicked"/>
+    <Button
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:tag="-256"
+        android:layout_margin="2.5dp"
+        android:background="@drawable/selector_chemlights_yellow"
+        android:textOn=""
+        android:textOff=""
+        android:contentDescription="@string/chemlight_yellow"
+        android:onClick="chemLightColorChangeClicked"/>
+    <Button
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:tag="-16711936"
+        android:layout_margin="2.5dp"
+        android:background="@drawable/selector_chemlights_green"
+        android:textOn=""
+        android:textOff=""
+        android:contentDescription="@string/chemlight_green"
+        android:onClick="chemLightColorChangeClicked"/>
+    <Button
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:tag="-16776961"
+        android:layout_margin="2.5dp"
+        android:background="@drawable/selector_chemlights_blue"
+        android:textOn=""
+        android:textOff=""
+        android:contentDescription="@string/chemlight_blue"
+        android:onClick="chemLightColorChangeClicked"/>
+    <Button
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="2.5dp"
+        android:background="@android:drawable/ic_menu_delete"
+        android:textOn=""
+        android:textOff=""
+        android:contentDescription="@string/remove"
+        android:onClick="chemLightRemoveClicked"/>
+    
+</LinearLayout>

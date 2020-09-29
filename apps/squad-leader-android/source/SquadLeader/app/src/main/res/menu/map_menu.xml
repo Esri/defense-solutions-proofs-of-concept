@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/add_layer"
+        android:icon="@drawable/ic_add_content"
+        android:title="@string/add_layer"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/add_feature"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="@string/add_feature"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/clear_messages"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="@string/clear_messages"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/go_to_mgrs"
+        android:icon="@drawable/ic_action_place"
+        android:title="@string/go_to_mgrs"
+        app:showAsAction="ifRoom" />
+    <!--  TODO toggling labels won't work because of NIM102986. When that is fixed, make this menu item visible
+               and also uncomment the contents of AdvancedSymbolController.toggleLabels and test. -->
+    <item android:id="@+id/toggle_labels"
+        android:visible="false"
+        android:icon="@drawable/ic_action_labels"
+        android:title="@string/toggle_labels"
+        android:checkable="true"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/set_location_mode" android:title="@string/set_location_mode" />
+    <item android:id="@+id/settings" android:title="@string/settings" />
+</menu>

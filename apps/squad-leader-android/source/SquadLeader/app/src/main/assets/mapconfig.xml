@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig name="test map">
+    <!--
+    The application reads the layers top to bottom and adds each to the top of the map. That means
+    the layer you want on top should be listed last, and the layer you want on the bottom should
+    be listed first.
+
+    Each layer tag can have one of the following types. Next to each type is a description
+    of what should be the value of the child datasetpath element.
+
+    - TiledCacheLayer: file:/// URL to the map cache (the directory that contains conf.xml) or a tile package (TPK).
+                       On Android, this must be a file URL (e.g. file:///mnt/sdcard/path/to/tilepack.tpk).
+    - TiledMapServiceLayer: URL of a cached map service
+    - LocalDynamicMapLayer: filename of a map package (MPK) (relative or absolute)
+    - DynamicMapServiceLayer: URL of a dynamic map service
+    - FeatureServiceLayer: URL of a feature service, or the URL of an individual layer in a feature service
+    - ImageServiceLayer: URL of an image service
+    - Shapefile: file:/// URL to a shapefile. Make sure the .shp, .shx, and .dbf files (at least) are
+                       on the device.
+    - GeoPackage: file:/// URL to an OGC GeoPackage
+
+    Each layer element has a basemap property that can be set to true or false. If absent, the
+    default is false. Basemap layers display only one at a time, so set only one basemap layer
+    to visible="true". Non-basemap layers can be turned on and off individually in the application.
+	
+	Basemap layers can have a "thumbnail" attribute whose value is the name of an image file (PNG, JPG, or GIF).
+	That image will be used in the application's basemap selection panel.
+
+    Note that ideally, basemap layers should be of type TiledCacheLayer or TiledMapServiceLayer. You can use a dynamic
+    map as a basemap layer, but it will not render unless the map is not moving.
+    -->
+    <layers>
+        <!--layer name="Topographic" visible="true" type="TiledCacheLayer" basemap="true">
+            <datasetpath>file:///mnt/sdcard/path/to/tilepack.tpk</datasetpath>
+        </layer-->
+        <layer name="Imagery" visible="false" type="TiledMapServiceLayer" basemap="true">
+            <url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer</url>
+        </layer>
+        <layer name="Streets" visible="false" type="TiledMapServiceLayer" basemap="true">
+            <url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer</url>
+        </layer>
+        <layer name="Topographic" visible="true" type="TiledMapServiceLayer" basemap="true">
+            <url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer</url>
+        </layer>
+        <layer name="Shaded Relief" visible="false" type="TiledMapServiceLayer" basemap="true">
+            <url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer</url>
+        </layer>
+        <layer name="Physical" visible="false" type="TiledMapServiceLayer" basemap="true">
+            <url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer</url>
+        </layer>
+        <layer name="Terrain" visible="false" type="TiledMapServiceLayer" basemap="true">
+            <url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer</url>
+        </layer>
+        <layer name="USGS Topo" visible="false" type="TiledMapServiceLayer" basemap="true">
+            <url>http://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer</url>
+        </layer>
+        <layer name="Oceans" visible="false" type="TiledMapServiceLayer" basemap="true">
+            <url>http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer</url>
+        </layer>
+        <layer name="Light Gray Canvas" visible="false" type="TiledMapServiceLayer" basemap="true">
+            <url>http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer</url>
+        </layer>
+        <layer name="National Geographic" visible="false" type="TiledMapServiceLayer" basemap="true">
+            <url>http://services.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer</url>
+        </layer>
+        <!--layer name="Bihsud Bridge and Environs" visible="true" type="LocalDynamicMapLayer" basemap="false">
+            <datasetpath>/mnt/sdcard/MapPackage.mpk</datasetpath>
+        </layer> -->
+        <layer name="COA Sketch" visible="true" type="Mil2525CMessageLayer" basemap="false">
+            <datasetpath>/mnt/sdcard/data/coa.xml</datasetpath>
+        </layer>
+        <!--<layer name="GeoPackage Layer" visible="true" type="GeoPackage" basemap="false" showvectors="true" showrasters="true">-->
+            <!--<datasetpath>/mnt/sdcard/data/my_geopackage.gpkg</datasetpath>-->
+        <!--</layer>-->
+        <!--<layer name="Blank Shapefile for GPKG" visible="false" type="Shapefile" basemap="false">-->
+            <!--<datasetpath>/mnt/sdcard/data/blank_point_3857.shp</datasetpath>-->
+        <!--</layer>-->
+        <!--<layer name="GPKG01" visible="true" type="GeoPackage" basemap="false" showvectors="true">-->
+            <!--<datasetpath>/mnt/sdcard/data/Example GPKGs/GPKG01.gpkg</datasetpath>-->
+        <!--</layer>-->
+        <!--<layer name="GPKG01" visible="true" type="GeoPackage" basemap="false" showrasters="true">-->
+            <!--<datasetpath>/mnt/sdcard/data/Example GPKGs/GPKG01.gpkg</datasetpath>-->
+        <!--</layer>-->
+    </layers>
+    <initialextent>
+        <anchor>
+            <x>-13570000</x>
+            <y>4383000</y>
+        </anchor>
+        <scale>72224</scale>
+        <rotation>0</rotation>
+    </initialextent>
+    <viewshed>
+        <elevation>/mnt/sdcard/data/monterey_srtm_1arc_v3_webmercator.tif</elevation>
+        <observerheight>2.0</observerheight>
+    </viewshed>
+    <extensions>
+        <!--
+        A toolbar item is a JButton, a ToolbarToggleButton, or an instance
+        of a child class of either of those.
+        -->
+        <!--toolbaritem class="javax.swing.JButton" icon="icon-Normal.png" pressedicon="icon-Pressed.png" /-->
+        <!--toolbaritem class="mypackage.MyWidgetButton"
+                jar="C:\bin\GroundGuidanceExtension.jar" /-->
+    </extensions>
+</mapconfig>

@@ -1,0 +1,9 @@
+.gradle
+local.properties
+.idea/encodings.xml
+.idea/misc.xml
+.idea/workspace.xml
+.idea/libraries
+.DS_Store
+app/app.iml
+build
