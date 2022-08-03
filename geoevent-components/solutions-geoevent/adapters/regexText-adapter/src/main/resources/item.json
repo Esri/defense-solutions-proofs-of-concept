@@ -1,0 +1,26 @@
+[
+	{
+		"Parent-groupId": "${parent.groupId}",
+		"Parent-artifactId": "${parent.artifactId}",
+		"Parent-SymbolicName": "${parent.groupId}.${parent.artifactId}",
+		"Parent-ID": "${parent.id}",
+		
+		"Bundle-groupId": "${groupId}",
+		"Bundle-artifactId": "${artifactId}",
+		"Bundle-SymbolicName": "${groupId}.${artifactId}",
+		"Bundle-URI": "${groupId}/${artifactId}/${project.version}",
+		"Bundle-FileName": "${project.name}-${project.version}.jar",
+		"Bundle-Version": "${project.version}.${project.release}",
+		
+		"SDK-Version": "${project.version}",
+		"Compatibility-min": "${project.version}",
+		"Compatibility-max": null,
+		"Release": "${project.release}",
+		
+		"Release-FileName": "GeoEventServer-${parent.artifactId}-${project.release}.zip",
+		"Release-URL": "${project.organization.url}",
+		"Release-Base-URL": "/gallery/${parent.artifactId}/",
+		"Release-History-URL": "/gallery/${parent.artifactId}/Release History.pdf",
+		"Release-Documentation-URL": "/gallery/${parent.artifactId}/Geotab Connector for GeoEvent Server.pdf"
+	}
+]
