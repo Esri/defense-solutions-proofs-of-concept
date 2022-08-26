@@ -5,10 +5,10 @@
 		"Parent-SymbolicName": "${parent.groupId}.${parent.artifactId}",
 		"Parent-ID": "${parent.id}",
 		
-		"Bundle-groupId": "${groupId}",
-		"Bundle-artifactId": "${artifactId}",
-		"Bundle-SymbolicName": "${groupId}.${artifactId}",
-		"Bundle-URI": "${groupId}/${artifactId}/${project.version}",
+		"Bundle-groupId": "${project.groupId}",
+		"Bundle-artifactId": "${project.artifactId}",
+		"Bundle-SymbolicName": "${project.groupId}.${project.artifactId}",
+		"Bundle-URI": "${project.groupId}/${project.artifactId}/${project.version}",
 		"Bundle-FileName": "${project.artifactId}-${project.version}.jar",
 		"Bundle-Version": "${project.version}.${project.release}",
 		
