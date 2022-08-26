@@ -10,13 +10,13 @@
 		<artifactId>regexText-adapter</artifactId>
 		<name>Regular Expression Text Adaptor</name>
 		<description>Regex Text Adapter that allows lines to be ignored and for a line of headings to be used as GeoEvent Definition field names</description>
-		<url>https://esri.com</url>
+		<url>https://www.arcgis.com/home/item.html?id=${parent.id}</url>
 		<organization>
 				<name>Esri, inc</name>
-				<url>https://www.arcgis.com/home/item.html?id=8a8fda6c78b8447da252b24954f651ca</url>
+				<url>https://www.esri.com</url>
 		</organization>
 		<properties>
-				<project.release>1</project.release>
+				<project.release>2</project.release>
 				<parent.id>8a8fda6c78b8447da252b24954f651ca</parent.id>
 				<parent.groupId>com.esri.geoevent</parent.groupId>
 				<parent.artifactId>regexText</parent.artifactId>
