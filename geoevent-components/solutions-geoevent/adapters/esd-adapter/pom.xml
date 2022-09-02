@@ -8,15 +8,11 @@
   <packaging>bundle</packaging>
   <artifactId>esd-adapter</artifactId>
   <name>Esri :: AGES :: Solutions :: Adapter :: Esd</name>
-  <url>https://www.arcgis.com/home/item.html?id=${parent.id}</url>
   <organization>
     <name>Esri</name>
     <url>https://www.esri.com</url>
   </organization>
   <properties>
-    <parent.id>[ArcGIS Online Gallery ID]</parent.id>
-    <parent.groupId>com.esri.geoevent</parent.groupId>
-    <parent.artifactId>esd-adapter</parent.artifactId>
     <contact.address>geoevent@esri.com</contact.address>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.bundle.plugin.version>2.3.6</maven.bundle.plugin.version>
@@ -97,8 +93,6 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <AGES-Gallery>TRUE</AGES-Gallery>
-            <AGES-Release>${project.release}</AGES-Release>
             <Bundle-Version>${project.version}.${project.release}
             </Bundle-Version>
             <Bundle-SymbolicName>${project.groupId}.${project.artifactId}
