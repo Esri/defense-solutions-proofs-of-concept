@@ -110,8 +110,6 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <Bundle-Version>${project.version}.${project.release}
-            </Bundle-Version>
             <Bundle-SymbolicName>${project.groupId}.${project.artifactId}
             </Bundle-SymbolicName>
             <Bundle-ContactAddress>cbailey@esri.com</Bundle-ContactAddress>
