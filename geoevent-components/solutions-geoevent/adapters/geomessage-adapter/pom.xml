@@ -7,7 +7,7 @@
   <packaging>bundle</packaging>
   <artifactId>geomessage-adapter</artifactId>
   <name>Esri :: AGES :: Solutions :: Adapter :: GeoMessage</name>
-  <url>https://www.arcgis.com/home/item.html?id=${parent.id}</url>
+  <url>https://www.arcgis.com/home/item.html?id=${gallery.itemId}</url>
   <organization>
     <name>Esri</name>
     <url>https://www.esri.com</url>
@@ -15,7 +15,9 @@
   <properties>
     <project.release>2</project.release>
     <revision>10.6.0</revision>
-    <parent.id>cd3ce7a01fdc46a48aa199bfd091dd50</parent.id>
+    <gallery.itemId>cd3ce7a01fdc46a48aa199bfd091dd50</gallery.itemId>
+    <release.itemId>To Be Replaced</release.itemId>
+    <compatibility.min>${project.version}</compatibility.min>
     <parent.groupId>com.esri.geoevent</parent.groupId>
     <parent.artifactId>GeoMessage</parent.artifactId>
     <project.build.properties.encoding>ISO-8859-1

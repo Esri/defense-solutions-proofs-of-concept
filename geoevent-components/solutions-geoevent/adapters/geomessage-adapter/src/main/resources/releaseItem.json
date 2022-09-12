@@ -1,0 +1,17 @@
+{
+	"name": "${parent.artifactId}",
+	"galleryItemId": "${gallery.itemId}",
+	"galleryItemUrl": "https://www.arcgis.com/home/item.html?id=${gallery.itemId}",
+	"releaseItemId": "${release.itemId}",
+	"releaseItemUrl": "https://www.arcgis.com/sharing/rest/content/items/${release.itemId}/data",
+	"sdkVersion": "${project.version}",
+	"compatibilityMin": "${compatibility.min}",
+	"compatibilityMax": "",
+	"releaseNumber": ${project.release},
+	"releaseName": "Release ${project.release}",
+	"releaseFileName": "GeoEventServer-${parent.artifactId}-r${project.release}.zip",
+	"installBaseUrl": "/gallery/${parent.artifactId}/",
+	"installHistoryUrl": "/gallery/${parent.artifactId}/Release History.pdf",
+	"installDocumentationUrl": "/gallery/${parent.artifactId}/ArcGISGeoEventServer_${parent.artifactId}.pdf",
+	"components": []
+}
