@@ -1,5 +1,6 @@
 {
 	"name": "${parent.artifactId}",
+	"releaseDate": "${maven.build.timestamp}",
 	"galleryItemId": "${gallery.itemId}",
 	"galleryItemUrl": "https://www.arcgis.com/home/item.html?id=${gallery.itemId}",
 	"releaseItemId": "${release.itemId}",
