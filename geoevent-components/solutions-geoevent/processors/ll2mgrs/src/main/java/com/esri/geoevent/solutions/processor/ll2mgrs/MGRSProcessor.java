@@ -43,7 +43,6 @@ public class MGRSProcessor extends GeoEventProcessorBase
   public MGRSProcessor(GeoEventProcessorDefinition definition) throws ComponentException
   {
     super(definition);
-    // TODO Auto-generated constructor stub
   }
 
   @Override
@@ -54,7 +53,7 @@ public class MGRSProcessor extends GeoEventProcessorBase
     int wkid = mapGeo.getSpatialReference().getID();
     if (wkid != 4326)
     {
-      LOGGER.info("wkid of the Geometry field is not 4326.");
+      LOGGER.info("Cannot process event: WKID of the Geometry field is not 4326.");
       return null;
     }
     if (geo.getType() != Geometry.Type.Point)
@@ -104,7 +103,6 @@ public class MGRSProcessor extends GeoEventProcessorBase
     }
     catch (ConfigurationException e)
     {
-      // TODO Auto-generated catch block
       LOGGER.warn("Error while trying to create new field mgrs.", e);
     }
   }

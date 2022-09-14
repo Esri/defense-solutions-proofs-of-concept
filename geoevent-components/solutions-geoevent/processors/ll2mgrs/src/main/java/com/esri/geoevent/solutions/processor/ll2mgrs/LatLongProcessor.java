@@ -82,7 +82,6 @@ public class LatLongProcessor extends GeoEventProcessorBase
       }
       catch (ConfigurationException e)
       {
-        // TODO Auto-generated catch block
         LOGGER.warn("Error while trying to create new geometry field.", e);
       }
     }
@@ -138,7 +137,6 @@ public class LatLongProcessor extends GeoEventProcessorBase
         }
         catch (Exception e)
         {
-          // TODO Auto-generated catch block
           LOGGER.warn("Error while trying to create new GeoEvent definition.", e);
         }
 
