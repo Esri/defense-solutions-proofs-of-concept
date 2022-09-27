@@ -9,7 +9,7 @@ public class LatLongProcessorDefinition extends GeoEventProcessorDefinitionBase{
 	private String lblMGRS = "${com.esri.geoevent.solutions.processor.ll2mgrs.ll2mgrs-processor.LBL_MGRS}";
 	private String descMGRS= "${com.esri.geoevent.solutions.processor.ll2mgrs.ll2mgrs-processor.DESC_MGRS}";
 	private String lblGeoField = "${com.esri.geoevent.solutions.processor.ll2mgrs.ll2mgrs-processor.LBL_GEO_FLD}";
-	private String descGeoField= "${com.esri.geoevent.solutions.processor.ll2mgrs.ll2mgrs-processor.DESC_GEO_FLD}";
+	private String descGeoField= "${com.esri.geoevent.solutions.processor.ll2mgrs.ll2mgrs-processor.DESC_GEO_FLD_MGRS}";
 	private String lblNewDef = "${com.esri.geoevent.solutions.processor.ll2mgrs.ll2mgrs-processor.LBL_NEW_DEF}";
 	private String descNewDef = "${com.esri.geoevent.solutions.processor.ll2mgrs.ll2mgrs-processor.DESC_NEW_DEF}";
 	private String lblAccuracy = "${com.esri.geoevent.solutions.processor.ll2mgrs.ll2mgrs-processor.LBL_ACCURACY}";
@@ -38,7 +38,7 @@ public class LatLongProcessorDefinition extends GeoEventProcessorDefinitionBase{
 
 	@Override
 	public String getVersion() {
-		return "10.5.0";
+		return "10.6.0";
 	}
 
 	@Override
