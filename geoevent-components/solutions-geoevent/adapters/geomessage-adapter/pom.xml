@@ -16,10 +16,11 @@
     <project.release>2</project.release>
     <revision>10.6.0</revision>
     <gallery.itemId>cd3ce7a01fdc46a48aa199bfd091dd50</gallery.itemId>
-    <release.itemId>To Be Replaced</release.itemId>
+    <release.itemId>655c88b737ce4f4ea6d60e41779e441c</release.itemId>
     <compatibility.min>${project.version}</compatibility.min>
-    <parent.groupId>com.esri.geoevent</parent.groupId>
-    <parent.artifactId>GeoMessage</parent.artifactId>
+    <compatibility.max></compatibility.max>
+    <release.name>geomessage</release.name>
+    <build.time>${maven.build.timestamp}</build.time>
     <project.build.properties.encoding>ISO-8859-1
     </project.build.properties.encoding>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -115,6 +116,7 @@
             <Private-Package>com.esri.geoevent.solutions.adapter.geomessage
             </Private-Package>
           </instructions>
+          <finalName>${project.artifactId}-${project.version}</finalName>
         </configuration>
       </plugin>
     </plugins>
