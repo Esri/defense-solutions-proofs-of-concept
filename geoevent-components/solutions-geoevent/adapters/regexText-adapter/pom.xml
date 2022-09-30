@@ -12,18 +12,21 @@
   <description>Regex Text Adapter that allows lines to be ignored and for a line
     of headings to be used as GeoEvent Definition field names
   </description>
-  <url>https://esri.com</url>
+  <url>
+    https://www.arcgis.com/home/item.html?id=${gallery.itemId}
+  </url>
   <organization>
-    <name>Esri, inc</name>
+    <name>Esri</name>
     <url>
-      https://www.arcgis.com/home/item.html?id=8a8fda6c78b8447da252b24954f651ca
+      https://esri.com
     </url>
   </organization>
   <properties>
-    <project.release>1</project.release>
-    <parent.id>8a8fda6c78b8447da252b24954f651ca</parent.id>
-    <parent.groupId>com.esri.geoevent</parent.groupId>
-    <parent.artifactId>regexText</parent.artifactId>
+    <project.release>2</project.release>
+    <gallery.itemId>8a8fda6c78b8447da252b24954f651ca</gallery.itemId>
+    <release.itemId>eecc568e524445de9f484492c4741d99</release.itemId>
+    <build.time>${maven.build.timestamp}</build.time>
+    <release.name>regextext</release.name>
     <revision>10.6.0</revision>
     <contact.address>geoevent@esri.com</contact.address>
     <project.build.properties.encoding>ISO-8859-1
@@ -33,6 +36,8 @@
     <maven.bundle.plugin.version>5.1.7</maven.bundle.plugin.version>
     <maven.resources.plugin.version>3.2.0</maven.resources.plugin.version>
     <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
+    <compatibility.min>${project.version}</compatibility.min>
+    <compatibility.max></compatibility.max>
     <junit.version>4.13.2</junit.version>
   </properties>
   <dependencies>
