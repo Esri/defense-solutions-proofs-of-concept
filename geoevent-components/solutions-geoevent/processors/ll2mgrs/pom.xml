@@ -14,12 +14,12 @@
           OF ANY KIND, either express or implied. See the License for the specific language
           governing permissions and limitations under the License. -->
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.esri.geoevent.solutions.processor.ll2mgrs</groupId>
-  <artifactId>ll2mgrs-processor</artifactId>
+  <groupId>com.esri.geoevent.processor</groupId>
+  <artifactId>latlongtomgrs-processor</artifactId>
   <version>${revision}</version>
   <packaging>bundle</packaging>
-  <name>LatLon2MGRS Processor Blueprint Bundle</name>
-  <description>ll2mgrs OSGi blueprint bundle project.</description>
+  <name>LatLong to MGRS Processor Blueprint Bundle</name>
+  <description>LatLong to MGRS OSGi blueprint bundle project.</description>
   <url>https://www.arcgis.com/home/item.html?id=${gallery.itemId}</url>
   <organization>
     <name>Esri</name>
@@ -28,10 +28,11 @@
   <properties>
     <project.release>2</project.release>
     <compatibility.min>${project.version}</compatibility.min>
+    <compatibility.max></compatibility.max>
+    <build.time>${maven.build.timestamp}</build.time>
     <gallery.itemId>f34314728ae04664925dfb86ebc0bc3f</gallery.itemId>
-    <release.itemId>To Be Replaced</release.itemId>
-    <parent.groupId>com.esri.geoevent</parent.groupId>
-    <parent.artifactId>LatLon2MGRS</parent.artifactId>
+    <release.itemId>50c70f222383401386f372696cc1df06</release.itemId>
+    <release.name>latlongtomgrs</release.name>
     <revision>10.6.0</revision>
     <contact.address>geoevent@esri.com</contact.address>
     <project.build.properties.encoding>ISO-8859-1
@@ -168,6 +169,7 @@
         <version>${maven.bundle.plugin.version}</version>
         <extensions>true</extensions>
         <configuration>
+          <finalName>${project.artifactId}-${project.version}</finalName>
           <instructions>
             <AGES-Gallery>TRUE</AGES-Gallery>
             <AGES-Release>${project.release}</AGES-Release>
