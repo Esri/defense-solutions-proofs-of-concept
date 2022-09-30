@@ -40,10 +40,10 @@ public class RegexTextInboundAdapter extends TextInboundAdapter
   // single-character delimiter (which the base class will handle)
   // It then passes the altered stream to the base class to handle as normal
   static final private BundleLogger LOGGER                                           = BundleLoggerFactory.getLogger(RegexTextInboundAdapter.class);
-  private String                    attributeSeparator;
-  protected static String           ATTRIBUTE_SEPARATOR_TO_BE_REPLACED_PROPERTY_NAME = "AttributeSeparatorToBeReplaced";
-  private String                    separatorToBeReplaced                            = "";
-  private static Charset            charset                                          = Charset.forName("UTF-8");
+  private              String       attributeSeparator;
+  protected static     String       ATTRIBUTE_SEPARATOR_TO_BE_REPLACED_PROPERTY_NAME = "AttributeSeparatorToBeReplaced";
+  private              String       separatorToBeReplaced                            = "";
+  private static       Charset      charset                                          = Charset.forName("UTF-8");
 
   public RegexTextInboundAdapter(AdapterDefinition adapterDefinition) throws ComponentException
   {

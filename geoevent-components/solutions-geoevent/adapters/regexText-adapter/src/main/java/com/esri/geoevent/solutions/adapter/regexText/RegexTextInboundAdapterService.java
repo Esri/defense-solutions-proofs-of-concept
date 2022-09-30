@@ -20,14 +20,17 @@ import com.esri.ges.adapter.text.TextInboundAdapterService;
 import com.esri.ges.adapter.util.XmlAdapterDefinition;
 import com.esri.ges.core.component.ComponentException;
 
-public class RegexTextInboundAdapterService extends TextInboundAdapterService {
-	public RegexTextInboundAdapterService() {
-		super();
-		definition = new XmlAdapterDefinition(getResourceAsStream("inboundadapter-definition.xml"));
-	}
+public class RegexTextInboundAdapterService extends TextInboundAdapterService
+{
+  public RegexTextInboundAdapterService()
+  {
+    super();
+    definition = new XmlAdapterDefinition(getResourceAsStream("inboundadapter-definition.xml"));
+  }
 
-	@Override
-	public Adapter createAdapter() throws ComponentException {
-		return new RegexTextInboundAdapter(definition);
-	}
+  @Override
+  public Adapter createAdapter() throws ComponentException
+  {
+    return new RegexTextInboundAdapter(definition);
+  }
 }
