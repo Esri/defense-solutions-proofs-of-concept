@@ -8,12 +8,12 @@ import com.esri.ges.processor.GeoEventProcessorDefinitionBase;
 public class MGRSProcessorDefinition extends GeoEventProcessorDefinitionBase{
 	
 	
-	private String lblGeoField = "${com.esri.geoevent.processor.latlongtomgrs-processor.LBL_GEO_FLD}";
-	private String descGeoField= "${com.esri.geoevent.processor.latlongtomgrs-processor.DESC_GEO_FLD}";
-	private String lblNewDef = "${com.esri.geoevent.processor.latlongtomgrs-processor.LBL_NEW_DEF}";
-	private String descNewDef = "${com.esri.geoevent.processor.latlongtomgrs-processor.DESC_NEW_DEF}";
-	private String lblAccuracy = "${com.esri.geoevent.processor.latlongtomgrs-processor.LBL_ACCURACY}";
-	private String descAccuracy= "${com.esri.geoevent.processor.latlongtomgrs-processor.DESC_ACCURACY}";
+	private String lblGeoField = "${com.esri.geoevent.processor.latlong-mgrs-converter-processors.LBL_GEO_FLD}";
+	private String descGeoField= "${com.esri.geoevent.processor.latlong-mgrs-converter-processors.DESC_GEO_FLD}";
+	private String lblNewDef = "${com.esri.geoevent.processor.latlong-mgrs-converter-processors.LBL_NEW_DEF}";
+	private String descNewDef = "${com.esri.geoevent.processor.latlong-mgrs-converter-processors.DESC_NEW_DEF}";
+	private String lblAccuracy = "${com.esri.geoevent.processor.latlong-mgrs-converter-processors.LBL_ACCURACY}";
+	private String descAccuracy= "${com.esri.geoevent.processor.latlong-mgrs-converter-processors.DESC_ACCURACY}";
 	
 	public MGRSProcessorDefinition() {
 		try {
@@ -43,12 +43,12 @@ public class MGRSProcessorDefinition extends GeoEventProcessorDefinitionBase{
 
 	@Override
 	public String getLabel() {
-		return "${com.esri.geoevent.processor.latlongtomgrs-processor.LBL_LL2MGRS_PROCESSOR}";
+		return "${com.esri.geoevent.processor.latlong-mgrs-converter-processors.LBL_LL2MGRS_PROCESSOR}";
 	}
 
 	@Override
 	public String getDescription() {
-		return "${com.esri.geoevent.processor.latlongtomgrs-processor.DESC_LL2MGRS_PROCESSOR}";
+		return "${com.esri.geoevent.processor.latlong-mgrs-converter-processors.DESC_LL2MGRS_PROCESSOR}";
 	}
 
 	@Override
