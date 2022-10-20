@@ -15,11 +15,11 @@
           governing permissions and limitations under the License. -->
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.esri.geoevent.processor</groupId>
-  <artifactId>latlongtomgrs-processor</artifactId>
+  <artifactId>latlong-mgrs-converter-processors</artifactId>
   <version>${revision}</version>
   <packaging>bundle</packaging>
-  <name>LatLong to MGRS Processor Blueprint Bundle</name>
-  <description>LatLong to MGRS OSGi blueprint bundle project.</description>
+  <name>LatLong - MGRS Converter Processors Blueprint Bundle</name>
+  <description>LatLong - MGRS Converter Processors OSGi blueprint bundle project.</description>
   <url>https://www.arcgis.com/home/item.html?id=${gallery.itemId}</url>
   <organization>
     <name>Esri</name>
@@ -32,7 +32,7 @@
     <build.time>${maven.build.timestamp}</build.time>
     <gallery.itemId>f34314728ae04664925dfb86ebc0bc3f</gallery.itemId>
     <release.itemId>50c70f222383401386f372696cc1df06</release.itemId>
-    <release.name>latlongtomgrs</release.name>
+    <release.name>latlong-mgrs-converter</release.name>
     <revision>10.6.0</revision>
     <contact.address>geoevent@esri.com</contact.address>
     <project.build.properties.encoding>ISO-8859-1
