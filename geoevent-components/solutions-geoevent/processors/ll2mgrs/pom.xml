@@ -31,7 +31,7 @@
     <compatibility.max></compatibility.max>
     <build.time>${maven.build.timestamp}</build.time>
     <gallery.itemId>f34314728ae04664925dfb86ebc0bc3f</gallery.itemId>
-    <release.itemId>50c70f222383401386f372696cc1df06</release.itemId>
+    <release.itemId>e2a1560ce877471a88213a59fc8dd974</release.itemId>
     <release.name>latlong-mgrs-converter</release.name>
     <revision>10.6.0</revision>
     <contact.address>geoevent@esri.com</contact.address>
