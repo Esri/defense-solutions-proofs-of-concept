@@ -1,8 +1,8 @@
 {
-	"groupId": "${project.groupId}",
-	"buildDate": "${maven.build.timestamp}",
-	"artifactId": "${project.artifactId}",
-	"symbolicName": "${project.groupId}.${project.artifactId}",
-	"uri": "${project.groupId}/${project.artifactId}/${project.version}",
-	"fileName": "${project.artifactId}-${project.version}.jar"
+  "buildDate": "${build.time}",
+  "groupId": "${project.groupId}",
+  "artifactId": "${project.artifactId}",
+  "symbolicName": "${project.groupId}.${project.artifactId}",
+  "uri": "${project.groupId}/${project.artifactId}/${project.version}",
+  "fileName": "${project.artifactId}-${project.version}.jar"
 }
