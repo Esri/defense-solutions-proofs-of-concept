@@ -1,77 +1,124 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	
-	<groupId>com.esri.geoevent.solutions.adapter.geomessage</groupId> 
-		
-	<version>10.5.0</version> 
-	
-	<packaging>bundle</packaging>
-	<artifactId>geomessage-adapter</artifactId>
-	<name>Esri :: AGES :: Solutions :: Adapter :: GeoMessage</name>
-	<repositories>
-		<repository>
-			<id>ages-sdk-repo</id>
-			<name>GeoEvent Processor SDK repository</name>
-			<url>file:///Program Files/ArcGIS/Server/GeoEvent/sdk/repository</url>
-		</repository>
-		<repository>
-			<id>GEP</id>
-			<name>GeoEvent Processor embedded repository</name>
-			<layout>default</layout>
-			<url>file:///Program Files/ArcGIS/Server/GeoEvent/System</url>
-		</repository>
-	</repositories>
-		
-	<dependencies>
-		<dependency>
-			<groupId>com.esri.geoevent.sdk</groupId>
-			<artifactId>geoevent-sdk</artifactId>
-			<version>10.5.0</version>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.8.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-   			<groupId>com.esri.geometry</groupId>
-   			<artifactId>geometry-api</artifactId>
-   			<version>10.5.0</version>
-		</dependency>
-	</dependencies>
-	
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<configuration>
-						<source>1.7</source>
-						<target>1.7</target>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<version>2.3.6</version>
-				<extensions>true</extensions>
-				<configuration>
-					<instructions>
-						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
-						<Bundle-ContactAddress>geoeventprocessor@esri.com</Bundle-ContactAddress>
-						<Bundle-Version>${project.version}</Bundle-Version>
-						<AGES-Domain>com.esri.geoevent.solutions.adapter</AGES-Domain>
-						<Export-Package/>
-						<Private-Package>com.esri.geoevent.solutions.adapter.geomessage</Private-Package>
-					</instructions>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-	
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.esri.geoevent.solutions.adapter.geomessage</groupId>
+  <version>${revision}</version>
+  <packaging>bundle</packaging>
+  <artifactId>geomessage-adapter</artifactId>
+  <name>Esri :: AGES :: Solutions :: Adapter :: GeoMessage</name>
+  <url>https://www.arcgis.com/home/item.html?id=${gallery.itemId}</url>
+  <organization>
+    <name>Esri</name>
+    <url>https://www.esri.com</url>
+  </organization>
+  <properties>
+    <project.release>2</project.release>
+    <revision>10.6.0</revision>
+    <gallery.itemId>cd3ce7a01fdc46a48aa199bfd091dd50</gallery.itemId>
+    <release.itemId>655c88b737ce4f4ea6d60e41779e441c</release.itemId>
+    <compatibility.min>${project.version}</compatibility.min>
+    <compatibility.max></compatibility.max>
+    <release.name>geomessage</release.name>
+    <build.time>${maven.build.timestamp}</build.time>
+    <project.build.properties.encoding>ISO-8859-1
+    </project.build.properties.encoding>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.bundle.plugin.version>5.1.7</maven.bundle.plugin.version>
+    <maven.resources.plugin.version>3.2.0</maven.resources.plugin.version>
+    <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
+    <junit.version>4.13.2</junit.version>
+  </properties>
+  <repositories>
+    <repository>
+      <id>ages-sdk-repo</id>
+      <name>GeoEvent Processor SDK repository</name>
+      <url>file:///Program Files/ArcGIS/Server/GeoEvent/sdk/repository</url>
+    </repository>
+    <repository>
+      <id>GEP</id>
+      <name>GeoEvent Processor embedded repository</name>
+      <layout>default</layout>
+      <url>file:///Program Files/ArcGIS/Server/GeoEvent/System</url>
+    </repository>
+  </repositories>
+  <dependencies>
+    <dependency>
+      <groupId>com.esri.geoevent.sdk</groupId>
+      <artifactId>geoevent-sdk</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.esri.geometry</groupId>
+      <artifactId>geometry-api</artifactId>
+      <version>${project.version}</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/geometry-api-${project.version}.jar
+      </systemPath>
+    </dependency>
+  </dependencies>
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>${maven.resources.plugin.version}</version>
+          <configuration>
+            <propertiesEncoding>${project.build.properties.encoding}
+            </propertiesEncoding>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven.compiler.plugin.version}</version>
+          <configuration>
+            <source>1.7</source>
+            <target>1.7</target>
+            <encoding>${project.build.sourceEncoding}</encoding>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>${maven.bundle.plugin.version}</version>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <AGES-Gallery>TRUE</AGES-Gallery>
+            <AGES-Release>${project.release}</AGES-Release>
+            <Bundle-Version>${project.version}
+            </Bundle-Version>
+            <Bundle-SymbolicName>${project.groupId}.${project.artifactId}
+            </Bundle-SymbolicName>
+            <Bundle-ContactAddress>geoeventprocessor@esri.com
+            </Bundle-ContactAddress>
+            <AGES-Domain>com.esri.geoevent.solutions.adapter</AGES-Domain>
+            <Export-Package />
+            <Import-Package>com.esri.core.geometry;version="[10.6,12)",*
+            </Import-Package>
+            <Private-Package>com.esri.geoevent.solutions.adapter.geomessage
+            </Private-Package>
+          </instructions>
+          <finalName>${project.artifactId}-${project.version}</finalName>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

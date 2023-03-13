@@ -1,4 +1,812 @@
-<adapter name="Geomessage" label="${com.esri.geoevent.solutions.adapter.geomessage.geomessage-adapter.INBOUND_ADAPTER_LABEL}" domain="com.esri.geoevent.solutions.adapter.geomessage.inbound" type="inbound">
-	<description>${com.esri.geoevent.solutions.adapter.geomessage.geomessage-adapter.INBOUND_ADAPTER_DESCRIPTION}</description>
-	<propertyDefinitions/>
+<adapter name="Geomessage"
+         label="${com.esri.geoevent.solutions.adapter.geomessage.geomessage-adapter.INBOUND_ADAPTER_LABEL}"
+         domain="com.esri.geoevent.solutions.adapter.geomessage.inbound"
+         type="inbound">
+  <description>
+    ${com.esri.geoevent.solutions.adapter.geomessage.geomessage-adapter.INBOUND_ADAPTER_DESCRIPTION}
+  </description>
+  <propertyDefinitions />
+  <geoEventDefinitions>
+    <geoEventDefinition name="bedavail">
+      <fieldDefinitions>
+        <fieldDefinition name="datetimesubmitted" type="Date" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TIME_START</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="uniquedesignation" type="String"
+                         cardinality="One">
+          <fieldDefinitionTag>
+            <name>TRACK_ID</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="element" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="total_opl" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="med_opl" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="psych_opl" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="gen_opl" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="ortho_opl" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="burn_opl" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="spinal_opl" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="ob_gyn_opl" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="ped_opl" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="neuro_opl" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="oral_opl" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="opth_opl" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="thor_opl" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="avail_total" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="avail_med" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="avail_psych" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="avail_gen" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="avail_ortho" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="avail_burn" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="avail_spinal" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="avail_ob_gyn" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="avail_ped" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="avail_neuro" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="avail_oral" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="avail_opth" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="suites" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="backlog" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="overflow" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="narrative" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="avail_thor" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="createdtime" type="Date" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="createdby" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="editedtime" type="Date" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="editedby" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_action" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_wkid" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_control_points" type="Geometry"
+                         cardinality="One">
+          <fieldDefinitionTag>
+            <name>GEOMETRY</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_type" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_id" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+      </fieldDefinitions>
+    </geoEventDefinition>
+    <geoEventDefinition name="chemlight">
+      <fieldDefinitions>
+        <fieldDefinition name="uniquedesignation" type="String"
+                         cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="modifiedby" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="color" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="notes" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="datetimesubmitted" type="Date" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TIME_START</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="datetimemodified" type="Date" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_control_points" type="Geometry"
+                         cardinality="One">
+          <fieldDefinitionTag>
+            <name>GEOMETRY</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_id" type="String" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TRACK_ID</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_action" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_type" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_wkid" type="Integer" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+      </fieldDefinitions>
+    </geoEventDefinition>
+    <geoEventDefinition name="eod">
+      <fieldDefinitions>
+        <fieldDefinition name="uniquedesignation" type="String"
+                         cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="location" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="location_desc" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="contact" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="nbc_type" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="resources" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="impact" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="protective_meas" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="datetimesubmitted" type="Date" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TIME_START</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="status" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="munition_type" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="priority" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="nbc" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="incident_id" type="String" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TRACK_ID</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_control_points" type="Geometry"
+                         cardinality="One">
+          <fieldDefinitionTag>
+            <name>GEOMETRY</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_id" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_action" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_type" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_wkid" type="Integer" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+      </fieldDefinitions>
+    </geoEventDefinition>
+    <geoEventDefinition name="medevac">
+      <fieldDefinitions>
+        <fieldDefinition name="uniquedesignation" type="String"
+                         cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="radio_freq" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="patients_a" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="patients_b" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="patients_c" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="patients_d" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="patients_e" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="patients_type_l" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="patients_type_a" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="wounds" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="terrain" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="authentication" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="datetimesubmitted" type="Date" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TIME_START</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="status" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="equipment" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="security" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="marking" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="nbc" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="nationality" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="incident_id" type="String" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TRACK_ID</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_control_points" type="Geometry"
+                         cardinality="One">
+          <fieldDefinitionTag>
+            <name>GEOMETRY</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_id" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_action" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_type" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_wkid" type="Integer" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+      </fieldDefinitions>
+    </geoEventDefinition>
+    <geoEventDefinition name="sigact">
+      <fieldDefinitions>
+        <fieldDefinition name="dateoccured" type="Date" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TIME_START</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="datesubmitted" type="Date" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="dateupdated" type="Date" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="type" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="category" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="trackingnumber" type="String" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TRACK_ID</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="title" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="summary" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="region" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="attackon" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="complexattack" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="reportingunit" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="unitname" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="typeofunit" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="friendlywia" type="Long" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="friendlykia" type="Long" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="hostnationwia" type="Long" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="hostnationkia" type="Long" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="civilianwia" type="Long" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="civiliankia" type="Long" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="enemywia" type="Long" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="enemykia" type="Long" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="enemydetained" type="Long" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="mgrs" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="latitude" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="longitude" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="classification" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="province" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="district" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="tempdate" type="Date" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_control_points" type="Geometry"
+                         cardinality="One">
+          <fieldDefinitionTag>
+            <name>GEOMETRY</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_id" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_action" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_wkid" type="Integer" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_type" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+      </fieldDefinitions>
+    </geoEventDefinition>
+    <geoEventDefinition name="sitrep">
+      <fieldDefinitions>
+        <fieldDefinition name="datetimesubmitted" type="Date" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TIME_START</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="uniquedesignation" type="String"
+                         cardinality="One">
+          <fieldDefinitionTag>
+            <name>TRACK_ID</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="activity" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="effective" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="own_situation" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="situation_overview" type="String"
+                         cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="operations" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="isr" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="sustainment" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="comms" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="personnel" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_control_points" type="Geometry"
+                         cardinality="One">
+          <fieldDefinitionTag>
+            <name>GEOMETRY</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_id" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_action" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_type" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_wkid" type="Integer" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+      </fieldDefinitions>
+    </geoEventDefinition>
+    <geoEventDefinition name="slantrep">
+      <fieldDefinitions>
+        <fieldDefinition name="datetimesubmitted" type="Date" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TIME_START</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="uniquedesignation" type="String"
+                         cardinality="One">
+          <fieldDefinitionTag>
+            <name>TRACK_ID</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="cir" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="equipment" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="personnel" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="narrative" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_control_points" type="Geometry"
+                         cardinality="One">
+          <fieldDefinitionTag>
+            <name>GEOMETRY</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_id" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_action" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_type" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_wkid" type="Integer" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+      </fieldDefinitions>
+    </geoEventDefinition>
+    <geoEventDefinition name="spotrep">
+      <fieldDefinitions>
+        <fieldDefinition name="uniquedesignation" type="String"
+                         cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="size" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="activity" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="location" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="unit" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="equipment" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="rel_locn_dist" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="rel_locn_brg" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="datetimesubmitted" type="Date" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TIME_START</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="activity_cat" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="unit_cat" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="equip_cat" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="size_cat" type="Long" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="timeobserved" type="Date" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="sic" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_control_points" type="Geometry"
+                         cardinality="One">
+          <fieldDefinitionTag>
+            <name>GEOMETRY</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_id" type="String" cardinality="One">
+          <fieldDefinitionTag>
+            <name>TRACK_ID</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_action" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_type" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_wkid" type="Integer" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+      </fieldDefinitions>
+    </geoEventDefinition>
+    <geoEventDefinition name="trackrep">
+      <fieldDefinitions>
+        <fieldDefinition name="quantity" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="additionalinformation" type="String"
+                         cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="iff_sif" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="mobility" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="type" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="datetimevalid" type="Date" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="datetimeexpired" type="Date" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="uniquedesignation" type="String"
+                         cardinality="One">
+          <fieldDefinitionTag>
+            <name>TRACK_ID</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="x" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="y" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="z" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="owningunit" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="staffcomment" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="operationalcondition" type="Short"
+                         cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="createdby" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="editedby" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="createdtime" type="Date" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="editedtime" type="Date" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="sic" type="String" cardinality="One">
+          <fieldDefinitionTag>
+            <name>sidc</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="offseta" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="min_range" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="max_range" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="status911" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="fuel_state" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="rel_info" type="Short" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="direction" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="speed" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="speed_actual" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="direction_actual" type="Double"
+                         cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="obs_facing" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="vert_traverse" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="obs_elev" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="horiz_traverse" type="Double" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="callsign" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_control_points" type="Geometry"
+                         cardinality="One">
+          <fieldDefinitionTag>
+            <name>GEOMETRY</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_type" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_action" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_wkid" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="_id" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="datetimesubmitted" type="Date" cardinality="One">
+          <fieldDefinitionTag>
+            <name>DateTimeSubmitted</name>
+          </fieldDefinitionTag>
+          <fieldDefinitions />
+        </fieldDefinition>
+        <fieldDefinition name="MessageCount" type="String" cardinality="One">
+          <fieldDefinitions />
+        </fieldDefinition>
+      </fieldDefinitions>
+    </geoEventDefinition>
+  </geoEventDefinitions>
 </adapter>

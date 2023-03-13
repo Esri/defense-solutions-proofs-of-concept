@@ -1,6 +1,6 @@
-<adapter name="Geomessage" label="${com.esri.geoevent.solutions.adapter.geomessage.geomessage-adapter.OUTBOUND_ADAPTER_LABEL}" domain="com.esri.geoevent.solutions.adapter.geomessage.outbound" type="outbound">
+<adapter name="GeoMessage" label="${com.esri.geoevent.solutions.adapter.geomessage.geomessage-adapter.OUTBOUND_ADAPTER_LABEL}" domain="com.esri.geoevent.solutions.adapter.geomessage.outbound" type="outbound">
 	<description>${com.esri.geoevent.solutions.adapter.geomessage.geomessage-adapter.OUTBOUND_ADAPTER_DESCRIPTION}</description>
 	<propertyDefinitions>
-		<propertyDefinition propertyName="messagetype" label="Geomessage Type" description="Type to appear in the geomessage _type tag." propertyType="String" mandatory="true" readOnly="false"/>
+		<propertyDefinition propertyName="messagetype" label="GeoMessage Type" description="Type to appear in the geomessage _type tag." propertyType="String" mandatory="true" readOnly="false"/>
 	</propertyDefinitions>
 </adapter>

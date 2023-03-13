@@ -1,0 +1,27 @@
+{
+  "name": "${release.name}",
+  "releaseDate": "${build.time}",
+  "galleryItemId": "${gallery.itemId}",
+  "galleryItemUrl": "https://www.arcgis.com/home/item.html?id=${gallery.itemId}",
+  "releaseItemId": "${release.itemId}",
+  "releaseItemUrl": "https://www.arcgis.com/sharing/rest/content/items/${release.itemId}/data",
+  "sdkVersion": "${project.version}",
+  "compatibilityMin": "${compatibility.min}",
+  "compatibilityMax": "${compatibility.max}",
+  "releaseNumber": ${project.release},
+  "releaseName": "Release ${project.release}",
+  "releaseFileName": "GeoEventServer_${release.name}_r${project.release}.zip",
+  "installBaseUrl": "/gallery/${release.name}/",
+  "installHistoryUrl": "/gallery/${release.name}/Release History.pdf",
+  "installDocumentationUrl": "/gallery/${release.name}/ArcGISGeoEventServer_${release.name}.pdf",
+  "components": [
+    {
+      "buildDate": "${build.time}",
+      "groupId": "${project.groupId}",
+      "artifactId": "${project.artifactId}",
+      "symbolicName": "${project.groupId}.${project.artifactId}",
+      "uri": "${project.groupId}/${project.artifactId}/${project.version}",
+      "fileName": "${project.artifactId}-${project.version}.jar"
+    }
+  ]
+}
