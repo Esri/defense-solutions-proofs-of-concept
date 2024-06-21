@@ -2,9 +2,8 @@
 	type="inbound">
 	<description>Receive Cursor on Target messages over a TCP socket that opens and closes before and after the message is received</description>
 	<defaultName>cot-tcp-in</defaultName>
-	<transport uri="com.esri.ges.transport.inbound/TCP/10.5.0" />
-	<adapter
-		uri="com.esri.geoevent.solutions.adapter.cot.inbound/CursorOnTargetIn/10.5.0" />
+	<transport uri="com.esri.ges.transport.inbound/TCP/10.8.1" />
+	<adapter uri="com.esri.geoevent.solutions.adapter.cot.inbound/CursorOnTargetIn/10.8.1" />
 	<properties>
 		<shown>
 			<property name="XSD_Path" label="XSD_Path" source="adapter"

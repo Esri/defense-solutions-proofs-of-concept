@@ -1,7 +1,7 @@
 <connectorDefinition label="Send Cursor on Target message"
 	name="cot-out" type="outbound">
-	<adapter uri="com.esri.geoevent.solutions.adapter.cot.outbound/CursorOnTargetOut/10.5.0" />
-	<transport uri="com.esri.geoevent.solutions.transport.tcpsquirt.outbound/TCPSquirt/10.5.0" />
+	<adapter uri="com.esri.geoevent.solutions.adapter.cot.outbound/CursorOnTargetOut/10.8.1" />
+	<transport uri="com.esri.geoevent.solutions.transport.tcpsquirt.outbound/TCPSquirt/10.8.1" />
 	<defaultName>CoT-out</defaultName>
 	<description>Send a Cursor on Target message out over tcp socket that opens on demand</description>
 	<properties>
