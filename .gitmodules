@@ -1,3 +1,9 @@
+[submodule "apps/squad-leader-android/source/military-apps-library-java"]
+	path = apps/squad-leader-android/source/military-apps-library-java
+	url = https://github.com/Esri/military-apps-library-java.git
+[submodule "apps/squad-leader-android/source/aFileChooser"]
+	path = apps/squad-leader-android/source/aFileChooser
+	url = https://github.com/garys-esri/aFileChooser.git
 [submodule "apps/vehicle-commander-java/source/military-apps-library-java"]
 	path = apps/vehicle-commander-java/source/military-apps-library-java
 	url = git@github.com:Esri/military-apps-library-java.git

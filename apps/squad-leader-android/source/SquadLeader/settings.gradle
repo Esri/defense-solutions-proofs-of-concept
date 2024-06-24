@@ -1,0 +1,2 @@
+include ':aFileChooser', ':app'
+project(':aFileChooser').projectDir = new File('../aFileChooser')

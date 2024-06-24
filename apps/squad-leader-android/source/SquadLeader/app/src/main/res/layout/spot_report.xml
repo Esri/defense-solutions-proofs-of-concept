@@ -1,0 +1,75 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    
+        <TextView android:id="@+id/label_spotrep_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/size" />
+        <Spinner android:id="@+id/spinner_spotrep_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_spotrep_size" />
+        
+        <TextView android:id="@+id/label_spotrep_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/activity"
+            android:layout_below="@+id/spinner_spotrep_size" />
+        <Spinner android:id="@+id/spinner_spotrep_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_spotrep_activity" />
+        
+        <TextView android:id="@+id/label_spotrep_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/location"
+            android:layout_below="@+id/spinner_spotrep_activity" />
+        <EditText android:id="@+id/editText_spotrep_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mgrs"
+            android:layout_below="@+id/label_spotrep_location" />
+        
+        <TextView android:id="@+id/label_spotrep_unit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/unit"
+            android:layout_below="@+id/editText_spotrep_location" />
+        <Spinner android:id="@+id/spinner_spotrep_unit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_spotrep_unit" />
+        
+        <TextView android:id="@+id/label_spotrep_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/datetime"
+            android:layout_below="@+id/spinner_spotrep_unit" />
+        <DatePicker android:id="@+id/datepicker_spotrep_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_spotrep_date"
+            android:calendarViewShown="false" />
+        <TimePicker android:id="@+id/timepicker_spotrep_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/datepicker_spotrep_date" />
+        
+        <TextView android:id="@+id/label_spotrep_equipment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/equipment"
+            android:layout_below="@+id/timepicker_spotrep_time" />
+        <Spinner android:id="@+id/spinner_spotrep_equipment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_spotrep_equipment" />
+    
+    </RelativeLayout>
+</ScrollView>
