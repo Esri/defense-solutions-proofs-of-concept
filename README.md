@@ -1,5 +1,7 @@
 # defense-solutions-proofs-of-concept
 
+## *This repo is no longer maintained* 
+
 A repository to showcase demonstrations, prototypes and proofs of concept from the Defense Solutions Team.
 
 ## IMPORTANT NOTE
